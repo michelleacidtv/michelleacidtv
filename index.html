@@ -31,12 +31,56 @@
             .highlight {
                 color: white; /* Make this part of the text white */
             }
+                <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .large {
+            width: 300px; /* Adjust the main image size */
+        }
+
+        .small {
+            width: 40px; /* Adjust the small image size */
+            position: absolute;
+            top: 350px;  /* Move small image down */
+            left: 675px; /* Move small image right */
+        }
+            .image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.large {
+    width: 300px; /* Adjust size of the image */
+}
+
+.button {
+    position: absolute;
+    top: 44%; /* Moves the button down */
+    left: 50%; /* Moves the button right */
+    transform: translate(-50%, -50%); /* Centers the button */
+    background-color: #e31982; /* Button color */
+    color: white; /* Text color */
+    padding: 1px 10px;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 2px; /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.button:hover {
+    background-color: rgba(176, 16, 98, 0.52); /* Darker color on hover */
+}
         </style>
     </head>
     <body>
-        <div>
-            <h1>michelleacid<span class="highlight">tv</span></h1>
-            <p><span class="highlight">coming soon </span></p>
+    <div class="image-container">
+            <img src="images/coming-soon.jpg" alt="coming-soon.jpg" width="300" class="large" />
+            <a href="https://www.youtube.com/@michelleacidtv" class="button">></a>
         </div>
     </body>
 </html>
