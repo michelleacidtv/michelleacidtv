@@ -8,6 +8,7 @@
         <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
         <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
         <style>
+            /* Apply Xolonium font */
             body {
                 background-color: black;
                 color: #e31982;
@@ -26,63 +27,64 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: black;
+            background-color: black; /* Ensures a smooth transition */
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9993;
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 4s ease-out;
+            opacity: 1; /* Initial opacity */
+            visibility: visible; /* Initial visibility */
+            transition: opacity 4s ease-out; /* Transition visibility after opacity */
         }
         #loadingScreen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%; /* Make the GIF take up the full width */
+            height: 100%; /* Make the GIF take up the full height */
+            object-fit: cover; /* Ensure the GIF covers the screen without distortion */
         }
 
         #loadingScreen.fade-out {
             opacity: 0;
         }
-        @media (max-width: 768px) {
-        #loadingScreen {
-        width: 100vw;
-        height: 100vh;
-        }
-
-        #loadingScreen img {
-        object-fit: cover;
-        }
+        /* Container for TV */
         .tv-container {
             position: relative;
-            width: 90vw;
+            width: 700px; /* Adjust based on your TV image */
             text-align: center;
             margin: 0 auto; 
         }
+
+        /* TV Image */
         .tv-frame {
             width: 100%;
             display: block;
         }
+
+        /* Video inside the TV */
         .tv-screen {
             position: absolute;
-            top: 16%; 
-            left: 13%; 
-            width: 76%; 
-            height: 55%; 
-            aspect-ratio: 4 / 3; 
-            object-fit: contain; 
+            top: 16%; /* Adjust to fit the TV screen */
+            left: 13%; /* Adjust to fit the TV screen */
+            width: 76%; /* Adjust based on the screen size in the image */
+            height: auto; /* Keep aspect ratio */
+            aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
+            object-fit: contain; /* Ensures it fills the screen properly */
             border-radius: 5px;
-            background: black;
+            background: black; /* Black bars instead of stretching */
         }
+
+        /* Container for remote */
         .remote-container {
             position: absolute;
             left: -23%; /* Adjust to bring the remote into view */
             bottom: 7%; /* Moves the remote closer to the TV */
         }
+
+        /* Remote Image */
         .remote-container img {
             width: 120px; /* Adjust the size of the remote */
         }
 
+        /* Styling for buttons on remote */
         .remote-buttons {
             position: absolute;
             top: 46%;  /* Adjust the vertical position of the buttons */
@@ -90,9 +92,11 @@
             transform: translateX(-50%);  /* To truly center the buttons */
             display: flex;
             flex-direction: column;
-            gap: 5px
+            gap: 5px;
         }
     
+        
+        /* Default Button Style */
         .button {
             width: 265px;
             height: 25px;
@@ -117,7 +121,7 @@
         .button.orange {
             width: 271px;
             height: 46px;
-            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/orange.png') no-repeat center center;
+            background: url('images/orange.png') no-repeat center center;
             background-size: cover;
             position: relative;
             left: 938px; /* Move it to the right */
@@ -133,7 +137,7 @@
             transform: scale(1.1); /* Slight zoom */
         }
         .button.youtube {
-            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/youtube.png') no-repeat center center;
+            background: url('images/youtube.png') no-repeat center center;
             background-size: cover;
             width: 37px;
             height: 41px;
@@ -150,7 +154,7 @@
         }
 
         .button.tokyo {
-            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tokyo.png') no-repeat center center;
+            background: url('images/tokyo.png') no-repeat center center;
             background-size: cover;
             width: 271px;
             height: 46px;
@@ -168,7 +172,7 @@
         }
         
 .button.wink {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/wink.png') no-repeat center center;
+    background: url('images/wink.png') no-repeat center center;
     background-size: cover;
     width: 271px;
     height: 46px;
@@ -186,7 +190,7 @@
 }
                 
 .button.younme {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/younme.png') no-repeat center center;
+    background: url('images/younme.png') no-repeat center center;
     background-size: cover;
     width: 271px;
     height: 46px;
@@ -204,7 +208,7 @@
 }
                 
 .button.mechanical {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/mechancal.png') no-repeat center center;
+    background: url('images/mechancal.png') no-repeat center center;
     background-size: cover;
     width: 270px;
     height: 46px;
@@ -222,7 +226,7 @@
 }
                         
 .button.soundcloud {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/soundclu.png') no-repeat center center;
+    background: url('images/soundclu.png') no-repeat center center;
     background-size: cover;
     width: 39px;
     height: 38px;
@@ -240,7 +244,7 @@
 }
                                 
 .button.spotify {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/sptofy.jpg') no-repeat center center;
+    background: url('images/sptofy.jpg') no-repeat center center;
     background-size: cover;
     width: 38px;
     height: 39px;
@@ -258,7 +262,7 @@
 }
                                 
 .button.email {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/email.png') no-repeat center center;
+    background: url('images/email.png') no-repeat center center;
     background-size: cover;
     width: 36px;
     height: 38px;
@@ -292,6 +296,8 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
+
+/* Visible when the contact-info class is active */
 .contact-info.show {
     display: block;
     opacity: 1;
@@ -299,7 +305,7 @@
 }
         
 .button.apple {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/apple.png') no-repeat center center;
+    background: url('images/apple.png') no-repeat center center;
     background-size: cover;
     width: 38px;
     height: 40px;
@@ -316,7 +322,7 @@
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
 .button.quote {
-    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/handbutton.png') no-repeat center center;
+    background: url('images/handbutton.png') no-repeat center center;
     background-size: cover;
     width: 38px;
     height: 37px;
