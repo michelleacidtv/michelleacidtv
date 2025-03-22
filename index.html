@@ -32,7 +32,7 @@
             justify-content: center;
             z-index: 9993;
             opacity: 1;
-            visibility: hidden;
+            visibility: visible;
             transition: opacity 4s ease-out;
         }
         #loadingScreen img {
@@ -44,61 +44,50 @@
         #loadingScreen.fade-out {
             opacity: 0;
         }
-        /* Container for TV */
         .tv-container {
             position: relative;
-            width: 700px;
+            width: 90vw;
+            max-width: 700px;
             text-align: center;
             margin: 0 auto; 
         }
-
-        /* TV Image */
         .tv-frame {
             width: 100%;
             display: block;
         }
-
-        /* Video inside the TV */
         .tv-screen {
             position: absolute;
-            top: 16%; /* Adjust to fit the TV screen */
-            left: 13%; /* Adjust to fit the TV screen */
-            width: 76%; /* Adjust based on the screen size in the image */
-            height: 55%; /* Keep aspect ratio */
-            aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
-            object-fit: contain; /* Ensures it fills the screen properly */
+            top: 16%; 
+            left: 13%; 
+            width: 76%; 
+            height: auto; 
+            aspect-ratio: 4 / 3; 
+            object-fit: contain; 
             border-radius: 5px;
-            background: black; /* Black bars instead of stretching */
+            background: black;
         }
-
-        /* Container for remote */
         .remote-container {
             position: absolute;
             left: -23%; /* Adjust to bring the remote into view */
             bottom: 7%; /* Moves the remote closer to the TV */
         }
-
-        /* Remote Image */
         .remote-container img {
             width: 120px; /* Adjust the size of the remote */
         }
 
-        /* Styling for buttons on remote */
         .remote-buttons {
-            position: absolute;
-            top: 46%;  /* Adjust the vertical position of the buttons */
-            left: 82%;  /* Center the buttons horizontally on the remote */
-            transform: translateX(-50%);  /* To truly center the buttons */
+            position: relative;
+            top: auto;  /* Adjust the vertical position of the buttons */
+            left: auto;  /* Center the buttons horizontally on the remote */
+            transform: none;  /* To truly center the buttons */
             display: flex;
-            flex-direction: column;
-            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
     
-        
-        /* Default Button Style */
         .button {
-            width: 265px;
-            height: 25px;
+            width: 80%;
+            max-width: 250px;
             border-radius: 50%;
             background-color: rgb(66, 66, 66);
             border: none;
@@ -295,8 +284,6 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
-
-/* Visible when the contact-info class is active */
 .contact-info.show {
     display: block;
     opacity: 1;
@@ -410,6 +397,18 @@
         .cd.insert {
             transform: scale(0.2); /* Shrinks to simulate insertion */
             opacity: 0; /* Fades out */
+        }
+        @media (max-width: 768px) {
+        .tv-container {
+        width: 95vw;
+        }
+        .remote-buttons {
+        flex-direction: row;
+        justify-content: center;
+        }
+        .button {
+        width: 70px; /* Reduce button size on small screens */
+        height: 20px;
         }
 
     </style>
