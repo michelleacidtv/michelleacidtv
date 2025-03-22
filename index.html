@@ -56,7 +56,6 @@
         .tv-container {
             position: relative;
             width: 90vw;
-            max-width: 700px;
             text-align: center;
             margin: 0 auto; 
         }
@@ -69,7 +68,7 @@
             top: 16%; 
             left: 13%; 
             width: 76%; 
-            height: auto; 
+            height: 55%; 
             aspect-ratio: 4 / 3; 
             object-fit: contain; 
             border-radius: 5px;
@@ -85,18 +84,18 @@
         }
 
         .remote-buttons {
-            position: relative;
-            top: auto;  /* Adjust the vertical position of the buttons */
-            left: auto;  /* Center the buttons horizontally on the remote */
-            transform: none;  /* To truly center the buttons */
+            position: absolute;
+            top: 46%;  /* Adjust the vertical position of the buttons */
+            left: 82%;  /* Center the buttons horizontally on the remote */
+            transform: translateX(-50%);  /* To truly center the buttons */
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            gap: 5px
         }
     
         .button {
-            width: 80%;
-            max-width: 250px;
+            width: 265px;
+            height: 25px;
             border-radius: 50%;
             background-color: rgb(66, 66, 66);
             border: none;
