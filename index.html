@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>michelleacidtv</title>
-        <link rel="icon" type="image/png" href="Screenshot.png">
+        <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
         <!-- Link to Google Fonts Xolonium -->
         <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
         <style>
@@ -21,67 +22,658 @@
                 align-items: center; /* Vertically center content */
                 text-align: center;
             }
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black; /* Ensures a smooth transition */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9993;
+            opacity: 1; /* Initial opacity */
+            visibility: visible; /* Initial visibility */
+            transition: opacity 4s ease-out; /* Transition visibility after opacity */
+        }
+        #loadingScreen img {
+            width: 100%; /* Make the GIF take up the full width */
+            height: 100%; /* Make the GIF take up the full height */
+            object-fit: cover; /* Ensure the GIF covers the screen without distortion */
+        }
 
-            h1 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-            .highlight {
-                color: white; /* Make this part of the text white */
-            }
-                <style>
-        .image-container {
+        #loadingScreen.fade-out {
+            opacity: 0;
+        }
+        /* Container for TV */
+        .tv-container {
             position: relative;
-            display: inline-block;
+            width: 700px; /* Adjust based on your TV image */
+            text-align: center;
+            margin: 0 auto; 
         }
 
-        .large {
-            width: 300px; /* Adjust the main image size */
+        /* TV Image */
+        .tv-frame {
+            width: 100%;
+            display: block;
         }
 
-        .small {
-            width: 40px; /* Adjust the small image size */
+        /* Video inside the TV */
+        .tv-screen {
             position: absolute;
-            top: 350px;  /* Move small image down */
-            left: 675px; /* Move small image right */
+            top: 16%; /* Adjust to fit the TV screen */
+            left: 13%; /* Adjust to fit the TV screen */
+            width: 76%; /* Adjust based on the screen size in the image */
+            height: 55%; /* Keep aspect ratio */
+            aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
+            object-fit: contain; /* Ensures it fills the screen properly */
+            border-radius: 5px;
+            background: black; /* Black bars instead of stretching */
         }
-            .image-container {
+
+        /* Container for remote */
+        .remote-container {
+            position: absolute;
+            left: -23%; /* Adjust to bring the remote into view */
+            bottom: 7%; /* Moves the remote closer to the TV */
+        }
+
+        /* Remote Image */
+        .remote-container img {
+            width: 120px; /* Adjust the size of the remote */
+        }
+
+        /* Styling for buttons on remote */
+        .remote-buttons {
+            position: absolute;
+            top: 46%;  /* Adjust the vertical position of the buttons */
+            left: 82%;  /* Center the buttons horizontally on the remote */
+            transform: translateX(-50%);  /* To truly center the buttons */
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    
+        
+        /* Default Button Style */
+        .button {
+            width: 265px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(66, 66, 66);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease-in-out; /* Smooth effect */
+        }
+
+        .button:hover {
+            background-color: #f26bc8;  /* Change color on hover */
+            filter: brightness(1.2); /* Slightly brighten */
+            opacity: 0.9; /* Make it slightly transparent */
+            transform: scale(1.1); /* Slightly enlarge */
+            box-shadow: 0 0 10px rgba(255, 120, 50, 0.6); /* Add glow */
+        }
+
+        .button.orange {
+            width: 271px;
+            height: 46px;
+            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/orange.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            left: 938px; /* Move it to the right */
+            top: -46px; /* Move it up */
+            border: 3px solid rgba(208, 88, 8, 0.73); /* Orange border */
+            border-radius: 2px; /* Optional: Add rounded corners */
+            transition: all 0.3s ease-in-out; 
+        }
+        
+        .button.orange:hover {
+            filter: brightness(1.1);
+            border-color: rgba(255, 120, 50, 0.9);
+            transform: scale(1.1); /* Slight zoom */
+        }
+        .button.youtube {
+            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/youtube.png') no-repeat center center;
+            background-size: cover;
+            width: 37px;
+            height: 41px;
+            position: relative;
+            left: 59px; /* Adjust position */
+            top: -72px;
+            border: 1px solid rgb(218, 15, 15); /* Orange border */
+            border-radius: 11px; /* Optional: Add rounded corners */
+            transition: all 0.3s ease-in-out;
+        }
+        .button.youtube:hover {
+            filter: brightness(1.3);
+            transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+        }
+
+        .button.tokyo {
+            background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tokyo.png') no-repeat center center;
+            background-size: cover;
+            width: 271px;
+            height: 46px;
+            position: relative;
+            left: 921px; /* Adjust position */
+            top: -93px;
+            border: 3px solid #e595bf; /* Orange border */
+            border-radius: 2px; /* Optional: Add rounded corners */
+            transition: all 0.3s ease-in-out;
+        }
+        .button.tokyo:hover {
+            filter: brightness(1.1);
+            border-color: #e595bf;
+            transform: scale(1.1); /* Slight zoom and rotate */
+        }
+        
+.button.wink {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/wink.png') no-repeat center center;
+    background-size: cover;
+    width: 271px;
+    height: 46px;
     position: relative;
-    display: inline-block;
+    left: 935px; /* Adjust position */
+    top: -94px;
+    border: 3px solid rgba(30, 48, 198, 0.82); /* Orange border */
+    border-radius: 2px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
 }
-
-.large {
-    width: 300px; /* Adjust size of the image */
+.button.wink:hover {
+    filter: brightness(1.1);
+    border-color: rgb(88, 164, 221);
+    transform: scale(1.1); /* Slight zoom and rotate */
 }
-
-.button {
+                
+.button.younme {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/younme.png') no-repeat center center;
+    background-size: cover;
+    width: 271px;
+    height: 46px;
+    position: relative;
+    left: 907px; /* Adjust position */
+    top: -94px;
+    border: 3px solid #252625; 
+    border-radius: 2px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+        .button.younme:hover {
+    filter: brightness(1);
+    border-color: #1f1f1f;
+    transform: scale(1.1); /* Slight zoom */
+}
+                
+.button.mechanical {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/mechancal.png') no-repeat center center;
+    background-size: cover;
+    width: 270px;
+    height: 46px;
+    position: relative;
+    left: 927px; /* Adjust position */
+    top: -91px;
+    border: 3px solid rgba(255, 255, 255, 0.9); /* Orange border */
+    border-radius: 2px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+        .button.mechanical:hover {
+    filter: brightness(1);
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1); /* Slight zoom */
+}
+                        
+.button.soundcloud {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/soundclu.png') no-repeat center center;
+    background-size: cover;
+    width: 39px;
+    height: 38px;
+    position: relative;
+    left: 99px; /* Adjust position */
+    top: -276px;
+    border: 1px solid rgba(244, 105, 42, 0.97); /* Orange border */
+    border-radius: 15px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+.button.soundcloud:hover {
+    filter: brightness(1.3);
+    border-color: rgba(240, 101, 39, 0.89);
+    transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
+                                
+.button.spotify {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/sptofy.jpg') no-repeat center center;
+    background-size: cover;
+    width: 38px;
+    height: 39px;
+    position: relative;
+    left: 58px; /* Adjust position */
+    top: -320px;
+    border: 1px solid rgb(53, 201, 27); /* Orange border */
+    border-radius: 14px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+.button.spotify:hover {
+    filter: brightness(1.3);
+    border-color: rgba(17, 160, 23, 0.89);
+    transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
+                                
+.button.email {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/email.png') no-repeat center center;
+    background-size: cover;
+    width: 36px;
+    height: 38px;
+    position: relative;
+    left: 60px; /* Adjust position */
+    top: -320px;
+    border: 1px solid rgb(255, 255, 255); /* Orange border */
+    border-radius: 2px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+.button.email:hover {
+    filter: brightness(1.3);
+    border-color: #E31982;
+    transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
+        /* Hidden by default */
+.contact-info {
     position: absolute;
-    top: 44%; /* Moves the button down */
-    left: 50%; /* Moves the button right */
-    transform: translate(-50%, -50%); /* Centers the button */
-    background-color: #e31982; /* Button color */
-    color: white; /* Text color */
-    padding: 1px 10px;
-    text-decoration: none;
-    font-size: 22px;
-    border-radius: 2px; /* Rounded corners */
-    border: none;
-    cursor: pointer;
-    transition: 0.5s;
+    font-family: "Xolonium", sans-serif;
+    top: 43px; /* Position the info below the button */
+    left: 98%; /* Center the tooltip horizontally */
+    transform: translateX(-50%); /* Adjust the tooltip's position */
+    background-color: black; /* Dark background for contrast */
+    color: #e31982; /* White text for visibility */
+    padding: 7px 8px;
+    border-radius: 37px; /* Rounded corners */
+    font-size: 12px; /* Font size for the tooltip */
+    white-space: nowrap; /* Prevent text wrapping */
+    display: none; /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
 
-.button:hover {
-    background-color: rgba(176, 16, 98, 0.52); /* Darker color on hover */
+/* Visible when the contact-info class is active */
+.contact-info.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
-        </style>
-    </head>
-    <body>
-    <div class="image-container">
-            <img src="https://github.com/michelleacidtv/michelleacidtv/blob/main/coming-soon.jpg?raw=true" alt="coming-soon.jpg" width="300" class="large" />
-            <a href="https://www.youtube.com/@michelleacidtv" class="button">></a>
+        
+.button.apple {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/apple.png') no-repeat center center;
+    background-size: cover;
+    width: 38px;
+    height: 40px;
+    position: relative;
+    left: 99px; /* Adjust position */
+    top: -451px;
+    border: 1px solid rgb(152, 210, 236); /* Orange border */
+    border-radius: 11px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+.button.apple:hover {
+    filter: brightness(1.3);
+    border-color: rgba(243, 242, 253, 0.89);
+    transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
+.button.quote {
+    background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/handbutton.png') no-repeat center center;
+    background-size: cover;
+    width: 38px;
+    height: 37px;
+    position: relative;
+    left: 99px; /* Adjust position */
+    top: -407px;
+    border: 2px solid #E31982; /* Orange border */
+    border-radius: 7px; /* Optional: Add rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+        .button.quote:hover {
+    filter: brightness(1.3);
+    border-color: #E31982;
+    transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
+.hidden-hand, .hidden-quote {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    pointer-events: none; /* Ensures it doesn’t interfere when hidden */
+}
+    @keyframes pulseGlow {
+    50% { text-shadow: 0 0 10px #ffffff, 0 0 20px #e31982, 0 0 30px #e31982; }
+}
+.quoteText {
+    position: absolute;
+    color: #ffffff;
+    font-family: "Xolonium", sans-serif;
+    font-size: 14px;
+    left: 50%;
+    top: 93%; /* Position it to the center vertically relative to the container */
+    transform: translate(-50%, -50%); /* Adjust to center it */
+    text-align: center;
+    background: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 1px 6px;
+    border-radius: 1px;
+    transition: opacity 1.5s ease-in-out;
+    text-shadow: 1 0 1px #ffffff, 0 0 2px #ffffff;
+
+    /* ✨ Apply pulsing animation */
+    animation: pulseGlow 4s infinite alternate;
+}
+
+#handImage {
+    width: 431px; /* Adjust size */
+    left: 50%; /* Center it */
+    position: absolute;
+    top: 87%; /* Center it relative to the container */
+    transform: translate(-50%, -50%); /* Adjust to keep it centered */
+    display: block; /* Start hidden */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out; /* Smooth fade-in */
+}
+.show {
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+            /* Show the elements with the 'show' class */
+            
+  .resized-image {
+    width: 220px;  /* Set the width of the image */
+    height: auto;  /* Maintain aspect ratio */
+    transform: translate(403px, -610px);
+    position: absolute; 
+  }            
+
+        /* CD Initial Position (Starts on the Right) */
+        .cd {
+            position: absolute;
+            width: 90px; /* Adjust CD size */
+            top: 15%;  /* Higher values move it down */
+            right: -248px; /* Start off-screen on the right */
+            transition: transform 1s linear, right 1.5s ease-in-out, top 1s ease-in-out, opacity 0.5s ease-in;
+        }
+
+        /* Move CD Left */
+        .cd.move-left {
+            right: 50%; /* Moves toward the TV */
+        }
+
+        /* Move CD Down */
+        .cd.move-down {
+            top: 65%; /* Moves it down near the TV slot */
+        }
+
+        /* Shrink and Disappear */
+        .cd.insert {
+            transform: scale(0.2); /* Shrinks to simulate insertion */
+            opacity: 0; /* Fades out */
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="loadingScreen">
+        <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/giphy.gif" alt="Loading Animation">
+    </div>   
+    
+    <div class="tv-container">
+        <img src="untitled%20folder/a0948206569_100%20copy.jpg" alt="TV Frame" class="tv-frame">
+        
+<video class="tv-screen" id="tv-video-orange" controls controlsList="nodownload" preload="auto" style="display: none;">
+    <source src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/Orange%20(uploaded)%20copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<video class="tv-screen" id="tv-video-tokyo" controls controlsList="nodownload" preload="auto" style="display: none;">
+    <source src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/Tokyo%20(uploaded)%20copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<video class="tv-screen" id="tv-video-wink" controls controlsList="nodownload" preload="auto" style="display: none;">
+    <source src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/Wink%20(uploaded)%20copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<video class="tv-screen" id="tv-video-younme" controls controlsList="nodownload" preload="auto" style="display: none;">
+    <source src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/Younme%20(uploaded)%20copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<video class="tv-screen" id="tv-video-mechanical" controls controlsList="nodownload" preload="auto" style="display: none;">
+    <source src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/images%20copy/Mech%20Wom%20(Uploaded)%20copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+        
+        <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/cd.png" alt="CD" class="cd">
+        <!-- Remote Image -->
+        <div class="remote-container">
+            <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/remote.png" alt="Remote">
+            
+            <!-- Buttons on the remote -->
+            <div class="remote-buttons">
+                <button class="button orange"></button>
+                <button class="button youtube" id="youtubeButton"></button>
+                <button class="button tokyo"></button>
+                <button class="button wink"></button>
+                <button class="button younme"></button>
+                <button class="button mechanical"></button>
+                <button class="button soundcloud" id="soundcloudButton"></button>
+                <button class="button spotify" id="spotifyButton"></button>
+                <button class="button email" id="emailButton"></button>
+                <button class="button apple" id="appleButton"></button>
+                <button class="button quote" id="quoteButton" ></button>
+            </div>                
         </div>
-    </body>
+    
+    <img id="handImage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/hand.png" alt="Hand" class="hidden-hand" />
+    <div id="quoteText" class="hidden-quote"></div>       
+
+<img id="imageToToggle" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album1.png" alt="Image" onclick="toggleImage()" class="resized-image" />
+
+</div>
+
+<script>
+    function toggleImage() {
+        var image = document.getElementById('imageToToggle');
+    
+        // Use getAttribute to get the relative image path
+        var currentSrc = image.getAttribute('src');
+    
+        // Check the current image source and switch it
+        if (currentSrc === 'https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album1.png') {
+        image.src = 'https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album2.png'; // Switch to second image
+        } else {
+        image.src = 'https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album1.png'; // Switch back to first image
+        }
+        }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const cd = document.querySelector(".cd");
+        const buttonOrange = document.querySelector(".button.orange");
+        const buttonTokyo = document.querySelector(".button.tokyo");
+        const buttonWink = document.querySelector(".button.wink");
+        const buttonYounme = document.querySelector(".button.younme");
+        const buttonMechanical = document.querySelector(".button.mechanical");
+        const videoOrange = document.getElementById("tv-video-orange");
+        const videoTokyo = document.getElementById("tv-video-tokyo");
+        const videoWink = document.getElementById("tv-video-wink");
+        const videoYounme = document.getElementById("tv-video-younme");
+        const videoMechanical = document.getElementById("tv-video-mechanical");
+        const emailButton = document.querySelector(".button.email");
+        const contactInfo = document.createElement("div");
+            contactInfo.classList.add("contact-info");
+            contactInfo.textContent = "michelleacidtv@gmail.com"; // Your contact details here
+        
+        const allVideos = [videoOrange, videoTokyo, videoWink, videoYounme, videoMechanical];
+
+        // Function to stop all videos before playing a new one
+        function stopAllVideos() {
+            allVideos.forEach(video => {
+                video.pause(); // Stop playing
+                video.currentTime = 0; // Reset to beginning
+                video.style.display = "none"; // Hide the video
+                video.load();
+            });
+        }
+
+        // Function to reset CD animation
+        function resetCDAnimation() {
+            cd.classList.remove("move-left", "move-down", "insert");
+            void cd.offsetWidth; // Forces a reflow
+        }
+
+        // Function to trigger animation and play video
+        function triggerAnimationAndPlayVideo(videoElement) {
+            stopAllVideos();
+            resetCDAnimation();
+            // Start the CD animation sequence
+            cd.classList.add("move-left");
+
+            setTimeout(() => {
+                cd.classList.add("move-down");
+            }, 1500);
+
+            setTimeout(() => {
+                cd.classList.add("insert");
+            }, 2500);
+
+            // **Delay stopping videos to avoid blocking animation**
+            setTimeout(() => {
+                stopAllVideos(); // Now stop all videos
+            }, 2800);
+
+            // Show and play the video after the animation ends
+            setTimeout(() => {
+                videoElement.style.display = "block"; // Make the video visible
+                videoElement.currentTime = 0; // Reset the video to start
+                videoElement.play(); // Play the video
+            }, 3500);
+        }
+
+        // Event listener for Orange button
+        buttonOrange.addEventListener("click", function () {
+            triggerAnimationAndPlayVideo(videoOrange);
+        });
+
+        // Event listener for Tokyo button
+        buttonTokyo.addEventListener("click", function () {
+            triggerAnimationAndPlayVideo(videoTokyo);
+        });
+
+        // Event listener for Wink button
+        buttonWink.addEventListener("click", function () {
+            triggerAnimationAndPlayVideo(videoWink);
+        });
+
+        // Event listener for Younme button
+        buttonYounme.addEventListener("click", function () {
+            triggerAnimationAndPlayVideo(videoYounme);
+        });
+
+        // Event listener for Mechanical button
+        buttonMechanical.addEventListener("click", function () {
+            triggerAnimationAndPlayVideo(videoMechanical);
+        });
+
+        // Fullscreen handling for both videos
+        document.addEventListener("fullscreenchange", function () {
+            const video = document.querySelector("video"); // Target the video dynamically
+
+            if (document.fullscreenElement === video) {
+                video.style.width = "100vw"; // Make video take full screen width
+                video.style.height = "75vw"; // Ensures 4:3 (75vw = 100vw * 3/4)
+                video.style.maxHeight = "100vh"; // Prevents overflow
+            } else {
+                video.style.width = ""; // Reset on exit
+                video.style.height = "";
+            }
+        });
+
+        const loadingScreen = document.getElementById("loadingScreen");
+
+        setTimeout(() => {
+            loadingScreen.classList.add("fade-out");
+
+            // Remove the loading screen from the DOM after transition ends
+            setTimeout(() => {
+                loadingScreen.remove(); // Completely removes it
+            }, 4000); // Matches fade-out duration
+        }, 4000); // Adjust delay before fade-out
+
+        document.getElementById("soundcloudButton").addEventListener("click", function () {
+            window.open("https://soundcloud.com/michelleacid", "_blank"); // Correct usage
+        });
+
+        document.getElementById("youtubeButton").addEventListener("click", function () {
+            window.open("https://www.youtube.com/@michelleacidtv", "_blank"); // Correct usage
+        });
+                document.getElementById("spotifyButton").addEventListener("click", function () {
+            window.open("https://open.spotify.com/artist/0ampJZ6FZq1OpVuRGmdzY2?si=sQaHB_ONSbWPjCWHpMIXrA", "_blank"); // Correct usage
+        });
+                document.getElementById("appleButton").addEventListener("click", function () {
+            window.open("https://music.apple.com/us/artist/michelleacidtv/1800831510", "_blank"); // Correct usage
+        });
+        
+            emailButton.appendChild(contactInfo);
+
+    emailButton.addEventListener("click", function (event) {
+        // Toggle visibility of the contact info
+        contactInfo.classList.toggle("show");
+
+        // Prevent event from propagating to avoid closing immediately when clicked
+        event.stopPropagation();
+    });
+
+    // Close contact info when clicking anywhere else on the page
+    document.addEventListener("click", function () {
+        if (contactInfo.classList.contains("show")) {
+            contactInfo.classList.remove("show");
+        }
+    });
+    // Quote & Hand Logic
+    const quoteButton = document.querySelector(".button.quote");
+    const handImage = document.getElementById("handImage");
+    const quoteText = document.getElementById("quoteText");
+
+    const quotes = [
+        "You run faster when you see the end in sight - Unknown",
+        "Resist nothing - Eckhart Tolle",
+        "Confront what you're avoiding - Unknown",
+        "He who writes for fools always finds a large public - Arthur Schopenhauer",
+        "Nothing you do can add anything to what you already have - Eckhart Tolle",
+    ];
+
+    quoteButton.addEventListener("click", function (event) {
+        let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteText.textContent = randomQuote; // Set new quote
+        quoteText.classList.add("quoteText"); // Add class for styling
+
+        handImage.style.display = "block"; 
+        quoteText.style.display = "block"; 
+        
+        setTimeout(() => {
+            handImage.style.opacity = "1"; 
+            quoteText.style.opacity = "1"; 
+        }, 10);
+        
+        event.stopPropagation(); // Prevents immediate fade-out
+    });
+
+    // Hide the hand and quote when clicking anywhere else
+    document.addEventListener("click", function (event) {
+        if (!quoteButton.contains(event.target) && event.target !== handImage && event.target !== quoteText) {
+            handImage.style.opacity = "0"; 
+            quoteText.style.opacity = "0"; 
+
+            setTimeout(() => {
+                handImage.style.display = "none"; 
+                quoteText.style.display = "none"; 
+            }, 500); // Matches fade-out duration
+            }
+        });
+    });
+</script>
+</body>
 </html>
