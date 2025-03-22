@@ -3,13 +3,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
         <title>michelleacidtv</title>
         <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
-        <!-- Link to Google Fonts Xolonium -->
         <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
         <style>
-            /* Apply Xolonium font */
             body {
                 background-color: black;
                 color: #e31982;
@@ -28,19 +26,19 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: black; /* Ensures a smooth transition */
+            background-color: black;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9993;
-            opacity: 1; /* Initial opacity */
-            visibility: visible; /* Initial visibility */
-            transition: opacity 4s ease-out; /* Transition visibility after opacity */
+            opacity: 1;
+            visibility: hidden;
+            transition: opacity 4s ease-out;
         }
         #loadingScreen img {
-            width: 100%; /* Make the GIF take up the full width */
-            height: 100%; /* Make the GIF take up the full height */
-            object-fit: cover; /* Ensure the GIF covers the screen without distortion */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
         }
 
         #loadingScreen.fade-out {
@@ -49,7 +47,7 @@
         /* Container for TV */
         .tv-container {
             position: relative;
-            width: 700px; /* Adjust based on your TV image */
+            width: 700px;
             text-align: center;
             margin: 0 auto; 
         }
