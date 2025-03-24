@@ -175,11 +175,12 @@
             border-radius: 2px; /* Optional: Add rounded corners */
             transition: all 0.3s ease-in-out; 
         }
-        
+        @media (hover: hover) {
         .button.orange:hover {
             filter: brightness(1.1);
             border-color: rgba(255, 120, 50, 0.9);
             transform: scale(1.1); /* Slight zoom */
+        }
         }
         @media (max-width: 768px) {
     .button.orange {
@@ -189,13 +190,6 @@
         top: -66px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
-        .button.orange:hover {
-        background-color: initial !important;  /* Reset to default */
-        filter: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
     }
     @media screen and (max-width: 844px) and (orientation: landscape) {
     .button.orange {
@@ -218,9 +212,11 @@
             border-radius: 11px; /* Optional: Add rounded corners */
             transition: all 0.3s ease-in-out;
         }
+        @media (hover: hover) {
         .button.youtube:hover {
             filter: brightness(1.3);
             transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+        }
         }
         @media (max-width: 768px) {
     .button.youtube {
@@ -230,13 +226,6 @@
         top: -94px; /* Adjust vertical positioning */
         transform: translateX(-426%); /* Center the button properly */
         }
-        .button.youtube:hover {
-        background-color: initial !important;  /* Reset to default */
-        filter: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
     }
 @media screen and (max-width: 844px) and (orientation: landscape) {
     .button.youtube {
@@ -260,11 +249,13 @@
             border-radius: 2px; /* Optional: Add rounded corners */
             transition: all 0.3s ease-in-out;
         }
+            @media (hover: hover) {
         .button.tokyo:hover {
             filter: brightness(1.1);
             border-color: #e595bf;
             transform: scale(1.1); /* Slight zoom and rotate */
         }
+            }
     @media (max-width: 768px) {
     .button.tokyo {
         width: 233px; /* Reduce width for mobile */
@@ -296,11 +287,13 @@
     border-radius: 2px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+ @media (hover: hover) {
 .button.wink:hover {
     filter: brightness(1.1);
     border-color: rgb(88, 164, 221);
     transform: scale(1.1); /* Slight zoom and rotate */
 }
+ }
 @media (max-width: 768px) {
     .button.wink {
         width: 233px; /* Reduce width for mobile */
@@ -332,11 +325,13 @@
     border-radius: 2px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+        @media (hover: hover) {
         .button.younme:hover {
     filter: brightness(1);
     border-color: #1f1f1f;
     transform: scale(1.1); /* Slight zoom */
 }
+        }
     @media (max-width: 768px) {
     .button.younme {
         width: 233px; /* Reduce width for mobile */
@@ -368,10 +363,12 @@
     border-radius: 2px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+        @media (hover: hover) {
         .button.mechanical:hover {
     filter: brightness(1);
     border-color: rgba(255, 255, 255, 0.9);
     transform: scale(1.1); /* Slight zoom */
+}
 }
 @media (max-width: 768px) {
     .button.mechanical {
@@ -404,10 +401,12 @@
     border-radius: 15px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+@media (hover: hover) {
 .button.soundcloud:hover {
     filter: brightness(1.3);
     border-color: rgba(240, 101, 39, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
 }
 @media (max-width: 768px) {
     .button.soundcloud {
@@ -440,10 +439,12 @@
     border-radius: 14px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+@media (hover: hover) {
 .button.spotify:hover {
     filter: brightness(1.3);
     border-color: rgba(17, 160, 23, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
 }
 @media (max-width: 768px) {
     .button.spotify {
@@ -476,10 +477,12 @@
     border-radius: 2px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+@media (hover: hover) {
 .button.email:hover {
     filter: brightness(1.3);
     border-color: #E31982;
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
 }
 @media (max-width: 768px) {
     .button.email {
@@ -549,10 +552,12 @@
     border-radius: 11px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+@media (hover: hover) {
 .button.apple:hover {
     filter: brightness(1.3);
     border-color: rgba(243, 242, 253, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
 }
  @media (max-width: 768px) {
     .button.apple {
@@ -585,10 +590,12 @@
     border-radius: 7px; /* Optional: Add rounded corners */
     transition: all 0.3s ease-in-out;
 }
+@media (hover: hover) {
         .button.quote:hover {
     filter: brightness(1.3);
     border-color: #E31982;
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
+}
 }
 @media (max-width: 768px) {
     .button.quote {
@@ -699,8 +706,8 @@
         .cd {
             position: absolute;
             width: 90px; /* Adjust CD size */
-            top: 15%;  /* Higher values move it down */
-            right: -248px; /* Start off-screen on the right */
+            top: 7%;  /* Higher values move it down */
+            right: -218px; /* Start off-screen on the right */
             transition: transform 1s linear, right 1.5s ease-in-out, top 1s ease-in-out, opacity 0.5s ease-in;
         }
 
@@ -721,16 +728,16 @@
         }
         @media (max-width: 768px) {
         .cd {
-        width: 105px; /* Reduce size for mobile */
-        right: 53px; /* Adjust position so it's still visible */
-        top: 96%; /* Slightly adjust vertical position */
+        width: 73px; /* Reduce size for mobile */
+        right: 74px; /* Adjust position so it's still visible */
+        top: 100%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         .cd {
-        width: 89px; /* Reduce width for mobile */
+        width: 67px; /* Reduce width for mobile */
         top: -3%; /* Missing semicolon fixed */
-        transform: translate(-19px, 37px); /* Adjust position */
+        transform: translate(-29px, 37px); /* Adjust position */
     }
 }
         #smileimage {
