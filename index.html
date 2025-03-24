@@ -726,6 +726,7 @@
             transform: scale(0.2); /* Shrinks to simulate insertion */
             opacity: 0; /* Fades out */
         }
+@supports (-webkit-touch-callout: none) {
         @media (max-width: 768px) {
         .cd {
         width: 73px; /* Reduce size for mobile */
@@ -739,6 +740,7 @@
         top: -3%; /* Missing semicolon fixed */
         transform: translate(-29px, 37px); /* Adjust position */
     }
+}
 }
         #smileimage {
             position: absolute;
