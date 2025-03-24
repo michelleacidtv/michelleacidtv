@@ -70,6 +70,20 @@
             border-radius: 5px;
             background: black; /* Black bars instead of stretching */
         }
+            @media screen and (max-width: 768px) and (orientation: portrait) {
+        .tv-container {
+            width: 92vw; /* Makes the container take 90% of the viewport width on small screens */
+            left: 0%; /* Adjust left positioning for smaller screens */
+            bottom: 27%;
+        }
+    }
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .tv-container {
+        width: 43vw; /* Makes the container take 92% of the viewport width */
+        left: 0vw; /* Adjust left positioning to avoid overflow */
+        bottom: 0%; /* Adjust bottom position */
+    }
+}
 
         /* Container for remote */
         .remote-container {
@@ -93,8 +107,40 @@
             flex-direction: column;
             gap: 5px;
         }
-    
-        
+            @media (max-width: 768px) {
+    /* Adjust the remote container to fit smaller screens */
+        .remote-container {
+        left: -2%; /* Adjust left positioning for smaller screens */
+        bottom: -154%; /* Adjust bottom positioning */
+    }
+
+        .remote-container img {
+        width: 115px; /* Make the remote smaller on smaller screens */
+    }
+
+    /* Adjust buttons positioning for smaller screens */
+        .remote-buttons {
+        top: 51%;  /* Move the buttons up slightly for smaller screens */
+        left: 76%;  /* Adjust horizontal position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+    /* Adjust the remote container to fit smaller screens */
+        .remote-container {
+        left: -36%; /* Adjust left positioning for smaller screens */
+        bottom: -20%; /* Adjust bottom positioning */
+    }
+
+        .remote-container img {
+        width: 94px; /* Make the remote smaller on smaller screens */
+    }
+
+    /* Adjust buttons positioning for smaller screens */
+        .remote-buttons {
+        top: 49%;  /* Move the buttons up slightly for smaller screens */
+        left: 113%;  /* Adjust horizontal position */
+    }
+}
         /* Default Button Style */
         .button {
             width: 265px;
@@ -135,6 +181,24 @@
             border-color: rgba(255, 120, 50, 0.9);
             transform: scale(1.1); /* Slight zoom */
         }
+        @media (max-width: 768px) {
+    .button.orange {
+        width: 233px; /* Reduce width for mobile */
+        height: 40px; /* Scale down height proportionally */
+        left: 109%; /* Center it more effectively */
+        top: -66px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
+    @media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.orange {
+        width: 219px; /* Reduce width for mobile */
+        height: 34px; /* Scale down height proportionally */
+        left: 262%; /* Center it more effectively */
+        top: -62px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
         .button.youtube {
             background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/youtube.png') no-repeat center center;
             background-size: cover;
@@ -151,6 +215,24 @@
             filter: brightness(1.3);
             transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
         }
+        @media (max-width: 768px) {
+    .button.youtube {
+        width: -9px; /* Reduce width for mobile */
+        height: 39px; /* Scale down height proportionally */
+        left: 89%; /* Center it more effectively */
+        top: -94px; /* Adjust vertical positioning */
+        transform: translateX(-426%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.youtube {
+        width: 29px; /* Reduce width for mobile */
+        height: 33px; /* Scale down height proportionally */
+        left: 66%; /* Center it more effectively */
+        top: -71px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
 
         .button.tokyo {
             background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tokyo.png') no-repeat center center;
@@ -169,6 +251,24 @@
             border-color: #e595bf;
             transform: scale(1.1); /* Slight zoom and rotate */
         }
+    @media (max-width: 768px) {
+    .button.tokyo {
+        width: 233px; /* Reduce width for mobile */
+        height: 40px; /* Scale down height proportionally */
+        left: 103%; /* Center it more effectively */
+        top: -106px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
+    @media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.tokyo {
+        width: 219px; /* Reduce width for mobile */
+        height: 34px; /* Scale down height proportionally */
+        left: 266%; /* Center it more effectively */
+        top: -98px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
         
 .button.wink {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/wink.png') no-repeat center center;
@@ -187,6 +287,24 @@
     border-color: rgb(88, 164, 221);
     transform: scale(1.1); /* Slight zoom and rotate */
 }
+@media (max-width: 768px) {
+    .button.wink {
+        width: 233px; /* Reduce width for mobile */
+        height: 40px; /* Scale down height proportionally */
+        left: 106%; /* Center it more effectively */
+        top: -102px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
+    @media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.wink {
+        width: 219px; /* Reduce width for mobile */
+        height: 34px; /* Scale down height proportionally */
+        left: 268%; /* Center it more effectively */
+        top: -96px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
                 
 .button.younme {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/younme.png') no-repeat center center;
@@ -205,6 +323,24 @@
     border-color: #1f1f1f;
     transform: scale(1.1); /* Slight zoom */
 }
+    @media (max-width: 768px) {
+    .button.younme {
+        width: 233px; /* Reduce width for mobile */
+        height: 40px; /* Scale down height proportionally */
+        left: 101%; /* Center it more effectively */
+        top: -99px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
+    @media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.younme {
+        width: 219px; /* Reduce width for mobile */
+        height: 34px; /* Scale down height proportionally */
+        left: 262%; /* Center it more effectively */
+        top: -92px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
                 
 .button.mechanical {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/mechancal.png') no-repeat center center;
@@ -223,6 +359,24 @@
     border-color: rgba(255, 255, 255, 0.9);
     transform: scale(1.1); /* Slight zoom */
 }
+@media (max-width: 768px) {
+    .button.mechanical {
+        width: 233px; /* Reduce width for mobile */
+        height: 40px; /* Scale down height proportionally */
+        left: 109%; /* Center it more effectively */
+        top: -96px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
+    @media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.mechanical {
+        width: 219px; /* Reduce width for mobile */
+        height: 34px; /* Scale down height proportionally */
+        left: 265%; /* Center it more effectively */
+        top: -92px; /* Adjust vertical positioning */
+        transform: translateX(-37%); /* Center the button properly */
+        }
+    }
                         
 .button.soundcloud {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/soundclu.png') no-repeat center center;
@@ -241,6 +395,24 @@
     border-color: rgba(240, 101, 39, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
+@media (max-width: 768px) {
+    .button.soundcloud {
+        width: -9px; /* Reduce width for mobile */
+        height: 38px; /* Scale down height proportionally */
+        left: 109%; /* Center it more effectively */
+        top: -276px; /* Adjust vertical positioning */
+        transform: translateX(-426%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.soundcloud {
+        width: 29px; /* Reduce width for mobile */
+        height: 33px; /* Scale down height proportionally */
+        left: 81%; /* Center it more effectively */
+        top: -230px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
                                 
 .button.spotify {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/sptofy.jpg') no-repeat center center;
@@ -259,6 +431,24 @@
     border-color: rgba(17, 160, 23, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
+@media (max-width: 768px) {
+    .button.spotify {
+        width: -9px; /* Reduce width for mobile */
+        height: 39px; /* Scale down height proportionally */
+        left: 108%; /* Center it more effectively */
+        top: -319px; /* Adjust vertical positioning */
+        transform: translateX(-534%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.spotify {
+        width: 29px; /* Reduce width for mobile */
+        height: 33px; /* Scale down height proportionally */
+        left: 66%; /* Center it more effectively */
+        top: -269px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
                                 
 .button.email {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/email.png') no-repeat center center;
@@ -277,6 +467,24 @@
     border-color: #E31982;
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
+@media (max-width: 768px) {
+    .button.email {
+        width: -9px; /* Reduce width for mobile */
+        height: 37px; /* Scale down height proportionally */
+        left: 109%; /* Center it more effectively */
+        top: -320px; /* Adjust vertical positioning */
+        transform: translateX(-565%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.email {
+        width: 29px; /* Reduce width for mobile */
+        height: 31px; /* Scale down height proportionally */
+        left: 66%; /* Center it more effectively */
+        top: -270px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
         /* Hidden by default */
 .contact-info {
     position: absolute;
@@ -302,6 +510,18 @@
     opacity: 1;
     visibility: visible;
 }
+    @media (max-width: 768px) {
+    .contact-info {
+    width: 171px;  /* Reduce size for mobile */
+    transform: translate(-59px, -2px);  /* Adjust position */
+    }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .contact-info {
+    width: 171px;  /* Reduce size for mobile */
+    transform: translate(-93px, -10px);  /* Adjust position */
+    }
+    }
         
 .button.apple {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/apple.png') no-repeat center center;
@@ -320,6 +540,25 @@
     border-color: rgba(243, 242, 253, 0.89);
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
+ @media (max-width: 768px) {
+    .button.apple {
+        width: -9px; /* Reduce width for mobile */
+        height: 38px; /* Scale down height proportionally */
+        left: 107%; /* Center it more effectively */
+        top: -448px; /* Adjust vertical positioning */
+        transform: translateX(-426%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.apple {
+        width: 32px; /* Reduce width for mobile */
+        height: 33px; /* Scale down height proportionally */
+        left: 89%; /* Center it more effectively */
+        top: -378px; /* Adjust vertical positioning */
+        transform: translateX(-452%); /* Center the button properly */
+        }
+    }
+            
 .button.quote {
     background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/handbutton.png') no-repeat center center;
     background-size: cover;
@@ -337,6 +576,25 @@
     border-color: #E31982;
     transform: scale(0.9) rotate(0deg); /* Slight zoom and rotate */
 }
+@media (max-width: 768px) {
+    .button.quote {
+        width: -9px; /* Reduce width for mobile */
+        height: 37px; /* Scale down height proportionally */
+        left: 108%; /* Center it more effectively */
+        top: -406px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .button.quote {
+        width: 29px; /* Reduce width for mobile */
+        height: 31px; /* Scale down height proportionally */
+        left: 81%; /* Center it more effectively */
+        top: -344px; /* Adjust vertical positioning */
+        transform: translateX(-430%); /* Center the button properly */
+        }
+    }
+            
 .hidden-hand, .hidden-quote {
     opacity: 0;
     transition: opacity 2s ease-in-out;
@@ -379,13 +637,49 @@
     pointer-events: auto;
 }
             /* Show the elements with the 'show' class */
-            
+@media (max-width: 768px) {
+    .quoteText {
+        font-size: 11px; /* Reduce font size */
+        top: 87%; /* Adjust vertical positioning */
+        padding: 1px 4px; /* Adjust padding */
+    }
+
+    #handImage {
+        width: 244px; /* Reduce size for mobile */
+        top: 83%; /* Adjust position */
+    }
+}
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .quoteText {
+        font-size: 11px; /* Reduce font size */
+        top: 87%; /* Adjust vertical positioning */
+        padding: 1px 4px; /* Adjust padding */
+    }
+
+    #handImage {
+        width: 244px; /* Reduce size for mobile */
+        top: 83%; /* Adjust position */
+    }
+}
   .resized-image {
     width: 220px;  /* Set the width of the image */
     height: auto;  /* Maintain aspect ratio */
     transform: translate(403px, -610px);
     position: absolute; 
-  }            
+  }  
+    @media (max-width: 768px) {
+    .resized-image {
+    width: 195px;  /* Reduce size for mobile */
+    transform: translate(-37px, 36px);  /* Adjust position */
+    }
+    }
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    .resized-image {
+        width: 150px; /* Reduce width for mobile */
+        top: -10%; /* Missing semicolon fixed */
+        transform: translate(219px, 40px); /* Adjust position */
+    }
+}
 
         /* CD Initial Position (Starts on the Right) */
         .cd {
@@ -411,6 +705,40 @@
             transform: scale(0.2); /* Shrinks to simulate insertion */
             opacity: 0; /* Fades out */
         }
+        @media (max-width: 768px) {
+        .cd {
+        width: 105px; /* Reduce size for mobile */
+        right: 53px; /* Adjust position so it's still visible */
+        top: 96%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .cd {
+        width: 89px; /* Reduce width for mobile */
+        top: -3%; /* Missing semicolon fixed */
+        transform: translate(-19px, 37px); /* Adjust position */
+    }
+}
+        #smileimage {
+            position: absolute;
+            width: 98px; /* Adjust CD size */
+            top: 244%;  /* Higher values move it down */
+            right: 287px; /* Start off-screen on the right */
+        }
+        @media (max-width: 768px) {
+        #smileimage {
+        width: 86px; /* Reduce size for mobile */
+        right: 138px; /* Adjust position so it's still visible */
+        top: 601%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        #smileimage {
+        width: 86px; /* Reduce size for mobile */
+        right: 138px; /* Adjust position so it's still visible */
+        top: 455%; /* Slightly adjust vertical position */
+    }
+}
 
     </style>
 </head>
