@@ -728,7 +728,6 @@
             transform: scale(0.2); /* Shrinks to simulate insertion */
             opacity: 0; /* Fades out */
         }
-@supports (-webkit-touch-callout: none) {
         @media (max-width: 768px) {
         .cd {
         width: 73px; /* Reduce size for mobile */
@@ -736,13 +735,12 @@
         top: 100%; /* Slightly adjust vertical position */
     }
 }
-        @media screen and (max-width: 844px) and (orientation: landscape) {
+        @media (max-width: 844px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
         .cd {
         width: 67px; /* Reduce width for mobile */
         top: -3%; /* Missing semicolon fixed */
         transform: translate(-29px, 37px); /* Adjust position */
     }
-}
 }
         #smileimage {
             position: absolute;
