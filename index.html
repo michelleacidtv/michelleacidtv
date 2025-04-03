@@ -107,6 +107,7 @@
             flex-direction: column;
             gap: 5px;
         }
+            @supports (-webkit-touch-callout: none) {
             @media (max-width: 768px) {
     /* Adjust the remote container to fit smaller screens */
         .remote-container {
@@ -128,7 +129,7 @@
     /* Adjust the remote container to fit smaller screens */
         .remote-container {
         left: -36%; /* Adjust left positioning for smaller screens */
-        bottom: -40%; /* Adjust bottom positioning */
+        bottom: -20%; /* Adjust bottom positioning */
     }
 
         .remote-container img {
@@ -140,6 +141,7 @@
         top: 49%;  /* Move the buttons up slightly for smaller screens */
         left: 113%;  /* Adjust horizontal position */
     }
+}
 }
         /* Default Button Style */
         .button {
