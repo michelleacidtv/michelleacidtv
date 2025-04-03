@@ -688,23 +688,23 @@
     transform: translate(403px, -610px);
     position: absolute; 
   }
-@supports (-webkit-touch-callout: none) {
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .resized-image {
-    width: 25lvw;  /* Reduce size for mobile */
-    left: 5lvw; 
-    top: 5dvh;
-    }
-    }
-@media screen and (max-width: 844px) and (max-aspect-ratio: 16/9) {
-    .resized-image {
-        width: 18lvw; /* Reduce width for mobile */
-        top: -30dvh; /* Missing semicolon fixed */
-        left: 45lvw
+        width: 50vw;  /* Adjust width to 50% of viewport width (responsive size) */
+        left: 38vw;   /* Center the image horizontally on the screen */
+        top: 46vh;    /* Set the top position to 10% of viewport height */
+        -webkit-transform: none; 
+        transform: none;  /* Remove the translate, as we're now using left/top */
     }
 }
+@media (max-width: 844px) and (orientation: landscape) {
+    .resized-image {
+        width: 19vw;  /* Set width to 30% of the viewport width in landscape */
+        left: 47vw;   /* Adjust the image's left position (centered for landscape) */
+        top: 0vh;    /* Set the top position to 20% of the viewport height */
+        transform: none;  /* Remove transform if you're using left and top for positioning */
+    }
 }
-
         /* CD Initial Position (Starts on the Right) */
         .cd {
             position: absolute;
