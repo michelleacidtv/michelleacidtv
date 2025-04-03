@@ -1027,6 +1027,11 @@
             }, 500); // Matches fade-out duration
             }
         });
+                window.addEventListener('resize', function() {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            console.log(width, height);
+        });
     });
 </script>
 </body>
