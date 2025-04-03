@@ -688,18 +688,20 @@
     transform: translate(403px, -610px);
     position: absolute; 
   }
+@supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
     .resized-image {
     width: 195px;  /* Reduce size for mobile */
     transform: translate(-37px, 36px);  /* Adjust position */
     }
     }
-@media screen and (max-width: 844px) and (orientation: landscape) {
+@media screen and (max-width: 844px) and (max-aspect-ratio: 16/9) {
     .resized-image {
-        width: 150px; /* Reduce width for mobile */
-        top: -10%; /* Missing semicolon fixed */
-        transform: translate(219px, 40px); /* Adjust position */
+        width: 18lvw; /* Reduce width for mobile */
+        top: -10dvh; /* Missing semicolon fixed */
+        left: 45lvw
     }
+}
 }
 
         /* CD Initial Position (Starts on the Right) */
@@ -734,7 +736,7 @@
         top: 100%; /* Slightly adjust vertical position */
     }
 }
-        @media (max-width: 844px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+        @media (max-width: 844px) and (max-aspect-ratio: 16/9) {
         .cd {
         width: 7lvw; 
         top: 3dvh; 
