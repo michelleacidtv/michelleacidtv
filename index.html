@@ -691,14 +691,16 @@
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 768px) {
     .resized-image {
-    width: 195px;  /* Reduce size for mobile */
-    transform: translate(-37px, 36px);  /* Adjust position */
+    width: 25lvw;  /* Reduce size for mobile */
+    left: 5lvw; 
+    top: 5dvh;
+    position: absolute; 
     }
     }
 @media screen and (max-width: 844px) and (max-aspect-ratio: 16/9) {
     .resized-image {
         width: 18lvw; /* Reduce width for mobile */
-        top: -10dvh; /* Missing semicolon fixed */
+        top: -30dvh; /* Missing semicolon fixed */
         left: 45lvw
         position: absolute; 
     }
