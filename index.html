@@ -49,7 +49,8 @@
             position: relative;
             width: 700px; /* Adjust based on your TV image */
             text-align: center;
-            margin: 0 auto; 
+            margin: 0 auto;
+            bottom: -425%;
         }
 
         /* TV Image */
@@ -61,10 +62,10 @@
         /* Video inside the TV */
         .tv-screen {
             position: absolute;
-            top: 16%; /* Adjust to fit the TV screen */
-            left: 13%; /* Adjust to fit the TV screen */
-            width: 76%; /* Adjust based on the screen size in the image */
-            height: 55%; /* Keep aspect ratio */
+            top: 11%; /* Adjust to fit the TV screen */
+            left: 12%; /* Adjust to fit the TV screen */
+            width: 77%; /* Adjust based on the screen size in the image */
+            height: 63%; /* Keep aspect ratio */
             aspect-ratio: 4 / 3; /* Ensures 4:3 ratio */
             object-fit: contain; /* Ensures it fills the screen properly */
             border-radius: 5px;
@@ -74,14 +75,14 @@
         .tv-container {
             width: 92vw; /* Makes the container take 90% of the viewport width on small screens */
             left: 0%; /* Adjust left positioning for smaller screens */
-            bottom: 27%;
+            bottom: -374%;
         }
     }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         .tv-container {
         width: 47vw; /* Makes the container take 92% of the viewport width */
         left: -7vw; /* Adjust left positioning to avoid overflow */
-        bottom: -5%; /* Adjust bottom position */
+        bottom: -529%; /* Adjust bottom position */
     }
 }
 
@@ -111,7 +112,7 @@
     /* Adjust the remote container to fit smaller screens */
         .remote-container {
         left: -2%; /* Adjust left positioning for smaller screens */
-        bottom: -154%; /* Adjust bottom positioning */
+        bottom: -191%; /* Adjust bottom positioning */
     }
 
         .remote-container img {
@@ -127,8 +128,8 @@
     @media (max-width: 844px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
     /* Adjust the remote container to fit smaller screens */
         .remote-container {
-        left: -36%; /* Adjust left positioning for smaller screens */
-        bottom: -18%; /* Adjust bottom positioning */
+        left: -25%; /* Adjust left positioning for smaller screens */
+        bottom: -26%; /* Adjust bottom positioning */
     }
 
         .remote-container img {
@@ -687,12 +688,13 @@
     height: auto;  /* Maintain aspect ratio */
     transform: translate(405px, -617px);
     position: absolute;
+    cursor: pointer;
   }
 @media (max-width: 768px) {
     .resized-image {
         width: 50vw;  /* Adjust width to 50% of viewport width (responsive size) */
         left: 38vw;   /* Center the image horizontally on the screen */
-        top: 51vh;    /* Set the top position to 10% of viewport height */
+        top: 44vh;    /* Set the top position to 10% of viewport height */
         transform: none;  /* Remove the translate, as we're now using left/top */
     }
 }
@@ -730,7 +732,7 @@
         }
         @media (max-width: 768px) {
         .cd {
-        width: 73px; /* Reduce size for mobile */
+        width: 74px; /* Reduce size for mobile */
         right: 74px; /* Adjust position so it's still visible */
         top: 100%; /* Slightly adjust vertical position */
     }
@@ -744,23 +746,452 @@
 }
         #smileimage {
             position: absolute;
-            width: 98px; /* Adjust CD size */
-            top: 244%;  /* Higher values move it down */
-            right: 287px; /* Start off-screen on the right */
+            width: 284px; /* Adjust CD size */
+            top: 682%;  /* Higher values move it down */
+            right: 483px; /* Start off-screen on the right */
         }
         @media (max-width: 768px) {
         #smileimage {
-        width: 86px; /* Reduce size for mobile */
-        right: 138px; /* Adjust position so it's still visible */
-        top: 601%; /* Slightly adjust vertical position */
+        width: 132px; /* Reduce size for mobile */
+        right: 227px; /* Adjust position so it's still visible */
+        top: 1183%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         #smileimage {
-        width: 86px; /* Reduce size for mobile */
-        right: 138px; /* Adjust position so it's still visible */
-        top: 455%; /* Slightly adjust vertical position */
+        width: 188px; /* Reduce size for mobile */
+        right: 233px; /* Adjust position so it's still visible */
+        top: 656%; /* Slightly adjust vertical position */
     }
+}
+    #bigsmileimage {
+            position: absolute;
+            width: 571px; /* Adjust CD size */
+            top: -529%;  /* Higher values move it down */
+            right: 62px; /* Start off-screen on the right */
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+        #bigsmileimage {
+        width: 309px; /* Reduce size for mobile */
+        right: 28px; /* Adjust position so it's still visible */
+        top: -1002%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        #bigsmileimage {
+        width: 425px; /* Reduce size for mobile */
+        right: -74px; /* Adjust position so it's still visible */
+        top: -585%; /* Slightly adjust vertical position */
+    }
+}
+@media (hover: hover) {
+    #bigsmileimage:hover {
+    filter: brightness(33);
+    border-color: black;
+    transform: scale(1.5); /* Slight zoom */
+}
+}
+    .moon-image {
+            position: absolute;
+            width: 55%; /* Adjust CD size */
+            top: -229%;  /* Higher values move it down */
+            right: -3%; /* Start off-screen on the right */
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            cursor: n-resize;
+            z-index: 1;
+        }
+            @media (max-width: 768px) {
+        .moon-image {
+        width: 216px; /* Reduce size for mobile */
+        right: 7px; /* Adjust position so it's still visible */
+        top: -426%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .moon-image {
+        width: 249px; /* Reduce size for mobile */
+        right: -154px; /* Adjust position so it's still visible */
+        top: -222%; /* Slightly adjust vertical position */
+    }
+}
+.wire-image {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: -1; /* Place the wire behind all other content */
+    top: 91%; /* Adjust as needed */
+    left: 34%; /* Adjust as needed */
+    width: 18%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+}
+                                    @media (max-width: 768px) {
+        .wire-image {
+        width: 151px; /* Reduce size for mobile */
+        left: 53px; /* Adjust position so it's still visible */
+        top: 260%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .wire-image {
+        width: 103px; /* Reduce size for mobile */
+        left: 172px; /* Adjust position so it's still visible */
+        top: 94%; /* Slightly adjust vertical position */
+    }
+}
+            .wire2-image {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: -1; /* Place the wire behind all other content */
+    top: 192%; /* Adjust as needed */
+    left: 39%; /* Adjust as needed */
+    width: 18%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+    transform: scaleX(-1);
+}
+                        @media (max-width: 768px) {
+        .wire2-image {
+        width: 157px; /* Reduce size for mobile */
+        left: 91px; /* Adjust position so it's still visible */
+        top: 497%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .wire2-image {
+        width: 103px; /* Reduce size for mobile */
+        left: 199px; /* Adjust position so it's still visible */
+        top: 239%; /* Slightly adjust vertical position */
+    }
+}
+    .computer-gif {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: -1; /* Place the wire behind all other content */
+    top: 296%; /* Adjust as needed */
+    left: 18%; /* Adjust as needed */
+    width: 86%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+}
+                            @media (max-width: 768px) {
+        .computer-gif {
+        width: 361px; /* Reduce size for mobile */
+        left: -5px; /* Adjust position so it's still visible */
+        top: 750%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .computer-gif {
+        width: 361px; /* Reduce size for mobile */
+        left: 122px; /* Adjust position so it's still visible */
+        top: 387%; /* Slightly adjust vertical position */
+    }
+}
+ .tiktokImage {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: 5; /* Place the wire behind all other content */
+    top: -184%; /* Adjust as needed */
+    left: 13%; /* Adjust as needed */
+    width: 9%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+    border: 60px solid #e31982; /* Change thickness and color as needed */
+    border-radius: 3px;      /* Optional: rounded corners */
+    padding: -28px;
+}
+.tiktokImage:hover {
+    transform: scale(0.67); /* Slight zoom on hover */
+    border-color: rgb(227, 25, 130); /* Lighter pink border on hover */
+    cursor: pointer; /* Change cursor to hand */
+}
+@media (max-width: 768px) {
+  .tiktokImage {
+    width: 64px;
+    position: absolute;
+    left: 34%; /* Use left instead of right */
+    top: -314%;
+  }
+}
+ .instaImage {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: 5; /* Place the wire behind all other content */
+    top: -225%; /* Adjust as needed */
+    left: -9%; /* Adjust as needed */
+    width: 9%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+    border: 55px solid #e31982; /* Change thickness and color as needed */
+    border-radius: 6px;      /* Optional: rounded corners */
+    padding: -22px;
+}
+.instaImage:hover {
+    transform: scale(0.67); /* Slight zoom on hover */
+    border-color: rgb(227, 25, 130); /* Lighter pink border on hover */
+    cursor: pointer; /* Change cursor to hand */
+}
+@media (max-width: 768px) {
+  .instaImage {
+    width: 86px;
+    position: absolute;
+    left: 0%; /* Use left instead of right */
+    top: -364%;
+  }
+}
+    .trollface {
+    position: absolute; /* Absolute positioning keeps it independent of other content */
+    z-index: -1; /* Place the wire behind all other content */
+    top: 1689%; /* Adjust as needed */
+    left: 47%; /* Adjust as needed */
+    width: 13%; /* You can adjust the width to fit the container or set a fixed size */
+    max-width: 1000px; /* Prevent it from getting too large */
+    height: auto; /* Maintain aspect ratio */
+}
+    @media (max-width: 768px) {
+        .trollface {
+        width: 82px; /* Reduce size for mobile */
+        left: 122px; /* Adjust position so it's still visible */
+        top: 2420%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .trollface {
+        width: 86px; /* Reduce size for mobile */
+        left: 232px; /* Adjust position so it's still visible */
+        top: 1997%; /* Slightly adjust vertical position */
+    }
+}
+.custom-text {
+  font-size: 29px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: -369%;
+  left: -7%;
+  z-index: 10;
+}
+        @media (max-width: 768px) {
+        .custom-text {
+        width: 389px; /* Reduce size for mobile */
+        font-size: 19px;
+        right: 23px; /* Adjust position so it's still visible */
+        top: -697%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .custom-text {
+        width: 392px; /* Reduce size for mobile */
+        font-size: 24px;
+        right: -74px; /* Adjust position so it's still visible */
+        top: -406%; /* Slightly adjust vertical position */
+    }
+}
+.custom1-text {
+  font-size: 54px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: 487%;
+  left: 28%;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+        .custom1-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 38px;
+        left: -5px; /* Adjust position so it's still visible */
+        top: 1066%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .custom1-text {
+        width: 358px; /* Reduce size for mobile */
+      font-size: 39px;
+        left: 108px; /* Adjust position so it's still visible */
+        top: 607%; /* Slightly adjust vertical position */
+    }
+}
+.custom5-text {
+  font-size: 20px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: 335%;
+  left: -14%;
+  z-index: 10;
+}
+                        @media (max-width: 768px) {
+        .custom5-text {
+        width: 255px; /* Reduce size for mobile */
+        left: 5px; /* Adjust position so it's still visible */
+        top: 873%; /* Slightly adjust vertical position */
+          font-size: 20px;
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .custom5-text {
+        width: 249px; /* Reduce size for mobile */
+        left: -102px; /* Adjust position so it's still visible */
+        top: 425%; /* Slightly adjust vertical position */
+    }
+}
+
+.custom2-text {
+  font-size: 30px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: 865%;
+  left: 47%;
+  z-index: 10;
+}
+                        @media (max-width: 768px) {
+        .custom2-text {
+        width: 234px; /* Reduce size for mobile */
+              font-size: 20px;
+        left: 126px; /* Adjust position so it's still visible */
+        top: 1510%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .custom2-text {
+        width: 567px; /* Reduce size for mobile */
+          font-size: 25px;
+        left: 92px; /* Adjust position so it's still visible */
+        top: 1037%; /* Slightly adjust vertical position */
+    }
+}
+.custom3-text {
+  font-size: 25px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: 1164%;
+  left: 23%;
+  z-index: 10;
+}
+@media (max-width: 768px) {
+        .custom3-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 18px;
+        left: -70px; /* Adjust position so it's still visible */
+        top: 1872%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .custom3-text {
+        width: 358px; /* Reduce size for mobile */
+      font-size: 20px;
+        left: -83px; /* Adjust position so it's still visible */
+        top: 1418%; /* Slightly adjust vertical position */
+    }
+}
+.custom4-text {
+  font-size: 15px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: 1706%;
+  left: 45%;
+  z-index: 10;
+}
+                        @media (max-width: 768px) {
+        .custom4-text {
+        width: 331px; /* Reduce size for mobile */
+              font-size: 14px;
+        left: 14px; /* Adjust position so it's still visible */
+        top: 2446%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            .custom4-text {
+        width: 567px; /* Reduce size for mobile */
+          font-size: 12px;
+        left: -14px; /* Adjust position so it's still visible */
+        top: 2024%; /* Slightly adjust vertical position */
+    }
+}
+#clickmeButton {
+  position: absolute;
+  top: 731%;
+  left: 59%;
+  font-size: 15px;
+  padding: 15px 67px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  background-color: rgba(128, 113, 121, 0.34);
+  cursor: progress; /* ← this semicolon was missing */
+}
+
+@media (max-width: 768px) {
+  #clickmeButton {
+    width: 117px;
+    left: 224px;
+    top: 721%;
+    font-size: 9px;
+    padding: 6px 19px;
+  }
+}
+
+@media screen and (max-width: 844px) and (orientation: landscape) {
+  #clickmeButton {
+    width: 120px;
+    left: 497px;
+    top: 958%;
+      font-size: 9px;
+    padding: 6px 19px;
+  }
+}
+
+            #clickCount {
+  position: absolute;
+  top: 698%;
+  left: 61%;
+  font-family: sans-serif;
+  color: #e31982;
+  font-size: 17px;
+border: double
+}
+@media (max-width: 768px) {
+  #clickCount {
+    width: 34px;
+    left: 230px;
+    top: 701%;
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+}
+
+@media screen and (max-width: 844px) and (orientation: landscape) {
+  #clickCount {
+    width: 36px;
+    left: 501px;
+    top: 915%;
+    font-size: 9px;
+    padding: 3px 9px;
+  }
 }
 
     </style>
@@ -796,6 +1227,15 @@
 </video>
         
         <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/cd.png" alt="CD" class="cd">
+
+<img src="images/FullMoon2010.jpg" alt="moon" class="moon-image" />
+        
+<a href="https://www.tiktok.com/@michellacidtv?is_from_webapp=1&sender_device=pc" target="_blank">
+<img src="images/tiktok.png" alt="tiktok" class="tiktokImage" />
+</a>
+<a href="https://www.instagram.com/michelleacidtv/" target="_blank">
+  <img src="images/insta.png" alt="insta" class="instaImage" />
+</a>
         <!-- Remote Image -->
         <div class="remote-container">
             <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/remote.png" alt="Remote">
@@ -822,8 +1262,26 @@
 <img id="imageToToggle" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album1.png" alt="Image" onclick="toggleImage()" class="resized-image" />
 
 <img id="smileimage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/smile.png" alt="Smile" class="Smile" />
+
+<img src="images/wire.png" alt="Wire" class="wire-image" id="wireImage">
+<img src="images/wire.png" alt="Wire" class="wire2-image" id="wire2Image">
+<img src="images/computer.gif" alt="Animated Computer" class="computer-gif" />
+<img src="images/Trollface.png" alt="troll" class="trollface" />
+
+
+<img id="bigsmileimage" src="images/big-smile.png" alt="Big Smile" class="Big-smile" onclick="alert('you are here. keep clicking.')" />
+
+<div class="custom-text">hello? welcome. scroll down. </div>
+<div class="custom1-text">scroll down</div>
+<div class="custom2-text">whatever happens just keep going</div>
+<div class="custom3-text">almost there</div>
+<div class="custom4-text">i'll add more later</div>
+<div class="custom5-text">i'm stuck here...for now</div>
         
 </div>
+    
+<button id="clickmeButton" onclick="countClicks()">??????</button>
+<p id="clickCount">Clicks: 0</p>
 
 <script>
     function toggleImage() {
@@ -1024,12 +1482,13 @@
             }, 500); // Matches fade-out duration
             }
         });
-                window.addEventListener('resize', function() {
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            console.log(width, height);
-        });
     });
+let count = 0;
+
+function countClicks() {
+    count++;
+    document.getElementById("clickCount").innerText = "Clicks: " + count;
+  }
 </script>
 </body>
 </html>
