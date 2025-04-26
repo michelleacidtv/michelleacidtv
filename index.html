@@ -1173,6 +1173,11 @@
     padding: 6px 19px;
   }
 }
+@supports (-webkit-touch-callout: none) {
+  #clickmeButton {
+    transform: translateY(180vh); /* Adjust just slightly for Safari if needed */
+  }
+}
 
             #clickCount {
   position: absolute;
