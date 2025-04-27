@@ -1207,8 +1207,53 @@ border: double
     padding: 3px 9px;
   }
 }
+#contact-form {
+    position: absolute;  /* Take the form out of the normal document flow */
+    top: 1769%;           /* Adjust this to move the form down if needed */
+    left: 541px;  
+}
+@media (max-width: 768px) {
+        #contact-form {
+        width: 331px; /* Reduce size for mobile */
+              font-size: 14px;
+        left: 32px; /* Adjust position so it's still visible */
+        top: 1321%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            #contact-form {
+        width: 567px; /* Reduce size for mobile */
+          font-size: 12px;
+        left: 163px; /* Adjust position so it's still visible */
+        top: 2347%; /* Slightly adjust vertical position */
+    }
+}
+#status-message {
+    position: absolute;  /* Take the form out of the normal document flow */
+    top: 1766%;           /* Adjust this to move the form down if needed */
+    left: 826px;  
+}
+@media (max-width: 768px) {
+        #status-message {
+        width: 331px; /* Reduce size for mobile */
+              font-size: 14px;
+        left: 105px; /* Adjust position so it's still visible */
+        top: 1318%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+            #status-message {
+        width: 567px; /* Reduce size for mobile */
+          font-size: 12px;
+        left: 271px; /* Adjust position so it's still visible */
+        top: 2341%; /* Slightly adjust vertical position */
+    }
+}
 
     </style>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
 </head>
 <body>
     
@@ -1508,6 +1553,27 @@ function countClicks() {
     count++;
     document.getElementById("clickCount").innerText = "Clicks: " + count;
   }
+            // Event listener for form submission
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            // Get the email input value
+            var email = document.getElementById("email").value;
+
+            // Send the form data using Axios (AJAX)
+            axios.post('https://formspree.io/f/xovdvkjq', {
+                email: email
+            })
+            .then(function(response) {
+                // Handle successful submission
+                document.getElementById("status-message").innerHTML = "Thanks. Go with Peace";
+                document.getElementById("contact-form").reset();  // Optional: Reset the form
+            })
+            .catch(function(error) {
+                // Handle error
+                document.getElementById("status-message").innerHTML = "Error. Try again.";
+            });
+        });
 </script>
 </body>
 </html>
