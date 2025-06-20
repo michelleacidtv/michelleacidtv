@@ -1462,9 +1462,13 @@ transform: scale(1.1);
 </head>  
 <body>
     
-    <div id="loadingScreen">
-        <img src="loading80.webm" alt="Loading Animation">
-    </div> 
+<div id="loadingScreen">
+  <video autoplay loop muted playsinline>
+    <source src="loading80.webm" type="video/webm">
+    <!-- Optional fallback -->
+    Your browser does not support the video tag.
+  </video>
+</div>
     
 <div id="mobile-warning">
   ⚠️ This site works best on desktop chrome.
