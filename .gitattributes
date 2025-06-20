@@ -1,5 +1,7 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.gif filter=lfs diff=lfs merge=lfs -text
 computer.gif !text !filter !merge !diff
+Clips/*.mp4 filter=lfs diff=lfs merge=lfs -text
+Clips/*.gif filter=lfs diff=lfs merge=lfs -text
 animatefinal/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 **/*.mp4 filter=lfs diff=lfs merge=lfs -text
