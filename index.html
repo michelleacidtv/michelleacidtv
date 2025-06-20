@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>michelleacidtv</title>
+        <title>Michelle Acid</title>
         <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
         <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
         <style>
@@ -16,17 +16,22 @@
           font-weight: normal;
           font-style: normal;
 }
-            body {
+html, body {
                 background-color: black;
                 color: #e31982;
                 font-family: "Xolonium", sans-serif; /* Use Xolonium font */
                 margin: 0;
                 padding: 0;
-                height: 100vh; /* Full viewport height */
+                height: 98vh; /* Full viewport height */
                 display: flex; /* Enable flexbox */
                 justify-content: center; /* Horizontally center content */
                 align-items: center; /* Vertically center content */
                 text-align: center;
+                background-image: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/seamlessbackground.png');
+                background-size: cover;       /* Fills the screen */
+                background-position: center;  /* Centers the image */
+                background-repeat: repeat;
+                cursor: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/mouse3.png'), auto;
             }
 
         #loadingScreen {
@@ -761,23 +766,83 @@
         }
         @media (max-width: 768px) {
         #smileimage {
-        width: 132px; /* Reduce size for mobile */
-        right: 227px; /* Adjust position so it's still visible */
+        width: 222px; /* Reduce size for mobile */
+        right: 146px; /* Adjust position so it's still visible */
         top: 1183%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         #smileimage {
-        width: 188px; /* Reduce size for mobile */
-        right: 233px; /* Adjust position so it's still visible */
+        width: 269px; /* Reduce size for mobile */
+        right: 152px; /* Adjust position so it's still visible */
         top: 656%; /* Slightly adjust vertical position */
+    }
+}
+        #startwist {
+            position: absolute;
+            width: 1027px; /* Adjust CD size */
+            top: 138%;  /* Higher values move it down */
+            right: -154px; /* Start off-screen on the right */
+        }
+        @media (max-width: 768px) {
+        #startwist {
+        width: 541px; /* Reduce size for mobile */
+        right: -90px; /* Adjust position so it's still visible */
+        top: 432%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        #startwist {
+        width: 620px; /* Reduce size for mobile */
+        right: -140px; /* Adjust position so it's still visible */
+        top: 190%; /* Slightly adjust vertical position */
+    }
+}
+#smileimage2 {
+            position: absolute;
+            width: 314px; /* Adjust CD size */
+            top: -231%;  /* Higher values move it down */
+            right: 61px; /* Start off-screen on the right */
+        }
+        @media (max-width: 768px) {
+        #smileimage2 {
+        width: 249px; /* Reduce size for mobile */
+        right: 7px; /* Adjust position so it's still visible */
+        top: -435%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        #smileimage2 {
+        width: 307px; /* Reduce size for mobile */
+        right: -165px; /* Adjust position so it's still visible */
+        top: -72%; /* Slightly adjust vertical position */
+    }
+}
+        #facegif {
+            position: absolute;
+            width: 744px; /* Adjust CD size */
+            top: -462%;  /* Higher values move it down */
+            right: -341px; /* Start off-screen on the right */
+        }
+        @media (max-width: 768px) {
+        #facegif {
+        width: 488px; /* Reduce size for mobile */
+        right: -135px; /* Adjust position so it's still visible */
+        top: -806%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        #facegif {
+        width: 485px; /* Reduce size for mobile */
+        right: -196px; /* Adjust position so it's still visible */
+        top: -470%; /* Slightly adjust vertical position */
     }
 }
     #bigsmileimage {
             position: absolute;
-            width: 571px; /* Adjust CD size */
-            top: -529%;  /* Higher values move it down */
-            right: 62px; /* Start off-screen on the right */
+            width: 617px; /* Adjust CD size */
+            top: -566%;  /* Higher values move it down */
+            right: 21px; /* Start off-screen on the right */
             transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
             cursor: pointer;
         }
@@ -786,6 +851,8 @@
         width: 309px; /* Reduce size for mobile */
         right: 28px; /* Adjust position so it's still visible */
         top: -897%; /* Slightly adjust vertical position */
+        right: 13px; /* Adjust position so it's still visible */
+        top: -973%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
@@ -805,8 +872,8 @@
     .moon-image {
             position: absolute;
             width: 55%; /* Adjust CD size */
-            top: -229%;  /* Higher values move it down */
-            right: -3%; /* Start off-screen on the right */
+            top: -175%;  /* Higher values move it down */
+            right: -11%; /* Start off-screen on the right */
             transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
             cursor: n-resize;
             z-index: 1;
@@ -815,61 +882,14 @@
         .moon-image {
         width: 216px; /* Reduce size for mobile */
         right: 7px; /* Adjust position so it's still visible */
-        top: -426%; /* Slightly adjust vertical position */
+        top: -359%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         .moon-image {
         width: 249px; /* Reduce size for mobile */
         right: -154px; /* Adjust position so it's still visible */
-        top: -222%; /* Slightly adjust vertical position */
-    }
-}
-.wire-image {
-    position: absolute; /* Absolute positioning keeps it independent of other content */
-    z-index: -1; /* Place the wire behind all other content */
-    top: 91%; /* Adjust as needed */
-    left: 34%; /* Adjust as needed */
-    width: 18%; /* You can adjust the width to fit the container or set a fixed size */
-    max-width: 1000px; /* Prevent it from getting too large */
-    height: auto; /* Maintain aspect ratio */
-}
-                                    @media (max-width: 768px) {
-        .wire-image {
-        width: 151px; /* Reduce size for mobile */
-        left: 53px; /* Adjust position so it's still visible */
-        top: 260%; /* Slightly adjust vertical position */
-    }
-}
-        @media screen and (max-width: 844px) and (orientation: landscape) {
-            .wire-image {
-        width: 103px; /* Reduce size for mobile */
-        left: 172px; /* Adjust position so it's still visible */
-        top: 94%; /* Slightly adjust vertical position */
-    }
-}
-            .wire2-image {
-    position: absolute; /* Absolute positioning keeps it independent of other content */
-    z-index: -1; /* Place the wire behind all other content */
-    top: 192%; /* Adjust as needed */
-    left: 39%; /* Adjust as needed */
-    width: 18%; /* You can adjust the width to fit the container or set a fixed size */
-    max-width: 1000px; /* Prevent it from getting too large */
-    height: auto; /* Maintain aspect ratio */
-    transform: scaleX(-1);
-}
-                        @media (max-width: 768px) {
-        .wire2-image {
-        width: 157px; /* Reduce size for mobile */
-        left: 91px; /* Adjust position so it's still visible */
-        top: 497%; /* Slightly adjust vertical position */
-    }
-}
-        @media screen and (max-width: 844px) and (orientation: landscape) {
-            .wire2-image {
-        width: 103px; /* Reduce size for mobile */
-        left: 199px; /* Adjust position so it's still visible */
-        top: 239%; /* Slightly adjust vertical position */
+        top: -184%; /* Slightly adjust vertical position */
     }
 }
     .computer-gif {
@@ -885,7 +905,7 @@
         .computer-gif {
         width: 361px; /* Reduce size for mobile */
         left: -5px; /* Adjust position so it's still visible */
-        top: 750%; /* Slightly adjust vertical position */
+        top: 726%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
@@ -898,7 +918,7 @@
  .tiktokImage {
     position: absolute; /* Absolute positioning keeps it independent of other content */
     z-index: 5; /* Place the wire behind all other content */
-    top: -184%; /* Adjust as needed */
+    top: -125%; /* Adjust as needed */
     left: 13%; /* Adjust as needed */
     width: 9%; /* You can adjust the width to fit the container or set a fixed size */
     max-width: 1000px; /* Prevent it from getting too large */
@@ -928,14 +948,14 @@
   .tiktokImage {
     width: 64px;
     position: absolute;
-    left: 34%; /* Use left instead of right */
-    top: -314%;
+    left: 44%; /* Use left instead of right */
+    top: -263%;
   }
 }
  .instaImage {
     position: absolute; /* Absolute positioning keeps it independent of other content */
     z-index: 5; /* Place the wire behind all other content */
-    top: -225%; /* Adjust as needed */
+    top: -179%; /* Adjust as needed */
     left: -9%; /* Adjust as needed */
     width: 9%; /* You can adjust the width to fit the container or set a fixed size */
     max-width: 1000px; /* Prevent it from getting too large */
@@ -963,10 +983,10 @@
 }
 @media (max-width: 768px) {
   .instaImage {
-    width: 86px;
+    width: 68px;
     position: absolute;
-    left: 0%; /* Use left instead of right */
-    top: -364%;
+    left: 6%; /* Use left instead of right */
+    top: -307%;
   }
 }
     .trollface {
@@ -997,8 +1017,8 @@
   color: #E31982;
   font-family: "Xolonium", sans-serif;
   position: absolute; /* if you want to place it freely */
-  top: -369%;
-  left: -7%;
+  top: -481%;
+  left: -13%;
   z-index: 10;
 }
         @media (max-width: 768px) {
@@ -1006,7 +1026,7 @@
         width: 389px; /* Reduce size for mobile */
         font-size: 19px;
         right: 23px; /* Adjust position so it's still visible */
-        top: -697%; /* Slightly adjust vertical position */
+        top: -881%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
@@ -1014,7 +1034,7 @@
         width: 392px; /* Reduce size for mobile */
         font-size: 24px;
         right: -74px; /* Adjust position so it's still visible */
-        top: -406%; /* Slightly adjust vertical position */
+        top: -500%; /* Slightly adjust vertical position */
     }
 }
 .custom1-text {
@@ -1055,7 +1075,7 @@
         .custom5-text {
         width: 255px; /* Reduce size for mobile */
         left: 5px; /* Adjust position so it's still visible */
-        top: 873%; /* Slightly adjust vertical position */
+        top: 858%; /* Slightly adjust vertical position */
           font-size: 20px;
     }
 }
@@ -1144,8 +1164,8 @@
 }
 #clickmeButton {
   position: absolute;
-  top: 731%;
-  left: 59%;
+  top: 379%;
+  left: 68%;
   font-size: 15px;
   padding: 15px 67px;
   color: #E31982;
@@ -1159,6 +1179,8 @@
     width: 99px;
     left: 110px;
     top: 389%;
+    left: 218px;
+    top: 824%;
     font-size: 9px;
     padding: 6px 19px;
   }
@@ -1169,6 +1191,8 @@
     width: 120px;
     left: 356px;
     top: 240%;
+    left: 333px;
+    top: 476%;
     font-size: 9px;
     padding: 6px 19px;
   }
@@ -1179,10 +1203,10 @@
   }
 }
 
-            #clickCount {
+#clickCount {
   position: absolute;
-  top: 698%;
-  left: 61%;
+  top: 336%;
+  left: 56%;
   font-family: sans-serif;
   color: #e31982;
   font-size: 17px;
@@ -1191,8 +1215,8 @@ border: double
 @media (max-width: 768px) {
   #clickCount {
     width: 34px;
-    left: 230px;
-    top: 701%;
+    left: 153px;
+    top: 771%;
     font-size: 9px;
     padding: 4px 8px;
   }
@@ -1201,8 +1225,8 @@ border: double
 @media screen and (max-width: 844px) and (orientation: landscape) {
   #clickCount {
     width: 36px;
-    left: 501px;
-    top: 915%;
+    left: 273px;
+    top: 428%;
     font-size: 9px;
     padding: 3px 9px;
   }
@@ -1211,13 +1235,18 @@ border: double
     position: absolute;  /* Take the form out of the normal document flow */
     top: 1769%;           /* Adjust this to move the form down if needed */
     left: 541px;  
+    top: 1717%;           /* Adjust this to move the form down if needed */
+    left: 169px;  
+
 }
 @media (max-width: 768px) {
         #contact-form {
         width: 331px; /* Reduce size for mobile */
-              font-size: 14px;
+        font-size: 14px;
         left: 32px; /* Adjust position so it's still visible */
         top: 1321%; /* Slightly adjust vertical position */
+        left: 20px; /* Adjust position so it's still visible */
+        top: 2480%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
@@ -1226,6 +1255,9 @@ border: double
           font-size: 12px;
         left: 163px; /* Adjust position so it's still visible */
         top: 2347%; /* Slightly adjust vertical position */
+        left: 6px; /* Adjust position so it's still visible */
+        top: 2044%; /* Slightly adjust vertical position */
+
     }
 }
 #status-message {
@@ -1250,6 +1282,179 @@ border: double
     }
 }
 
+#phone-gif {
+  position: absolute;
+  top: -2144px;
+  right: 349px;
+  width: 215px; /* Or whatever final size you want */
+  cursor: pointer;
+  z-index: 9999;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#phone-gif img {
+  width: 198%; /* Match the button’s width */
+  display: block;
+}
+
+#phone-gif.fade-out {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+        #phone-gif {
+        width: 160px; /* Reduce size for mobile */
+        right: 175px; /* Adjust position so it's still visible */
+        top: -622%; /* Slightly adjust vertical position */
+    }
+}
+@media screen and (max-width: 844px) and (orientation: landscape) {
+        #phone-gif {
+        width: 152px; /* Reduce size for mobile */
+        right: 121px; /* Adjust position so it's still visible */
+        top: -324%; /* Slightly adjust vertical position */
+    }
+}
+
+#video-feed {
+  height: 114%;
+position: absolute;
+  top: -2301px;                /* Adjust this to move it down */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26vw;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  border: 4px solid #e31982;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 768px) {
+        #video-feed {
+        width: 203px; /* Reduce size for mobile */
+        right: 175px; /* Adjust position so it's still visible */
+        top: -622%; /* Slightly adjust vertical position */
+    }
+}
+@media screen and (max-width: 844px) and (orientation: landscape) {
+        #video-feed {
+        width: 222px; /* Reduce size for mobile */
+        right: 121px; /* Adjust position so it's still visible */
+        top: -350%; /* Slightly adjust vertical position */
+    }
+}
+
+.video-container {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+height: 100%;
+  scroll-snap-align: start;
+  position: relative;
+  background: black;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+background: black;
+}           
+            
+.video-container:hover .controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+            
+.controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Prevent invisible buttons from being clickable */
+}
+
+.controls button {
+  background: rgba(227, 25, 130, 0.76);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: 29%;
+  padding: 6px;
+  cursor: pointer;
+  transition: background 0.6s ease;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 0.2);
+transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+#mobile-warning {
+  position: fixed;
+  top: 0;
+  left: 2;
+  width: 25%;
+  background-color: rgba(227, 25, 130, 0.35);
+  color: #ffffff;
+  text-align: center;
+  padding: 2px;
+  font-size: 14px;
+  z-index: 9999;
+  border: 4px solid rgba(227, 25, 130, 0.55); /* pink/purple border */
+}
+@media (max-width: 768px) {
+  #mobile-warning {
+    position: fixed;
+    top: 0;
+    left: 1;
+    width: 100%;
+    z-index: 9999;
+    border: 0px solid rgba(227, 25, 130, 0.4); /* Subtle pink border */
+    border-radius: 0;
+    padding: 457px;
+  }
+}
+
+@media screen and (max-width: 844px) and (orientation: landscape) {
+  #mobile-warning {
+    position: fixed;
+    top: 0;
+    left: -1;
+    width: 100%;
+    z-index: 9999;
+    border: 0px solid rgba(227, 25, 130, 0.36); /* Subtle pink border */
+    border-radius: 0;
+    padding: 212px;
+  }
+}
+.video-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: left;
+  padding: 8px 14;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.video-container:hover .video-title {
+  opacity: 1;
+}
     </style>
         
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -1258,8 +1463,14 @@ border: double
 <body>
     
     <div id="loadingScreen">
-        <img src="https://github.com/michelleacidtv/michelleacidtv/raw/main/images%20copy/giphy.gif" alt="Loading Animation">
-    </div>   
+        <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/loading40.gif" alt="Loading Animation">
+    </div> 
+    
+<div id="mobile-warning">
+  ⚠️ This site works best on desktop chrome.
+  <button id="dismiss-btn">×</button>
+</div>
+
     
     <div class="tv-container">
         <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tv.jpg" alt="TV Frame" class="tv-frame">
@@ -1287,7 +1498,7 @@ border: double
         
         <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/cd.png" alt="CD" class="cd">
 
-<img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/FullMoon2010.jpg" alt="moon" class="moon-image" />
+<img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/FullMoon2010.png" alt="moon" class="moon-image" />
         
 <a href="https://www.tiktok.com/@michellacidtv?is_from_webapp=1&sender_device=pc" target="_blank">
 <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tiktok.png" alt="tiktok" class="tiktokImage" />
@@ -1320,15 +1531,15 @@ border: double
 
 <img id="imageToToggle" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/album1.png" alt="Image" onclick="toggleImage()" class="resized-image" />
 
-<img id="smileimage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/smile.png" alt="Smile" class="Smile" />
+<img id="smileimage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/smilegif.gif" alt="Smile" class="Smile" />
+<img id="smileimage2" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/smilegif.gif" alt="Smile2" class="Smile2" />
+<img id="facegif" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/facegif.gif" alt="Face" class="Face" />
+<img id="startwist" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/startwist7.gif" alt="Star Twist" class="StarT" />
 
-<img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/wire.png" alt="Wire" class="wire-image" id="wireImage">
-<img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/wire.png" alt="Wire" class="wire2-image" id="wire2Image">
 <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Trollface.png" alt="troll" class="trollface" />
 <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
 
-
-<img id="bigsmileimage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/big-smile.png" alt="Big Smile" class="Big-smile" onclick="alert('you are here. keep clicking.')" />
+<img id="bigsmileimage" src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/bigsmilegif1.gif" alt="Big Smile" class="Big-smile" onclick="alert('you are here. scroll down.')" />
 
 <div class="custom-text">hello? welcome. scroll down. </div>
 <div class="custom1-text">scroll down</div>
@@ -1337,8 +1548,6 @@ border: double
 <div class="custom4-text">i'll add more later</div>
 <div class="custom5-text">i'm stuck here...for now</div>
         
-</div>
-    
 <button id="clickmeButton" onclick="countClicks()">??????</button>
 <p id="clickCount">Clicks: 0</p>
 
@@ -1349,6 +1558,105 @@ border: double
     </form>
 
     <div id="status-message"></div> 
+
+        
+<button id="phone-gif" aria-label="Start Videos">
+  <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/pressplay1.gif" alt="Start Videos" />
+</button>
+    
+<div id="video-feed" class="hidden">
+    <div class="video-container">
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/gifs/scrolldown.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+    <div class="video-container">
+    <div class="video-title">Maximiliano - Forget My Name</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/tangodance%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+  <div class="video-container">
+  <div class="video-title">Olelujah - Zen, Robotics & Consciousness</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/;)%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+<div class="video-container">
+<div class="video-title">Laconic - Big Dawg</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/bigdawg%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+      <div class="video-container">
+      <div class="video-title">Michelle Acid - Tokyo (Lovers Mix)</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/T_clip2%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+  <div class="video-container">
+  <div class="video-title">Michelle Acid - You N Me</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/youme.%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+      <div class="video-container">
+    <div class="video-title">Michelle Acid - Orange</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/O_clip2%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+<div class="video-container">
+    <div class="video-title">Michelle Acid - You N Me</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/y0456%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+      <div class="video-container">
+      <div class="video-title">Michelle Acid - Wink</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/slime45%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+      <div class="video-container">
+          <div class="video-title">Michelle Acid - Tokyo (Lovers Mix)</div>
+    <video src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Clips/first0%20.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+</div>
+        
+</div>
 
 <script>
     function toggleImage() {
@@ -1475,8 +1783,8 @@ border: double
             // Remove the loading screen from the DOM after transition ends
             setTimeout(() => {
                 loadingScreen.remove(); // Completely removes it
-            }, 4000); // Matches fade-out duration
-        }, 4000); // Adjust delay before fade-out
+            }, 3000); // Matches fade-out duration
+        }, 6000); // Adjust delay before fade-out
 
         document.getElementById("soundcloudButton").addEventListener("click", function () {
             window.open("https://soundcloud.com/michelleacid", "_blank"); // Correct usage
@@ -1582,6 +1890,92 @@ function countClicks() {
                 document.getElementById("status-message").innerHTML = "Error. Try again.";
             });
         });
+    
+document.addEventListener('DOMContentLoaded', () => {
+  // Observer to handle video autoplay when in view
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const video = entry.target.querySelector('video');
+      if (!video) return;
+      if (entry.isIntersecting) {
+        video.currentTime = 0; 
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.video-container').forEach(container => {
+    observer.observe(container);
+
+    const video = container.querySelector('video');
+    const muteBtn = container.querySelector('.mute-toggle');
+    const playBtn = container.querySelector('.play-toggle');
+
+    muteBtn?.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    playBtn?.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playBtn.textContent = '⏸';
+      } else {
+        video.pause();
+        playBtn.textContent = '▶️';
+      }
+    });
+  });
+
+  // Reveal video feed on button click
+  const button = document.getElementById('phone-gif');
+  button.addEventListener('click', () => {
+    const feed = document.getElementById('video-feed');
+    feed.classList.remove('hidden');
+
+    // Unmute videos
+    document.querySelectorAll('#video-feed video').forEach(video => {
+      video.muted = false;
+    });
+
+    // Animate fade out
+    button.classList.add('fade-out');
+    setTimeout(() => {
+      button.style.display = 'none';
+    }, 500); // Match fade duration
+  });
+
+  // Fullscreen toggle
+  document.querySelectorAll('.fullscreen-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const video = button.closest('.video-container').querySelector('video');
+
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        video.requestFullscreen().catch(err => {
+          console.error("Error attempting to enable full-screen mode:", err);
+        });
+      }
+    });
+  });
+});
+   document.addEventListener("DOMContentLoaded", () => {
+    const warning = document.getElementById("mobile-warning");
+    const dismissBtn = document.getElementById("dismiss-btn");
+
+    // Show warning on mobile devices only
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      warning?.classList.remove("hidden");
+    }
+
+    // Dismiss on click
+    dismissBtn?.addEventListener("click", () => {
+      warning.style.display = "none";
+    });
+  });
 </script>
 </body>
 </html>
