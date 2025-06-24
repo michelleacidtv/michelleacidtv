@@ -843,7 +843,7 @@ html, body {
             width: 617px; /* Adjust CD size */
             top: -586%;  /* Higher values move it down */
             right: 21px; /* Start off-screen on the right */
-            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            transition: transform 0.5s ease-in-out, filter 0.3s ease-in-out;
             cursor: pointer;
         }
         @media (max-width: 768px) {
@@ -864,9 +864,9 @@ html, body {
 }
 @media (hover: hover) {
     #bigsmileimage:hover {
-    filter: brightness(33);
-    border-color: black;
-    transform: scale(1.5); /* Slight zoom */
+    filter: invert(100);
+    border-color: #e31982;
+    transform: scale(0.7);
 }
 }
     .moon-image {
@@ -1543,7 +1543,7 @@ transform: scale(1.1);
 <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Trollface.png" alt="troll" class="trollface" />
 <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
 
-<img id="bigsmileimage" src="bigsmilegif1NEW.png" alt="Big Smile" class="Big-smile" onclick="alert('you are here. scroll down.')" />
+<img id="bigsmileimage" src="bigsmilegif1NEW.png" alt="Big Smile" class="Big-smile" onclick="alert('you are here.')" />
 
 <div class="custom-text">hello? welcome. scroll down. </div>
 <div class="custom1-text">scroll down</div>
