@@ -4,3 +4,4 @@ computer.gif !text !filter !merge !diff
 Clips/*.mp4 filter=lfs diff=lfs merge=lfs -text
 Clips/*.gif filter=lfs diff=lfs merge=lfs -text
 gifs/*.mp4 filter=lfs diff=lfs merge=lfs -text
+loadingggg10.gif filter=lfs diff=lfs merge=lfs -text
