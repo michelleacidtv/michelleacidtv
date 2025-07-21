@@ -1293,11 +1293,6 @@ border: double
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
-#phone-gif img {
-  width: 198%; /* Match the button’s width */
-  display: block;
-}
-
 #phone-gif.fade-out {
   opacity: 0;
   transform: scale(0.9);
@@ -1305,21 +1300,23 @@ border: double
 }
 @media (max-width: 768px) {
         #phone-gif {
-        width: 160px; /* Reduce size for mobile */
-        right: 175px; /* Adjust position so it's still visible */
+        width: 291px; /* Reduce size for mobile */
+        right: 45px; /* Adjust position so it's still visible */
         top: -622%; /* Slightly adjust vertical position */
     }
 }
 @media screen and (max-width: 844px) and (orientation: landscape) {
         #phone-gif {
-        width: 152px; /* Reduce size for mobile */
-        right: 121px; /* Adjust position so it's still visible */
-        top: -324%; /* Slightly adjust vertical position */
+        position: absolute;
+        width: 290px; 
+        top: -324%; 
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 #video-feed {
-  height: 114%;
+  height: 110%;
 position: absolute;
   top: -2301px;                /* Adjust this to move it down */
   left: 50%;
@@ -1334,16 +1331,20 @@ position: absolute;
 }
 @media (max-width: 768px) {
         #video-feed {
-        width: 203px; /* Reduce size for mobile */
-        right: 175px; /* Adjust position so it's still visible */
-        top: -622%; /* Slightly adjust vertical position */
+        width: 309px; 
+        height: 175%;
+        left: 50%; 
+        top: -678%; 
+        transform: translateX(-50%);
     }
 }
 @media screen and (max-width: 844px) and (orientation: landscape) {
         #video-feed {
-        width: 222px; /* Reduce size for mobile */
-        right: 121px; /* Adjust position so it's still visible */
-        top: -350%; /* Slightly adjust vertical position */
+        width: 222px; 
+        height: 114%;
+        top: -352%;
+        left: 65%;
+        transform: translateX(-50%);
     }
 }
 
@@ -1353,13 +1354,13 @@ position: absolute;
 height: 100%;
   scroll-snap-align: start;
   position: relative;
-  background: black;
+  background: #e31982;
 }
 video {
   width: 100%;
   height: 100%;
   object-fit: contain;
-background: black;
+  background: #e31982;
 }           
             
 .video-container:hover .controls {
