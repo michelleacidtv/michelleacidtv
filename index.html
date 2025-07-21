@@ -1284,15 +1284,12 @@ border: double
   position: absolute;
   top: -2061px;
   right: 89px;
-  width: 474px; /* Or whatever final size you want */
+  width: 500px;
   cursor: pointer;
   z-index: 9998;
   background: none;
-  border: none;
-  padding: 0;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
-
 #phone-gif.fade-out {
   opacity: 0;
   transform: scale(0.9);
@@ -1300,25 +1297,23 @@ border: double
 }
 @media (max-width: 768px) {
         #phone-gif {
-        width: 291px; /* Reduce size for mobile */
-        right: 45px; /* Adjust position so it's still visible */
-        top: -622%; /* Slightly adjust vertical position */
+        width: 322px;
+        right: 12px; 
+        top: -622%; 
     }
 }
 @media screen and (max-width: 844px) and (orientation: landscape) {
         #phone-gif {
-        position: absolute;
-        width: 290px; 
+        width: 341px; 
         top: -324%; 
-        left: 50%;
-        transform: translateX(-50%);
+        right: -28px;
     }
 }
 
 #video-feed {
   height: 110%;
 position: absolute;
-  top: -2301px;                /* Adjust this to move it down */
+  top: -2301px;    
   left: 50%;
   transform: translateX(-50%);
   width: 26vw;
@@ -1354,7 +1349,7 @@ position: absolute;
 height: 100%;
   scroll-snap-align: start;
   position: relative;
-  background: #e31982;
+  background: none;
 }
 video {
   width: 100%;
