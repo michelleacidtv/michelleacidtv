@@ -5,3 +5,7 @@ Clips/*.mp4 filter=lfs diff=lfs merge=lfs -text
 Clips/*.gif filter=lfs diff=lfs merge=lfs -text
 gifs/*.mp4 filter=lfs diff=lfs merge=lfs -text
 loadingggg10.gif filter=lfs diff=lfs merge=lfs -text
+aciddream.mp4 filter=lfs diff=lfs merge=lfs -text
+acidfutre.mp4 filter=lfs diff=lfs merge=lfs -text
+gesloten.mp4 filter=lfs diff=lfs merge=lfs -text
+sorrow.mp4 filter=lfs diff=lfs merge=lfs -text
