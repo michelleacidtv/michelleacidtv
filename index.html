@@ -1012,6 +1012,32 @@ html, body {
         top: 2024%; /* Slightly adjust vertical position */
     }
 }
+.custom6-text {
+  font-size: 40px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: -17%;
+  left: -22%;
+  z-index: 10;
+}
+            @media (max-width: 768px) {
+        .custom6-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 32px;
+        left: -47px; /* Adjust position so it's still visible */
+        top: -25%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .custom6-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 32px;
+        left: -142px; /* Adjust position so it's still visible */
+        top: -18%; /* Slightly adjust vertical position */
+    }
+}
+            
 #clickmeButton {
   position: absolute;
   top: 379%;
@@ -1393,6 +1419,7 @@ transform: scale(1.1);
 <div class="custom3-text">almost there</div>
 <div class="custom4-text">i'll add more later</div>
 <div class="custom5-text">i'm stuck here...for now</div>
+<div class="custom6-text">more music...</div>
         
 <button id="clickmeButton" onclick="countClicks()">??????</button>
 <p id="clickCount">Clicks: 0</p>
