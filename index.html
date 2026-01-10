@@ -215,6 +215,7 @@ html, body {
         transform: translateX(-37%); /* Center the button properly */
         }
     }
+
         .button.tokyo {
             background: url('https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/tokyo.png') no-repeat center center;
             background-size: cover;
@@ -698,8 +699,10 @@ html, body {
         @media (max-width: 768px) {
         #bigsmileimage {
         width: 309px; /* Reduce size for mobile */
-        right: 16px; /* Adjust position so it's still visible */
-        top: -1000%; /* Slightly adjust vertical position */
+        right: 28px; /* Adjust position so it's still visible */
+        top: -897%; /* Slightly adjust vertical position */
+        right: 13px; /* Adjust position so it's still visible */
+        top: -973%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
@@ -765,8 +768,8 @@ html, body {
  .tiktokImage {
     position: absolute; /* Absolute positioning keeps it independent of other content */
     z-index: 5; /* Place the wire behind all other content */
-    top: -125%; /* Adjust as needed */
-    left: 13%; /* Adjust as needed */
+    top: -131%; /* Adjust as needed */
+    left: 26%; /* Adjust as needed */
     width: 9%; /* You can adjust the width to fit the container or set a fixed size */
     max-width: 1000px; /* Prevent it from getting too large */
     height: auto; /* Maintain aspect ratio */
@@ -782,12 +785,12 @@ html, body {
     2% 35%,
     39% 35%
   );
-    border: 60px solid #e31982; /* Change thickness and color as needed */
-    border-radius: 3px;      /* Optional: rounded corners */
-    padding: -28px;
+    border: 55px solid #e31982; /* Change thickness and color as needed */
+    border-radius: 6px;      /* Optional: rounded corners */
+    padding: -22px;
 }
 .tiktokImage:hover {
-    transform: scale(0.67); /* Slight zoom on hover */
+    transform: scale(0.65); /* Slight zoom on hover */
     border-color: rgb(227, 25, 130); /* Lighter pink border on hover */
     cursor: pointer; /* Change cursor to hand */
 }
@@ -872,16 +875,67 @@ html, body {
         .custom-text {
         width: 389px; /* Reduce size for mobile */
         font-size: 19px;
-        left: -13%;
-        top: -885%; 
+        right: 23px; /* Adjust position so it's still visible */
+        top: -881%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
         .custom-text {
         width: 392px; /* Reduce size for mobile */
         font-size: 24px;
-        left: -13%;
-        top: -500%;
+        right: -74px; /* Adjust position so it's still visible */
+        top: -500%; /* Slightly adjust vertical position */
+    }
+}
+            
+            .custom7-text {
+  font-size: 29px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: -327%;
+  left: -13%;
+  z-index: 10;
+}
+        @media (max-width: 768px) {
+        .custom7-text {
+        width: 308px; /* Reduce size for mobile */
+        font-size: 29px;
+        right: 41px; /* Adjust position so it's still visible */
+        top: -638%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .custom7-text {
+        width: 392px; /* Reduce size for mobile */
+        font-size: 24px;
+        right: -74px; /* Adjust position so it's still visible */
+        top: -362%; /* Slightly adjust vertical position */
+    }
+}
+            .custom8-text {
+  font-size: 29px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: -400%;
+  left: -34%;
+  z-index: 10;
+}
+        @media (max-width: 768px) {
+        .custom8-text {
+        width: 675px; /* Reduce size for mobile */
+        font-size: 12px;
+        right: 23px; /* Adjust position so it's still visible */
+        top: -696%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .custom8-text {
+        width: 392px; /* Reduce size for mobile */
+        font-size: 17px;
+        right: -74px; /* Adjust position so it's still visible */
+        top: -369%; /* Slightly adjust vertical position */
     }
 }
 .custom1-text {
@@ -1009,6 +1063,33 @@ html, body {
         top: 2024%; /* Slightly adjust vertical position */
     }
 }
+.custom6-text {
+  font-size: 40px;
+  color: #E31982;
+  font-family: "Xolonium", sans-serif;
+  position: absolute; /* if you want to place it freely */
+  top: -17%;
+  left: -22%;
+  z-index: 10;
+}
+            @media (max-width: 768px) {
+        .custom6-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 32px;
+        left: -47px; /* Adjust position so it's still visible */
+        top: -25%; /* Slightly adjust vertical position */
+    }
+}
+        @media screen and (max-width: 844px) and (orientation: landscape) {
+        .custom6-text {
+        width: 361px; /* Reduce size for mobile */
+      font-size: 32px;
+        left: -142px; /* Adjust position so it's still visible */
+        top: -18%; /* Slightly adjust vertical position */
+    }
+}
+
+            
 #clickmeButton {
   position: absolute;
   top: 379%;
@@ -1132,14 +1213,21 @@ border: double
 #phone-gif {
   position: absolute;
   top: -2061px;
-  right: 89px;
-  width: 500px;
+  right: 87px;
+  width: 474px; /* Or whatever final size you want */
   cursor: pointer;
   z-index: 9998;
   background: none;
   border: none;
+  padding: 0;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
+
+#phone-gif img {
+  width: 198%; /* Match the button’s width */
+  display: block;
+}
+
 #phone-gif.fade-out {
   opacity: 0;
   transform: scale(0.9);
@@ -1147,49 +1235,47 @@ border: double
 }
 @media (max-width: 768px) {
         #phone-gif {
-        width: 322px;
-        right: 12px; 
-        top: -622%; 
+        width: 322px; /* Reduce size for mobile */
+        right: 14px; /* Adjust position so it's still visible */
+        top: -622%; /* Slightly adjust vertical position */
     }
 }
 @media screen and (max-width: 844px) and (orientation: landscape) {
         #phone-gif {
-        width: 341px; 
-        top: -324%; 
-        right: -28px;
+        width: 350px; /* Reduce size for mobile */
+        right: -48px; /* Adjust position so it's still visible */
+        top: -324%; /* Slightly adjust vertical position */
     }
 }
 
 #video-feed {
-  height: 114%;
+  height: 110%;
 position: absolute;
-  top: -2301px;    
+  top: -2301px;                /* Adjust this to move it down */
   left: 50%;
   transform: translateX(-50%);
   width: 26vw;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  border: 10px solid #e31982;
-  border-radius: 8px;
+  border: 6px solid #e31982;
+  border-radius: 9px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+scrollbar-color: #e31982 transparent;
 }
+
 @media (max-width: 768px) {
         #video-feed {
-        width: 309px; 
-        height: 175%;
-        left: 50%; 
-        top: -678%; 
-        transform: translateX(-50%);
+        width: 194px; /* Reduce size for mobile */
+        right: 175px; /* Adjust position so it's still visible */
+        top: -622%; /* Slightly adjust vertical position */
     }
 }
 @media screen and (max-width: 844px) and (orientation: landscape) {
         #video-feed {
-        width: 222px; 
-        height: 114%;
-        top: -352%;
-        left: 65%;
-        transform: translateX(-50%);
+        width: 216px; /* Reduce size for mobile */
+        right: 121px; /* Adjust position so it's still visible */
+        top: -350%; /* Slightly adjust vertical position */
     }
 }
 
@@ -1205,14 +1291,14 @@ video {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: black;
+background: black;
 }           
             
 .video-container:hover .controls {
   opacity: 1;
   pointer-events: auto;
 }
-            
+                      
 .controls {
   position: absolute;
   bottom: 20px;
@@ -1345,7 +1431,7 @@ transform: scale(1.1);
 <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/FullMoon2010.png" alt="moon" class="moon-image" />
         
 <a href="https://www.youtube.com/@michelleacidtv" target="_blank">
-<img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/youtube1.png" alt="tiktok" class="tiktokImage" />
+<img src="youtube1.png" alt="tiktok" class="tiktokImage" />
 </a>
 <a href="https://www.instagram.com/michelleacidtv/" target="_blank">
   <img src="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/insta.png" alt="insta" class="instaImage" />
@@ -1387,6 +1473,9 @@ transform: scale(1.1);
 <div class="custom3-text">almost there</div>
 <div class="custom4-text">i'll add more later</div>
 <div class="custom5-text">i'm stuck here...for now</div>
+<div class="custom6-text">more music...</div>
+<div class="custom7-text">scroll here</div>
+<div class="custom8-text">don't forget to clear your cache</div>
         
 <button id="clickmeButton" onclick="countClicks()">??????</button>
 <p id="clickCount">Clicks: 0</p>
@@ -1406,26 +1495,15 @@ transform: scale(1.1);
     
 <div id="video-feed" class="hidden">
     <div class="video-container">
-    <div class="video-title">SCROLL DOWN</div>
+    <video src="gifs/scrolldown.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
+    <div class="controls">
+      <button class="mute-toggle">🔇</button>
+      <button class="play-toggle">⏸</button>
+      <button class="fullscreen-toggle">⛶</button>
+    </div>
+  </div>
+    <div class="video-container">
     <video src="Clips/acidfutreflyer.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
-    <div class="controls">
-      <button class="mute-toggle">🔇</button>
-      <button class="play-toggle">⏸</button>
-      <button class="fullscreen-toggle">⛶</button>
-    </div>
-  </div>
-    <div class="video-container">
-<div class="video-title">Love & Rockets - Resurrection Hex (Deep Dish Luv 'N' Dub Mix)</div>
-    <video src="Clips/luvresfinalmatv.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
-    <div class="controls">
-      <button class="mute-toggle">🔇</button>
-      <button class="play-toggle">⏸</button>
-      <button class="fullscreen-toggle">⛶</button>
-    </div>
-  </div>
-    <div class="video-container">
-<div class="video-title">Sam Phillips - Raised on Promises</div>
-    <video src="Clips/rasiedonpromisesmatv.mp4" type="video/mp4" muted loop playsinline preload="auto" controlsList="nodownload"></video>
     <div class="controls">
       <button class="mute-toggle">🔇</button>
       <button class="play-toggle">⏸</button>
@@ -1705,7 +1783,7 @@ transform: scale(1.1);
                 loadingScreen.remove(); // Completely removes it
             }, 3000); // Matches fade-out duration
         }, 6000); // Adjust delay before fade-out
-
+        
             emailButton.appendChild(contactInfo);
 
     emailButton.addEventListener("click", function (event) {
