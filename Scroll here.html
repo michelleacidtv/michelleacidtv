@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ᵃᶜⁱᵈ ᶠᵘᵗᵘʳᵉ</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
+    <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
+    
+    <style>
+        @font-face {
+            font-family: 'Xolonium';
+            src: url('Xolonium.woff2') format('woff2'),
+                 url('Xolonium.woff') format('woff'),
+                 url('Xolonium-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html, body {
+            background-color: black;
+            color: #e31982;
+            font-family: "Xolonium", sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('scrollbackground.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: default;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #e31982;
+            border: 2px solid #ff0066;
+            background-color: #ffffcb;
+            border-radius: 30px;
+            padding: 7px 9px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 10000;
+        }
+
+        .back-btn:hover {
+            background-color: #ff0066;
+            color: white;
+        }
+        
+        
+        #phone-gif {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 493px; 
+            cursor: pointer;
+            z-index: 9998;
+            background: rgb(255, 255, 220);
+            border: 31px solid #ffffcb;
+            border-radius: 31px;
+            padding: 0;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+
+        #phone-gif video {
+            width: 100%;
+            display: block;
+        }
+
+        #phone-gif.fade-out {
+            opacity: 0;
+            transform: scale(0.9) translate(-50%, -50%);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            #phone-gif { width: 264px; }
+        }
+
+        /* --- VIDEO GRID LAYOUT ADJUSTMENTS --- */
+#video-feed {
+    width: 45vw;
+    height: 49vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; 
+    
+    background: rgb(255, 255, 220);
+    background-size: cover;       
+    background-position: center;   
+    
+    grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
+    gap: 27px;
+    overflow-y: auto;
+    padding: 21px;
+    border: 5px solid rgb(255, 255, 220);
+    border-radius: 31px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    z-index: 2;
+}
+
+        @media (max-width: 768px) {
+            #video-feed {
+                width: 51vw;
+                height: 70vh;
+                
+                /* Responsive mobile card size down to 85px width */
+                grid-template-columns: repeat(auto-fill, minmax(39px, 1fr));
+                
+                /* Generous mobile gap separation */
+                gap: 31px;
+                padding: 22px;
+            }
+        }
+
+        /* Video Grid Card Thumbs */
+        .grid-card {
+            aspect-ratio: 9 / 16;
+            background: rgb(255, 255, 220);
+            border: 2px solid #ffffc8;
+            border-radius: 9px;
+            position: relative;
+            cursor: grabbing;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-card:hover {
+            transform: scale(1.07);
+            border-color: #cdfe02;
+            box-shadow: 0 0 0px #6665ff;
+        }
+
+        /* Placeholder thumbnail text size shrunk slightly to fit smaller cards */
+        .grid-card .thumb-placeholder {
+            font-size: 0.65rem;
+            color: #ff60b5;
+            padding: 6px;
+            text-transform: uppercase;
+            pointer-events: none;
+            text-shadow: 0 0 5px black;
+            line-height: 1.2;
+        }
+
+        /* --- LIGHTBOX OVERLAY --- */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            height: 80vh;
+            aspect-ratio: 9 / 16;
+            border: 4px solid #e31982;
+            border-radius: 6px;
+            background: #000000;
+            box-shadow: 0 0 0px #e31982;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-content { height: 75vh; }
+        }
+
+        .lightbox-content video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: -45px;
+            right: -10px;
+            background: none;
+            border: none;
+            color: #e31982;
+            font-size: 2rem;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+    
+        
+        .grid-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This crops the image perfectly to fit the 9:16 card aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+        .video-title-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    font-size: 0.7rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.83);
+    padding: 5px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    text-align: left;
+    
+    /* Transition setups */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+/* When the user hovers over the lightbox content frame, reveal the title */
+.lightbox-content:hover .video-title-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+ 
+        <a href="index.html" class="back-btn">back</a>
+        
+        <button id="phone-gif" aria-label="Start Videos">
+            <video src="pressplay60_alpha.webm" autoplay loop muted playsinline></video>
+        </button>
+
+        <div id="video-feed">
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Mulu - Pussycat (PFM Remix)">
+                <img src="thumbnails/Pussycatthumbnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Basic Channel - Quadrant Dub II">
+                <img src="thumbnails/quadthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Koala - Indian Spirits">
+                <img src="thumbnails/indianthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="D.A.V.E. The Drummer - Dig Into The Brain">
+                <img src="thumbnails/brainthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="DJ HMC - Phreakin'">
+                <img src="thumbnails/clownthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Lemon8 - Pressure">
+                <img src="thumbnails/Pressurethumnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="JX - You Belong To Me (No Respect Remix)">
+                <img src="thumbnails/belongtothumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Mark N-R-G - In My Brain">
+                <img src="thumbnails/housemusthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Alaska & Paradox - Uncertain Journey">
+                <img src="thumbnails/manthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Disco D - Need Another Drink">
+                <img src="thumbnails/drinkthumnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Extendo - Rawsport">
+                <img src="thumbnails/blehthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Athzira & Angry Luna - Ukhupacha">
+                <img src="thumbnails/ukapahcathumbail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Barabas & OD1 - Deeper (Jon The Dentist UCM RMX)">
+                <img src="thumbnails/horsemanthum,b.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Futurebound - Sorrow">
+                <img src="thumbnails/sorrowthumbnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Love & Rockets - Resurrection Hex (DeepDishLuvnDubMix)">
+                <img src="thumbnails/lovenresthumb.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Laconic - Big Dawg">
+                <img src="thumbnails/bigdawgthumbnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+             <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Olelujah - Zen, Robotics & Consciousness">
+                <img src="thumbnails/olelujahthumnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+                  <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="t_clip 2">
+                <img src="thumbnails/planethumnbail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Michelle Acid - Orange">
+                <img src="thumbnails/orangethumbnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
+                <img src="thumbnails/tokyothumnail.jpg" alt="Scroll Down Thumbnail">
+            </div>
+            <div class="grid-card" data-src="gifs/scrolldown.mp4" data-title="The End">
+                <img src="thumbnails/thendthum.jpg" alt="Scroll Down Thumbnail">
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="close-lightbox" id="close-lightbox">&times;</button>
+            <div class="video-title-overlay" id="lightbox-title"></div>
+            <video id="lightbox-video" controls playsinline preload="none" controlsList="nodownload"></video>
+        </div>
+    </div>
+        
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const button = document.getElementById('phone-gif');
+        const feed = document.getElementById('video-feed');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxVideo = document.getElementById('lightbox-video');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const closeLightbox = document.getElementById('close-lightbox');
+
+        // Reveal Grid
+        if (button && feed) {
+            button.addEventListener('click', () => {
+                feed.style.display = 'grid'; 
+                button.classList.add('fade-out');
+                setTimeout(() => {
+                    button.style.display = 'none';
+                }, 500); 
+            });
+        }
+
+        // Card Clicks -> Open Lightbox with targeted clip
+        document.querySelectorAll('.grid-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const videoSrc = card.getAttribute('data-src');
+                const videoTitle = card.getAttribute('data-title');
+
+                if(videoSrc) {
+                    lightboxTitle.textContent = videoTitle || "";
+                    lightboxVideo.src = videoSrc;
+                    lightbox.style.display = 'flex';
+                    lightboxVideo.load();
+                    lightboxVideo.play().catch(err => console.log("Autoplay blocked/interrupted"));
+                }
+            });
+        });
+
+        // Close Lightbox Logic safely teardown stream
+        const closeBox = () => {
+            lightbox.style.display = 'none';
+            lightboxVideo.pause();
+            lightboxVideo.src = ""; 
+        };
+
+        closeLightbox.addEventListener('click', closeBox);
+        lightbox.addEventListener('click', (e) => {
+            if(e.target === lightbox) closeBox();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>i̷̡̡͔̮͛͆͝ ̴̧̨͕̣̞̤̖̤͙̆ǎ̷̫̫̪͈̦͎͔̥̝͌͜ṃ̴̄͝ ̷̙͛̅̿̋̀̑̓h̵͍̤́̋͒̍̚̕ē̸̼̰̊͌̂͊ŗ̵̘̰̺͖̣̆̀͑͋̓̀̄̈́̏è̵̫̙̞̝͂͊͊</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/michelleacidtv/michelleacidtv/main/Screenshot.png">
+    <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
+    
+ <style>
+        @font-face {
+            font-family: 'Xolonium';
+            src: url('Xolonium.woff2') format('woff2'),
+                 url('Xolonium.woff') format('woff'),
+                 url('Xolonium-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html, body {
+            background-color: black;
+            color: #e31982;
+            font-family: "Xolonium", sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('iamhere%20copy.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: default;
+        }
+
+        .content-wrapper {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .back-btn {
+            position: fixed;   
+            top: 20px;         
+            left: 20px;        
+            color: #e31982;
+            border: 2px solid #e31982;
+            background-color: #fffce6;
+            border-radius: 30px;
+            padding: 7px 9px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 200;
+        }
+
+        .back-btn:hover {
+            background-color: #e31982;
+            color: white;
+        }
+        
+        /* NEW TRANSPARENT BACKDROP ANIMATION CLASS */
+        #bgAnimation {
+            position: absolute;
+            width: 253px; /* Adjust size to fit your asset's dimensions */
+            height: auto;
+            top: 71%;
+            left: 41%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Sits cleanly over your face background, beneath text/buttons */
+            pointer-events: none; /* Allows click signals to pass straight through to elements behind it */
+        }
+     
+             #winkgif {
+            position: absolute;
+            width: 129px; /* Adjust size to fit your asset's dimensions */
+            height: auto;
+            top: 43%;
+            left: 26%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Sits cleanly over your face background, beneath text/buttons */
+            pointer-events: none; /* Allows click signals to pass straight through to elements behind it */
+        }
+        
+        .computer-gif {
+            position: absolute; 
+            top: 75%; 
+            left: 89%; 
+            width: 25%; 
+            max-width: 1000px; 
+            height: auto; 
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+        
+        /* FIXED BUTTON STYLING */
+        #clickmeButton {
+            position: absolute;
+            top: 90%;
+            left: 91%; 
+            font-size: 15px;
+            padding: 7px 24px;
+            color: #E31982;
+            font-family: "Xolonium", sans-serif;
+            background-color: rgba(128, 113, 121, 0.34);
+            cursor: pointer; 
+            z-index: 100;
+        }
+
+        /* FIXED COUNT POSITIONING */
+        #clickCount {
+            position: absolute;
+            top: 90%;
+            left: 41%;
+            transform: translateX(-50%);
+            font-family: "Xolonium", sans-serif;
+            color: #e31982;
+            font-size: 18px;
+            border: 2px double #e31982;
+            padding: 5px 15px;
+            margin: 0;
+            z-index: 100;
+            white-space: nowrap;
+        }
+        
+#facegif {
+            position: absolute;
+            width: 30vw; 
+            top: 20%;  
+            right: 473px; 
+            transform: translateY(-50%);
+            z-index: 1; 
+            cursor: pointer; 
+            transition: transform 0.2s;
+            /* pointer-events: none; REMOVED so the button is clickable */
+        }
+     
+        /* Added both class and ID so click feedback works flawlessly */
+        #facegif:active, .Face:active {
+            transform: translateY(-50%) scale(0.95); /* Kept your absolute centering logic intact */
+        }
+
+        /* Mobile Layouts */
+        @media (max-width: 768px) {
+            #bgAnimation { width: 300px; top: 45%; }
+            .computer-gif { width: 50vw; left: 25%; top: 87%; }
+            #clickmeButton { left: 24%; top: 95%; font-size: 9px; }
+            #clickCount { left: 63%; top: 21%; font-size: 14px; }
+            #facegif { width: 58vw; left: 23%; top: 13%; } 
+            #winkgif { width: 28vw; left: 29%; top: 22%; } 
+            #bgAnimation { width: 40vw; left: 22%; top: 62%; } 
+        }
+     
+     /* The semi-transparent dark backdrop covering the whole screen */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10000; /* Keeps it on top of everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dims your background site */
+    justify-content: center;
+    align-items: center;
+}
+
+/* The wrapper keeping the video responsive */
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9; /* Keeps standard widescreen video shape */
+    border: 2px solid #e31982; /* Pink border matching your theme */
+    background-color: black;
+}
+
+/* The actual video player inside the box */
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* The "X" button to close the video player */
+.close-video {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #e31982;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-video:hover {
+    color: white;
+}
+     
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="index.html" class="back-btn">back</a>
+        
+        <!-- TRANSPARENT VIDEO (ACTING AS AN OPTIMIZED GIF COUPLER) -->
+        <video autoplay loop muted playsinline id="bgAnimation">
+            <source src="alienscreen.webm" type="video/webm">
+            Your browser does not support WebM transparency.
+        </video>
+        
+                <video autoplay loop muted playsinline id="winkgif">
+            <source src="winkgif.webm" type="video/webm">
+            Your browser does not support WebM transparency.
+        </video>
+        
+        <button id="clickmeButton" onclick="countClicks()">click me</button>
+        <p id="clickCount">Clicks: 0</p>
+        <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
+        
+<div onclick="openVideo()">
+    <img id="facegif" src="facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
+</div>
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-video" onclick="closeVideo()">&times;</span>
+        <iframe id="youtubePlayer" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
+        
+    </div>
+    
+    <script>
+        
+// 1. CLEANED UP: Only the video IDs extracted from your links are kept here
+const videoList = [
+    "73omlAllMm4",  // Video 1
+    "JSvcoOCD3IU",  // Video 2
+    "y2RB1plZihk",  // Video 3
+    "zoY2gOix0_s"   // Video 4
+];
+
+let count = 0;
+function countClicks() {
+    count++;
+    document.getElementById("clickCount").innerText = "Clicks: " + count;
+}
+        
+function openVideo() {
+    // 2. NEW: This picks a random number between 0 and the total number of videos in your list
+    const randomIndex = Math.floor(Math.random() * videoList.length);
+    const chosenVideoId = videoList[randomIndex];
+
+    // 3. Show the hidden pop-up container
+    document.getElementById("videoModal").style.display = "flex";
+    
+    // 4. FIXED: Instead of hardcoding one video, this dynamically injects the randomly chosen video ID
+    document.getElementById("youtubePlayer").src = `https://www.youtube.com/embed/${chosenVideoId}?autoplay=1`;
+}
+
+function closeVideo() {
+    // 1. Hide the pop-up container
+    document.getElementById("videoModal").style.display = "none";
+    
+    // 2. Kill the video source so the audio stops playing
+    document.getElementById("youtubePlayer").src = "";
+}
+    </script>
+</body>
+</html>
