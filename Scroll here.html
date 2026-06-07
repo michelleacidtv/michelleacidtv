@@ -70,7 +70,6 @@
             color: white;
         }
         
-        
         #phone-gif {
             position: absolute;
             top: 50%;
@@ -103,44 +102,39 @@
         }
 
         /* --- VIDEO GRID LAYOUT ADJUSTMENTS --- */
-#video-feed {
-    width: 45vw;
-    height: 49vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; 
-    
-    background: rgb(255, 255, 220);
-    background-size: cover;       
-    background-position: center;   
-    
-    grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
-    gap: 27px;
-    overflow-y: auto;
-    padding: 21px;
-    border: 5px solid rgb(255, 255, 220);
-    border-radius: 31px;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
-    z-index: 2;
-}
+        #video-feed {
+            width: 45vw;
+            height: 49vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none; 
+            
+            background: rgb(255, 255, 220);
+            background-size: cover;       
+            background-position: center;   
+            
+            grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
+            gap: 27px;
+            overflow-y: auto;
+            padding: 21px;
+            border: 5px solid rgb(255, 255, 220);
+            border-radius: 31px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+            z-index: 2;
+        }
 
         @media (max-width: 768px) {
             #video-feed {
                 width: 51vw;
                 height: 70vh;
-                
-                /* Responsive mobile card size down to 85px width */
                 grid-template-columns: repeat(auto-fill, minmax(39px, 1fr));
-                
-                /* Generous mobile gap separation */
                 gap: 31px;
                 padding: 22px;
             }
         }
 
-        /* Video Grid Card Thumbs */
         .grid-card {
             aspect-ratio: 9 / 16;
             background: rgb(255, 255, 220);
@@ -161,7 +155,6 @@
             box-shadow: 0 0 0px #6665ff;
         }
 
-        /* Placeholder thumbnail text size shrunk slightly to fit smaller cards */
         .grid-card .thumb-placeholder {
             font-size: 0.65rem;
             color: #ff60b5;
@@ -214,45 +207,39 @@
             cursor: pointer;
             font-family: sans-serif;
         }
-    
         
         .grid-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This crops the image perfectly to fit the 9:16 card aspect ratio */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
 
         .video-title-overlay {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    font-size: 0.7rem;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.83);
-    padding: 5px 10px;
-    border-radius: 4px;
-    pointer-events: none;
-    text-align: left;
-    
-    /* Transition setups */
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-}
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.83);
+            padding: 5px 10px;
+            border-radius: 4px;
+            pointer-events: none;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 10;
+        }
 
-/* When the user hovers over the lightbox content frame, reveal the title */
-.lightbox-content:hover .video-title-overlay {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-        
+        .lightbox-content:hover .video-title-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -266,67 +253,67 @@
         </button>
 
         <div id="video-feed">
-            <div class="grid-card" data-src="animatefinal/pusycat.mp4" data-title="Mulu - Pussycat (PFM Remix)">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/pusycat.mp4" data-title="Mulu - Pussycat (PFM Remix)">
                 <img src="thumbnails/Pussycatthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/dub.mp4" data-title="Basic Channel - Quadrant Dub II">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/dub.mp4" data-title="Basic Channel - Quadrant Dub II">
                 <img src="thumbnails/quadthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/indian.mp4" data-title="Koala - Indian Spirits">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/indian.mp4" data-title="Koala - Indian Spirits">
                 <img src="thumbnails/indianthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/dig.mp4" data-title="D.A.V.E. The Drummer - Dig Into The Brain">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/dig.mp4" data-title="D.A.V.E. The Drummer - Dig Into The Brain">
                 <img src="thumbnails/brainthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/hmc.mp4" data-title="DJ HMC - Phreakin'">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/hmc.mp4" data-title="DJ HMC - Phreakin'">
                 <img src="thumbnails/clownthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/press.mp4" data-title="Lemon8 - Pressure">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/press.mp4" data-title="Lemon8 - Pressure">
                 <img src="thumbnails/Pressurethumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/youbelong.mp4" data-title="JX - You Belong To Me (No Respect Remix)">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/youbelong.mp4" data-title="JX - You Belong To Me (No Respect Remix)">
                 <img src="thumbnails/belongtothumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/housem.mp4" data-title="Mark N-R-G - In My Brain">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/housem.mp4" data-title="Mark N-R-G - In My Brain">
                 <img src="thumbnails/housemusthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/manfinal2 copy.mp4" data-title="Alaska & Paradox - Uncertain Journey">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/manfinal2%20copy.mp4" data-title="Alaska & Paradox - Uncertain Journey">
                 <img src="thumbnails/manthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/U%Need%Another%Drink%copy.mp4" data-title="Disco D - Need Another Drink">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/U%25Need%25Another%25Drink%25copy.mp4" data-title="Disco D - Need Another Drink">
                 <img src="thumbnails/drinkthumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/bleh2%copy.mp4" data-title="Extendo - Rawsport">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/bleh2%25copy.mp4" data-title="Extendo - Rawsport">
                 <img src="thumbnails/blehthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/ukapahca.mp4" data-title="Athzira & Angry Luna - Ukhupacha">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/ukapahca.mp4" data-title="Athzira & Angry Luna - Ukhupacha">
                 <img src="thumbnails/ukapahcathumbail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="animatefinal/horsmanfinal2%copy.mp4" data-title="Barabas & OD1 - Deeper (Jon The Dentist UCM RMX)">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/horsmanfinal2%25copy.mp4" data-title="Barabas & OD1 - Deeper (Jon The Dentist UCM RMX)">
                 <img src="thumbnails/horsemanthum,b.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="sorrow.mp4" data-title="Futurebound - Sorrow">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/sorrow.mp4" data-title="Futurebound - Sorrow">
                 <img src="thumbnails/sorrowthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="Clips/luvresfinalmatv.mp4" data-title="Love & Rockets - Resurrection Hex (DeepDishLuvnDubMix)">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/luvresfinalmatv.mp4" data-title="Love & Rockets - Resurrection Hex (DeepDishLuvnDubMix)">
                 <img src="thumbnails/lovenresthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="Clips/bigdawg.mp4" data-title="Laconic - Big Dawg">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/bigdawg.mp4" data-title="Laconic - Big Dawg">
                 <img src="thumbnails/bigdawgthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-             <div class="grid-card" data-src="Clips/booth.mp4" data-title="Olelujah - Zen, Robotics & Consciousness">
+             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/booth.mp4" data-title="Olelujah - Zen, Robotics & Consciousness">
                 <img src="thumbnails/olelujahthumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-                  <div class="grid-card" data-src="Clips/T_clip2.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
+                  <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/T_clip2.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
                 <img src="thumbnails/planethumnbail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="Clips/O_clip1.mp4" data-title="Michelle Acid - Orange">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/O_clip1.mp4" data-title="Michelle Acid - Orange">
                 <img src="thumbnails/orangethumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="Clips/T_clip1.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/T_clip1.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
                 <img src="thumbnails/tokyothumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
-            <div class="grid-card" data-src="Clips/0009555_1.mp4" data-title="The End">
+            <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/0009555_1.mp4" data-title="The End">
                 <img src="thumbnails/thendthum.jpg" alt="Scroll Down Thumbnail">
             </div>
         </div>
