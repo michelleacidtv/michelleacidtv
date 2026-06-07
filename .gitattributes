@@ -9,5 +9,6 @@ aciddream.mp4 filter=lfs diff=lfs merge=lfs -text
 acidfutre.mp4 filter=lfs diff=lfs merge=lfs -text
 gesloten.mp4 filter=lfs diff=lfs merge=lfs -text
 sorrow.mp4 filter=lfs diff=lfs merge=lfs -text
+/Users/michelle/Documents/my-website/www.michelleacid.tv/animateGIT/ukapahca.mp4 filter=lfs diff=lfs merge=lfs -text
 animatefinal/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 **/*.mp4 filter=lfs diff=lfs merge=lfs -text
