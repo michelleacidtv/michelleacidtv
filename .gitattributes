@@ -4,3 +4,4 @@ animatefinal/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 **/*.mp4 filter=lfs diff=lfs merge=lfs -text
 animatefinal/bleh2.mp4 filter=lfs diff=lfs merge=lfs -text
 animatefinal/horsemanfinal2.mp4 filter=lfs diff=lfs merge=lfs -text
+pressplay2.mp4 filter=lfs diff=lfs merge=lfs -text
