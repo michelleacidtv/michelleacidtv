@@ -18,34 +18,28 @@
         }
 
 html, body {
-    background-color: #fffce6;
-    color: #e31982;
-    font-family: "Xolonium", sans-serif;
-    margin: 0;
-    padding: 0;
-    
-    /* 1. Use Dynamic Viewport Height (dvh) for mobile browser address bars */
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh; 
-    
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* 2. Fixed attachment keeps the image locked tightly behind the layout */
-    background-image: url('iamhere%20copy.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    
-    cursor: default;
-}
 
+            background-color: #fffce6;
+            color: #e31982;
+            font-family: "Xolonium", sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('iamhere%20copy.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: default;
+
+        } 
+     
         .content-wrapper {
             max-width: 90vw;
             max-height: 90vh;
