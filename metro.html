@@ -108,8 +108,32 @@
             border-radius: 8px; /* Optional slight rounding for aesthetics */
             box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
         }
-        
-        
+
+    @media (max-width: 768px) {
+    .video-container iframe {
+        width: 100%;          /* Let it fill the container on mobile */
+        max-width: 95vw;      /* Or bump it up slightly so it's easier to see on tiny screens */
+        height: auto;         
+        aspect-ratio: 16 / 9; /* Keeps the video shape perfect */
+        position: relative;
+        top: -160px;
+    }
+}  
+@media (max-width: 768px) {
+    .scoob { 
+        width: 100%;    /* Takes up 90% of the screen width, preventing overflow */
+        max-width: 441px; /* Keeps it from getting larger than 441px */
+        top: 66%; 
+        left: 32%;     /* Use % or small px for positioning so it stays on screen */
+    }
+    
+    .newrider { 
+        width: 127%;    /* Scales down smoothly on tiny screens */
+        max-width: 468px; 
+        top: 51%; 
+        left: -34%;
+    }
+}    
     </style>
 </head>
 <body>
