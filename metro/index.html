@@ -9,12 +9,13 @@
     <link rel="icon" type="image/png" href="/faviconnew.png">
     <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
     
-    <style>
+   <style>
         @font-face {
             font-family: 'Xolonium';
-            src: url('Xolonium.woff2') format('woff2'),
-                 url('Xolonium.woff') format('woff'),
-                 url('Xolonium-Regular.ttf') format('truetype');
+            /* FIXED: Added leading slashes so fonts load inside subfolders */
+            src: url('/Xolonium.woff2') format('woff2'),
+                 url('/Xolonium.woff') format('woff'),
+                 url('/Xolonium-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -110,40 +111,39 @@
             box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
         }
 
-    @media (max-width: 768px) {
-    .video-container iframe {
-        width: 100%;          /* Let it fill the container on mobile */
-        max-width: 95vw;      /* Or bump it up slightly so it's easier to see on tiny screens */
-        height: auto;         
-        aspect-ratio: 16 / 9; /* Keeps the video shape perfect */
-        position: relative;
-        top: -160px;
-    }
-}  
-@media (max-width: 768px) {
-    .scoob { 
-        width: 100%;    /* Takes up 90% of the screen width, preventing overflow */
-        max-width: 441px; /* Keeps it from getting larger than 441px */
-        top: 66%; 
-        left: 32%;     /* Use % or small px for positioning so it stays on screen */
-    }
-    
-    .newrider { 
-        width: 127%;    /* Scales down smoothly on tiny screens */
-        max-width: 468px; 
-        top: 51%; 
-        left: -34%;
-    }
-}    
+        @media (max-width: 768px) {
+            .video-container iframe {
+                width: 100%;          /* Let it fill the container on mobile */
+                max-width: 95vw;      /* Or bump it up slightly so it's easier to see on tiny screens */
+                height: auto;         
+                aspect-ratio: 16 / 9; /* Keeps the video shape perfect */
+                position: relative;
+                top: -160px;
+            }
+        }  
+        @media (max-width: 768px) {
+            .scoob { 
+                width: 100%;    /* Takes up 90% of the screen width, preventing overflow */
+                max-width: 441px; /* Keeps it from getting larger than 441px */
+                top: 66%; 
+                left: 32%;     /* Use % or small px for positioning so it stays on screen */
+            }
+            
+            .newrider { 
+                width: 127%;    /* Scales down smoothly on tiny screens */
+                max-width: 468px; 
+                top: 51%; 
+                left: -34%;
+            }
+        }    
     </style>
 </head>
 <body>
     
     <div class="bg-text-layer"></div>
     
+    <!-- FIXED: Removed the broken duplicate tag. This single absolute root link handles the job perfectly -->
     <a href="/" class="back-btn">back</a>
-    
-    <a href="index.html" class="back-btn">back</a>
     
     <img src="/newriderstand.png" class="newrider">
     <img src="/scoob.png" class="scoob">
