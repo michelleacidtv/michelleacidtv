@@ -179,15 +179,26 @@
         }
 
         /* --- LIGHTBOX OVERLAY --- */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0, 0, 0, 0.78);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
+.lightbox {
+    position: fixed;
+    
+    /* 1. Use absolute anchoring to trap the overlay to all 4 corners */
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    
+    /* 2. Upgrade sizing units to avoid scrollbar and dynamic browser bar bugs */
+    width: 100%; 
+    height: 100%;
+    height: 100dvh; /* dvh handles mobile address bars perfectly */
+    
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
 
         .lightbox-content {
             position: relative;
@@ -199,10 +210,13 @@
             box-shadow: 0 0 0px #e31982;
         }
 
-        @media (max-width: 768px) {
-            .lightbox-content { height: 75vh; }
-        }
-
+@media (max-width: 768px) {
+    .lightbox-content { 
+        /* Uses svh (small viewport height) to guarantee the container box 
+           never gets clipped by mobile navigation zones */
+        height: 70svh; 
+    }
+}
         .lightbox-content video {
             width: 100%;
             height: 100%;
