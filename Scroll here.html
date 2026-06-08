@@ -37,6 +37,14 @@
             background-repeat: no-repeat;
             cursor: default;
         }
+        
+        @media (max-width: 768px) {
+    html, body {
+        background-attachment: scroll; /* Prevents iOS scaling glitches */
+        height: 100vh; /* Fallback */
+        height: 100dvh; 
+    }
+}
 
         .content-wrapper {
             width: 100%;
