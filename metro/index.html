@@ -1,1 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <!-- Prevent zooming on mobile to keep dimensions fixed -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ⓜⓔⓣⓡⓞ</title>
+    <link rel="canonical" href="https://www.michelleacid.tv/metro/" />
+    <link rel="icon" type="image/png" href="faviconnew.png">
+    <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
+    
+    <style>
+        @font-face {
+            font-family: 'Xolonium';
+            src: url('Xolonium.woff2') format('woff2'),
+                 url('Xolonium.woff') format('woff'),
+                 url('Xolonium-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        /* The "Lockdown" CSS */
+        html, body {
+            background-color: white;
+            background-image: url('metrobackground.webp');
+            background-size: cover;       
+            background-position: center;  
+            background-repeat: no-repeat;
+            color: #e31982;
+            font-family: "Xolonium", sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            /* Strict dimensions */
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Disables all scrolling */
+            
+            /* Centering everything */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: default;
+        }
+
+        /* Container that ensures content stays inside the "window" */
+        .content-wrapper {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        p { font-size: 1.2rem; max-width: 600px; line-height: 1.4; }
+
+        .back-btn {
+            position: fixed;   /* Lock it to the screen */
+            top: 20px;         /* 20 pixels down from the top */
+            left: 20px;        /* 20 pixels in from the left */
+            color: #000000;
+            border: 2px solid #000000;
+            border-radius: 30px;
+            padding: 7px 9px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 200;      /* Keeps back button on top */
+        }
+
+        .back-btn:hover {
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 0 0px #e31982;
+        }
+        
+        .newrider {
+            position: absolute;
+            bottom: 10%;      
+            right: 43%;
+            height: auto;            
+            width: 73vw;             
+            z-index: 10;
+        }
+        
+        .scoob {
+            position: absolute;
+            bottom: 10%;      
+            right: -27%;
+            height: auto;            
+            width: 79vw;             
+            z-index: 10;
+        }
+
+        /* NEW VIDEO BOX CSS */
+        .content {
+            position: relative;
+            z-index: 100; /* CRITICAL: Places the video player above layer 10 images so you can click play! */
+        }
+
+        .video-container iframe {
+            max-width: 95vw; /* Keeps video responsive on small screens */
+            border-radius: 8px; /* Optional slight rounding for aesthetics */
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+        }
+
+    @media (max-width: 768px) {
+    .video-container iframe {
+        width: 100%;          /* Let it fill the container on mobile */
+        max-width: 95vw;      /* Or bump it up slightly so it's easier to see on tiny screens */
+        height: auto;         
+        aspect-ratio: 16 / 9; /* Keeps the video shape perfect */
+        position: relative;
+        top: -160px;
+    }
+}  
+@media (max-width: 768px) {
+    .scoob { 
+        width: 100%;    /* Takes up 90% of the screen width, preventing overflow */
+        max-width: 441px; /* Keeps it from getting larger than 441px */
+        top: 66%; 
+        left: 32%;     /* Use % or small px for positioning so it stays on screen */
+    }
+    
+    .newrider { 
+        width: 127%;    /* Scales down smoothly on tiny screens */
+        max-width: 468px; 
+        top: 51%; 
+        left: -34%;
+    }
+}    
+    </style>
+</head>
+<body>
+    
+    <div class="bg-text-layer"></div>
+    
+    <a href="index.html" class="back-btn">back</a>
+    
+    <img src="newriderstand.png" class="newrider">
+    <img src="scoob.png" class="scoob">
+
+    <div class="content">
+        <div class="video-container">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/Zlmp5j0BrDE?si=lo0prFiyktZPdShn" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+</body>
+</html>
