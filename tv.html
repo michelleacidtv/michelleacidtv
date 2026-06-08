@@ -97,8 +97,8 @@
 @media (max-width: 768px) {
     .click-text {
         position: fixed;      /* Lock it relative to the viewport glass */
-        top: 125px;            /* Placed safely below the quote button (top 20px + button height) */
-        right: 80px;          /* Aligned with the right edge side of the button area */
+        top: 103px;            /* Placed safely below the quote button (top 20px + button height) */
+        right: 47px;          /* Aligned with the right edge side of the button area */
         left: auto;           /* Clears desktop positioning rules */
         transform: none;      
         
@@ -197,7 +197,7 @@
             @media (max-width: 768px) {
     /* Adjust the remote container to fit smaller screens */
         .remote-container {
-        left: 0%; /* Adjust left positioning for smaller screens */
+        left: 3%; /* Adjust left positioning for smaller screens */
         bottom: -28%; /* Adjust bottom positioning */
     }
 
@@ -207,40 +207,11 @@
     }
 
     /* Adjust buttons positioning for smaller screens */
-        .remote-buttons {
-        top: 13%;  /* Move the buttons up slightly for smaller screens */
-        left: 13%;  /* Adjust horizontal position */
-        gap: 4px;
+.remote-buttons {
+        top: 13%;  
+        left: 13%;  
+        gap: 4px; /* Slightly tighter spacing for smaller buttons */
     }
-    .button.orange, 
-    .button.tokyo, 
-    .button.wink, 
-    .button.younme, 
-    .button.mechanical {
-        width: 160px !important;  /* Visually shrinks them uniformally */
-        height: 28px !important;  /* Proportionally scaled down height */
-        left: 94% !important;    /* Resets desktop positioning breakages */
-        transform: none !important; /* Clears translation shifts */
-        border-width: 2px !important; /* Slightly thinner border for small scale */
-    }
-}
-    @media (max-width: 844px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-    /* Adjust the remote container to fit smaller screens */
-        .remote-container {
-        left: -25%; /* Adjust left positioning for smaller screens */
-        bottom: -26%; /* Adjust bottom positioning */
-    }
-
-        .remote-container img {
-        width: 94px; /* Make the remote smaller on smaller screens */
-    }
-
-    /* Adjust buttons positioning for smaller screens */
-        .remote-buttons {
-        top: 49%;  /* Move the buttons up slightly for smaller screens */
-        left: 113%;  /* Adjust horizontal position */
-    }
-        
 }
         /* Default Button Style */
         .button {
@@ -285,10 +256,10 @@
         }
         @media (max-width: 768px) {
     .button.orange {
-        width: 233px; /* Reduce width for mobile */
-        height: 40px; /* Scale down height proportionally */
-        left: 107%; /* Center it more effectively */
-        top: -66px; /* Adjust vertical positioning */
+        width: 210px; /* Reduce width for mobile */
+        height: 35px; /* Scale down height proportionally */
+        left: 107%; /* Center it ee effectively */
+        top: -75px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
     }
@@ -323,10 +294,10 @@
             }
     @media (max-width: 768px) {
     .button.tokyo {
-        width: 233px; /* Reduce width for mobile */
-        height: 40px; /* Scale down height proportionally */
+        width: 210px; /* Reduce width for mobile */
+        height: 35px; /* Scale down height proportionally */
         left: 114%; /* Center it more effectively */
-        top: -61px; /* Adjust vertical positioning */
+        top: -75px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
     }
@@ -361,10 +332,10 @@
  }
 @media (max-width: 768px) {
     .button.wink {
-        width: 233px; /* Reduce width for mobile */
-        height: 40px; /* Scale down height proportionally */
+        width: 210px; /* Reduce width for mobile */
+        height: 35px; /* Scale down height proportionally */
         left: 99%; /* Center it more effectively */
-        top: -59px; /* Adjust vertical positioning */
+        top: -77px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
     }
@@ -399,10 +370,10 @@
         }
     @media (max-width: 768px) {
     .button.younme {
-        width: 233px; /* Reduce width for mobile */
-        height: 40px; /* Scale down height proportionally */
+        width: 210px; /* Reduce width for mobile */
+        height: 35px; /* Scale down height proportionally */
         left: 111%; /* Center it more effectively */
-        top: -57px; /* Adjust vertical positioning */
+        top: -80px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
     }
@@ -437,10 +408,10 @@
 }
 @media (max-width: 768px) {
     .button.mechanical {
-        width: 233px; /* Reduce width for mobile */
-        height: 40px; /* Scale down height proportionally */
-        left: 105%; /* Center it more effectively */
-        top: -56px; /* Adjust vertical positioning */
+        width: 210px; /* Reduce width for mobile */
+        height: 35px; /* Scale down height proportionally */
+        left: 107%; /* Center it more effectively */
+        top: -81px; /* Adjust vertical positioning */
         transform: translateX(-37%); /* Center the button properly */
         }
     }
@@ -578,7 +549,7 @@
   }
 @media (max-width: 768px) {
     .resized-image {
-        width: 35vw;  /* Adjust width to 50% of viewport width (responsive size) */
+        width: 34vw;  /* Adjust width to 50% of viewport width (responsive size) */
         left: 6vw;   /* Center the image horizontally on the screen */
         top: -19vh;    /* Set the top position to 10% of viewport height */
         transform: none;  /* Remove the translate, as we're now using left/top */
@@ -641,8 +612,8 @@
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .more-music-text {
         position: fixed;     /* Lock it relative to the screen layout */
-        top: 65px;           /* Placed safely below the back button's 20px top + padding */
-        left: 24px;          /* Slightly indented to align nicely under the back button text */
+        top: 37px;           /* Placed safely below the back button's 20px top + padding */
+        left: 226px;          /* Slightly indented to align nicely under the back button text */
         width: auto;         /* Remove the restrictive 69px width so text doesn't bunch up */
         font-size: 1.2rem;   /* Scale down the font size so it fits mobile screens cleanly */
     }
@@ -849,7 +820,7 @@
     const quotes = [
         "You run faster when you see the end in sight",
         "Resist nothing",
-        "Observe the mind. Smile at it",
+        "Observe the mind.",
         "Confront what you are avoiding",
         "He who writes for fools always finds a large public",
         "All discipline begins in the body",
