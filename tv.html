@@ -97,7 +97,7 @@
 @media (max-width: 768px) {
     .click-text {
         position: fixed;      /* Lock it relative to the viewport glass */
-        top: 145px;            /* Placed safely below the quote button (top 20px + button height) */
+        top: 125px;            /* Placed safely below the quote button (top 20px + button height) */
         right: 80px;          /* Aligned with the right edge side of the button area */
         left: auto;           /* Clears desktop positioning rules */
         transform: none;      
@@ -154,7 +154,7 @@
         }
 @media screen and (max-width: 768px) and (orientation: portrait) {
     .tv-container {
-        width: 85vw;       /* Slightly reduced from 92vw to leave clean safety margins on the sides */
+        width: 80vw;       /* Slightly reduced from 92vw to leave clean safety margins on the sides */
         left: auto;        /* Clears out any breaking horizontal offsets */
         bottom: auto;      /* Removes the massive -374% drop, snapping it back to the viewport center */
         margin: auto;      /* Instructs the browser to balance spacing equally on all sides */
@@ -210,6 +210,18 @@
         .remote-buttons {
         top: 13%;  /* Move the buttons up slightly for smaller screens */
         left: 13%;  /* Adjust horizontal position */
+        gap: 4px;
+    }
+    .button.orange, 
+    .button.tokyo, 
+    .button.wink, 
+    .button.younme, 
+    .button.mechanical {
+        width: 160px !important;  /* Visually shrinks them uniformally */
+        height: 28px !important;  /* Proportionally scaled down height */
+        left: 94% !important;    /* Resets desktop positioning breakages */
+        transform: none !important; /* Clears translation shifts */
+        border-width: 2px !important; /* Slightly thinner border for small scale */
     }
 }
     @media (max-width: 844px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
@@ -228,6 +240,7 @@
         top: 49%;  /* Move the buttons up slightly for smaller screens */
         left: 113%;  /* Adjust horizontal position */
     }
+        
 }
         /* Default Button Style */
         .button {
@@ -565,7 +578,7 @@
   }
 @media (max-width: 768px) {
     .resized-image {
-        width: 40vw;  /* Adjust width to 50% of viewport width (responsive size) */
+        width: 35vw;  /* Adjust width to 50% of viewport width (responsive size) */
         left: 6vw;   /* Center the image horizontally on the screen */
         top: -19vh;    /* Set the top position to 10% of viewport height */
         transform: none;  /* Remove the translate, as we're now using left/top */
@@ -607,7 +620,7 @@
         .cd {
         width: 74px; /* Reduce size for mobile */
         right: 182px; /* Adjust position so it's still visible */
-        top: -40%; /* Slightly adjust vertical position */
+        top: -47%; /* Slightly adjust vertical position */
     }
 }
         @media screen and (max-width: 844px) and (orientation: landscape) {
