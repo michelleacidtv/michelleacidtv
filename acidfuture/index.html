@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ᵃᶜⁱᵈ ᶠᵘᵗᵘʳᵉ</title>
     <link rel="canonical" href="https://www.michelleacid.tv/" />
-    <link rel="icon" type="image/png" href="faviconnew.png">
+    <link rel="icon" type="image/png" href="/faviconnew.png">
     <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
     
     <style>
         @font-face {
             font-family: 'Xolonium';
-            src: url('Xolonium.woff2') format('woff2'),
-                 url('Xolonium.woff') format('woff'),
-                 url('Xolonium-Regular.ttf') format('truetype');
+            /* FIXED: Added leading slashes so fonts don't break inside subfolders */
+            src: url('/Xolonium.woff2') format('woff2'),
+                 url('/Xolonium.woff') format('woff'),
+                 url('/Xolonium-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -32,7 +33,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('scrollbackwords.webp');
+            /* FIXED: Added leading slash for background image */
+            background-image: url('/scrollbackwords.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -40,12 +42,12 @@
         }
         
         @media (max-width: 768px) {
-    html, body {
-        background-attachment: scroll; /* Prevents iOS scaling glitches */
-        height: 100vh; /* Fallback */
-        height: 100dvh; 
-    }
-}
+            html, body {
+                background-attachment: scroll; /* Prevents iOS scaling glitches */
+                height: 100vh; /* Fallback */
+                height: 100dvh; 
+            }
+        }
 
         .content-wrapper {
             width: 100%;
@@ -108,10 +110,10 @@
 
         @media (max-width: 768px) {
             #phone-gif { 
-            width: 313px; 
-            border: 12px solid #ffffcb;
-            border-radius: 15px;
-            padding: 0;
+                width: 313px; 
+                border: 12px solid #ffffcb;
+                border-radius: 15px;
+                padding: 0;
             }
         }
 
@@ -180,26 +182,21 @@
         }
 
         /* --- LIGHTBOX OVERLAY --- */
-.lightbox {
-    position: fixed;
-    
-    /* 1. Use absolute anchoring to trap the overlay to all 4 corners */
-    top: 0; 
-    left: 0; 
-    right: 0;
-    bottom: 0;
-    
-    /* 2. Upgrade sizing units to avoid scrollbar and dynamic browser bar bugs */
-    width: 100%; 
-    height: 100%;
-    height: 100dvh; /* dvh handles mobile address bars perfectly */
-    
-    background: rgba(0, 0, 0, 0.78);
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
+        .lightbox {
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            height: 100%;
+            height: 100dvh; 
+            background: rgba(0, 0, 0, 0.78);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
 
         .lightbox-content {
             position: relative;
@@ -211,13 +208,12 @@
             box-shadow: 0 0 0px #e31982;
         }
 
-@media (max-width: 768px) {
-    .lightbox-content { 
-        /* Uses svh (small viewport height) to guarantee the container box 
-           never gets clipped by mobile navigation zones */
-        height: 70svh; 
-    }
-}
+        @media (max-width: 768px) {
+            .lightbox-content { 
+                height: 70svh; 
+            }
+        }
+        
         .lightbox-content video {
             width: 100%;
             height: 100%;
@@ -274,75 +270,75 @@
 
     <div class="content-wrapper">
  
-        <a href="index.html" class="back-btn">back</a>
+        <a href="/" class="back-btn">back</a>
         
         <button id="phone-gif" aria-label="Start Videos">
-            <video src="pressplay2.mp4" autoplay loop muted playsinline></video>
+            <video src="/pressplay2.mp4" autoplay loop muted playsinline></video>
         </button>
 
         <div id="video-feed">
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/pusycat.mp4" data-title="Mulu - Pussycat (PFM Remix)">
-                <img src="thumbnails/Pussycatthumbnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/Pussycatthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/dub.mp4" data-title="Basic Channel - Quadrant Dub II">
-                <img src="thumbnails/quadthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/quadthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/indian.mp4" data-title="Koala - Indian Spirits">
-                <img src="thumbnails/indianthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/indianthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/dig.mp4" data-title="D.A.V.E. The Drummer - Dig Into The Brain">
-                <img src="thumbnails/brainthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/brainthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/hmc.mp4" data-title="DJ HMC - Phreakin'">
-                <img src="thumbnails/clownthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/clownthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/press.mp4" data-title="Lemon8 - Pressure">
-                <img src="thumbnails/Pressurethumnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/Pressurethumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/youbelong.mp4" data-title="JX - You Belong To Me (No Respect Remix)">
-                <img src="thumbnails/belongtothumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/belongtothumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/housem.mp4" data-title="Mark N-R-G - In My Brain">
-                <img src="thumbnails/housemusthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/housemusthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/manfinal2%20copy.mp4" data-title="Alaska & Paradox - Uncertain Journey">
-                <img src="thumbnails/manthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/manthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/drink.mp4" data-title="Disco D - Need Another Drink">
-                <img src="thumbnails/drinkthumnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/drinkthumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/bleh2.mp4" data-title="Extendo - Rawsport">
-                <img src="thumbnails/blehthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/blehthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/ukapahca.mp4" data-title="Athzira & Angry Luna - Ukhupacha">
-                <img src="thumbnails/ukapahcathumbail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/ukapahcathumbail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/animatefinal/horsemanfinal2.mp4" data-title="Barabas & OD1 - Deeper (Jon The Dentist UCM RMX)">
-                <img src="thumbnails/horsemanthum,b.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/horsemanthum,b.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/sorrow.mp4" data-title="Futurebound - Sorrow">
-                <img src="thumbnails/sorrowthumbnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/sorrowthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/luvresfinalmatv.mp4" data-title="Love & Rockets - Resurrection Hex (DeepDishLuvnDubMix)">
-                <img src="thumbnails/lovenresthumb.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/lovenresthumb.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/bigdawg.mp4" data-title="Laconic - Big Dawg">
-                <img src="thumbnails/bigdawgthumbnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/bigdawgthumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
              <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/booth.mp4" data-title="Olelujah - Zen, Robotics & Consciousness">
-                <img src="thumbnails/olelujahthumnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/olelujahthumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
                   <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/T_clip2.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
-                <img src="thumbnails/planethumnbail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/planethumnbail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/O_clip1.mp4" data-title="Michelle Acid - Orange">
-                <img src="thumbnails/orangethumbnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/orangethumbnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/T_clip1.mp4" data-title="Michelle Acid - Tokyo (Lovers Mix)">
-                <img src="thumbnails/tokyothumnail.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/tokyothumnail.jpg" alt="Scroll Down Thumbnail">
             </div>
             <div class="grid-card" data-src="https://media.githubusercontent.com/media/michelleacidtv/michelleacidtv/main/Clips/0009555_1.mp4" data-title="The End">
-                <img src="thumbnails/thendthum.jpg" alt="Scroll Down Thumbnail">
+                <img src="/thumbnails/thendthum.jpg" alt="Scroll Down Thumbnail">
             </div>
         </div>
     </div>
