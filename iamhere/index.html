@@ -11,9 +11,9 @@
  <style>
         @font-face {
             font-family: 'Xolonium';
-            src: url('Xolonium.woff2') format('woff2'),
-                 url('Xolonium.woff') format('woff'),
-                 url('Xolonium-Regular.ttf') format('truetype');
+            src: url('/Xolonium.woff2') format('woff2'),
+                 url('/Xolonium.woff') format('woff'),
+                 url('/Xolonium-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -33,7 +33,7 @@ html, body {
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('iamheremobile.webp');
+            background-image: url('/iamheremobile.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -218,20 +218,20 @@ html, body {
 <body>
 
     <div class="content-wrapper">
-        <a href="index.html" class="back-btn">back</a>
+        <a href="/" class="back-btn">back</a>
         
 <video autoplay loop muted playsinline id="bgAnimation">
-    <source src="alienscreen-1.mov" type="video/mp4; codecs=hvc1">
+    <source src="/alienscreen-1.mov" type="video/mp4; codecs=hvc1">
     
-    <source src="alienscreen.webm" type="video/webm">
+    <source src="/alienscreen.webm" type="video/webm">
     
     Your browser does not support transparent video backgrounds.
 </video>
         
 <video autoplay loop muted playsinline id="winkgif">
-    <source src="winksmall-1.mov" type="video/mp4; codecs=hvc1">
+    <source src="/winksmall-1.mov" type="video/mp4; codecs=hvc1">
     
-    <source src="winkgif.webm" type="video/webm">
+    <source src="/winkgif.webm" type="video/webm">
     
     Your browser does not support transparent video backgrounds.
 </video>
@@ -241,7 +241,7 @@ html, body {
         <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
         
 <div onclick="openVideo()">
-    <img id="facegif" src="facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
+    <img id="/facegif" src="facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
 </div>
 
 <div id="videoModal" class="modal">
