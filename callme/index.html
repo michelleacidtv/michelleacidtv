@@ -130,13 +130,11 @@
             white-space: nowrap; 
         }
 
-        /* STABILIZED SMILE IMAGE */
-        #smileimage2 {
-            display: none;
+        #kissface {
             position: absolute;
-            width: 511px; 
-            left: 88%;
-            top: 87%;  
+            width: 822px; 
+            left: 76%;
+            top: 83%;  
             transform: translate(-50%, -50%);
             z-index: 1;
         }
@@ -144,8 +142,7 @@
         /* Responsive scaling */
         @media (max-width: 768px) {
             #contact-form { width: 61vw; top: 67%; }
-            #smileimage2 { width: 260px; top: 42%; }
-            p.contact-info { font-size: 1.6rem; top: 50%; }
+            #kissface { width: 197px; top: 4%; left: 286px; }
             #status-message { font-size: 1.5rem; }
         }
     </style>
@@ -154,6 +151,9 @@
 
     <div class="content-wrapper">
         <a href="/" class="back-btn">back</a>
+
+        <img id="kissface" src="kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
+
         
         <!-- FIXED FORM WITH NESTED STATUS DIV -->
         <form id="contact-form">
@@ -163,7 +163,6 @@
             <div id="status-message"></div> 
         </form>
 
-        <img id="smileimage2" src="/bigsmilegif1NEW.png" alt="Smile2" class="Smile2" />
     </div>
 
     <!-- FIXED SCRIPT INCLUSIONS -->
