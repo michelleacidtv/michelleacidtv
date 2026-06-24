@@ -262,16 +262,6 @@
     box-shadow: 1px 1px 0 0 #000000;
 }
 
-        #kissface {
-            display: none;
-            position: absolute;
-            width: 822px; 
-            left: 76%;
-            top: 83%;  
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
         /* Modal Overlay Properties */
         .modal-overlay {
             display: none; 
@@ -311,7 +301,6 @@
         /* Responsive scaling */
         @media (max-width: 768px) {
             #unified-window { width: 76vw; top: 50%; }
-            #kissface { width: 197px; top: 4%; left: 286px; }
             #status-message { font-size: 0.5rem; }
             .window-grid-layout { column-gap: 10px; grid-template-columns: 1fr 65px; }
         }
@@ -321,8 +310,6 @@
 
     <div class="content-wrapper">
         <a href="/" class="back-btn">back</a>
-
-        <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
 
         <!-- UNIFIED RETRO WINDOW CONTAINER -->
         <div id="unified-window" class="retro-window">
