@@ -20,16 +20,16 @@
 
         html, body {
             background-color: #f3f6ff;
-            background-image: url(/contactbackground.webp);
-            background-size: cover;       /* Fills the screen */
-            background-position: center;  /* Centers the image */
+            
+            background-size: cover;       
+            background-position: center;  
             color: #e31982;
             font-family: "Xolonium", sans-serif;
             margin: 0;
             padding: 0;
             width: 100vw;
             height: 100vh;
-            overflow: hidden; /* Disables all scrolling */
+            overflow: hidden; 
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -39,157 +39,61 @@
         }
 
         .content-wrapper {
-            max-width: 90vw;
-            max-height: 90vh;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
             position: relative;
-            width: 100%;
-            height: 100%;
         }
 
         .back-btn {
             position: fixed;   
             top: 20px;         
             left: 20px;        
-            color: black;
-            border: 2px solid black;
-            border-radius: 30px;
-            padding: 7px 9px;
-            font-size: 0.8rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            z-index: 200;
-        }
-
-        .back-btn:hover {
-            background-color: black;
-            color: #f3f6ff;
-        }
-        
-        /* CENTERED FORM LAYOUT */
-        #contact-form {
-            position: absolute;  
-            left: 50%;
-            top: 67%;           
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            z-index: 50;
-            width: 231px;
-        }
-
-        #contact-form label {
-            font-size: 1rem;
-            color: black;
-        }
-
-        #contact-form input {
-            font-family: "Xolonium", sans-serif;
-            padding: 4px;
-            border: 2px solid #000000;
-            background: #ffffff;
-            color: #7fff00;
-            text-align: center;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        #contact-form button {
-            font-family: "Xolonium", sans-serif;
-            background-color: #000000;
-            color: whitesmoke;
-            border: none;
-            padding: 6px 20px;
-            font-weight: bold;
-            cursor: help;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-
-        #contact-form button:hover {
-            background-color: #3fe304;
-            color: #e31982;
-        }
-
-        /* STATUS MESSAGE INSIDE THE FORM */
-        #status-message {
-            margin-top: -8px;
-            color: #3fe304;       
-            font-family: "Xolonium", sans-serif;
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            white-space: nowrap; 
-        }
-
-        #kissface {
-            position: absolute;
-            width: 822px; 
-            left: 76%;
-            top: 83%;  
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-        /* RETRO LEGAL PIECES */
-        .retro-btn, .retro-window {
+            color: #000000;
+            background-color: #c0c0c0;
+            
+            /* Vintage square 3D borders */
+            border: 4px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            box-shadow: 1px 1px 0 0 #000000;
+            
+            padding: 4px 10px;
             font-family: Tahoma, "MS Sans Serif", sans-serif;
             font-size: 11px;
-        }
-
-        /* Bottom right placement for launcher button */
-        #legalLauncher {
-            position: absolute;
-            left: 50%;
-            top: 93%;
-            transform: translate(-50%, -50%);
-            z-index: 150;
-        }
-
-        .retro-btn {
-            background-color: #c0c0c0;
-            color: black;
-            border: 2px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
-            padding: 3px 10px;
-            cursor: default;
+            text-decoration: none;
             font-weight: normal;
-        }
-        .retro-btn:active {
-            border-color: #808080 #ffffff #ffffff #808080; 
-        }
-
-        .modal-overlay {
-            display: none; 
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1000;
+            text-align: center;
+            box-sizing: border-box;
+            z-index: 200;
+            cursor: default;
         }
 
+        /* Simulated 90s button press effect */
+        .back-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+            box-shadow: none;
+            padding: 5px 9px 3px 11px;
+        }
+
+        /* RETRO WINDOW SYSTEM */
         .retro-window {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 321px;
             background-color: #c0c0c0;
-            border: 2px solid;
-            border-color: #ffffff #000000 #000000 #ffffff;
-            text-align: left; /* Keep modal alignment standard classic */
+            border: 7px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            text-align: left; 
             box-shadow: 1px 1px 0 0 #000000;
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            color: #000000;
         }
 
-        /* Windows 98 Blue Gradient Bar */
+        /* Blue Title Bar */
         .title-bar {
-            background: linear-gradient(90deg, #000080, #1084d0);
+            background: #0006f7;
             color: white;
             padding: 3px 3px 3px 5px;
             display: flex;
@@ -216,8 +120,173 @@
             border-color: #808080 #ffffff #ffffff #808080;
         }
 
+        /* BRANDING HEADER SECTION (Inspired by Windows XP/images.jpeg Setup) */
+        .branding-bar {
+            background-image: url(contactbackground.png);/* Deep retro OS gradient styling */
+            background-size: cover; /* Forces the image to fill the entire header bar */
+            background-position: center center;
+            color: #ffffff;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #e79b38; /* Classic bottom highlight line separator */
+        }
+
+        .branding-logo {
+            width: auto;
+            height: 48px; /* Fixed height container bounds for logo assets */
+            display: block;
+            object-fit: contain;
+        }
+
+        .branding-text-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .branding-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin: 0 0 2px 0;
+            color: #ffffff;
+        }
+
+        .branding-subtitle {
+            font-size: 11px;
+            opacity: 0.85;
+            margin: 0;
+            color: #ffffff;
+        }
+
         .window-body {
-            padding: 6px;
+            padding: 12px;
+        }
+
+        /* PERFECTLY CENTERED WINDOW POSITIONING FOR ALL SCREENS */
+        #unified-window {
+            position: absolute;  
+            left: 50%;
+            top: 50%; /* Holds absolute center position on all screens */           
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            width: 436px; /* Marginally scaled to fit wider branding details comfortably */
+            min-height: 232px;
+        }
+
+        /* Container grid for layout rows */
+        .window-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 75px;
+            column-gap: 16px;
+            row-gap: 10px;
+        }
+
+        /* Left-side text elements and labels */
+        .grid-left-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Right-side button alignment slots */
+        .grid-right-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Full-width row setup for centering content */
+        .grid-center-row {
+            grid-column: 1 / span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #contact-form label {
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        #contact-form input {
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 12px;
+            padding: 3px 4px;
+            border: 2px solid;
+            border-color: #808080 #ffffff #ffffff #808080; 
+            background: #ffffff;
+            color: #000000;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* Classic Retro Button Style */
+        .retro-btn {
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            background-color: #c0c0c0;
+            color: black;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 4px 0;
+            text-align: center;
+            width: 100%;
+            cursor: default;
+            font-weight: normal;
+            outline: none;
+            box-sizing: border-box;
+        }
+        
+        .retro-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080; 
+        }
+
+        /* STATUS MESSAGE UNDER WINDOW Frame */
+#status-message {
+    display: none; /* Hidden by default, script will show it */
+    margin-top: 0px;
+    background-color: #e3ffc0;
+    color: #000000;
+    font-family: Tahoma, "MS Sans Serif", sans-serif;
+    font-size: 11px;
+    padding: 6px 12px;
+    text-align: center;
+    
+    /* Classic Vintage 3D borders matching your buttons/windows */
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 0 #000000;
+}
+
+        #kissface {
+            display: none;
+            position: absolute;
+            width: 822px; 
+            left: 76%;
+            top: 83%;  
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Modal Overlay Properties */
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        #legalModal .retro-window {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 321px;
         }
 
         .window-content {
@@ -226,7 +295,7 @@
             border: 2px solid;
             border-color: #808080 #ffffff #ffffff #808080; 
             padding: 10px;
-            height: 467px;
+            height: 464px;
             overflow-y: scroll; 
         }
 
@@ -242,10 +311,10 @@
 
         /* Responsive scaling */
         @media (max-width: 768px) {
-            #contact-form { width: 61vw; top: 67%; }
+            #unified-window { width: 76vw; top: 50%; }
             #kissface { width: 197px; top: 4%; left: 286px; }
-            #status-message { font-size: 1.5rem; }
-            #legalLauncher { bottom: 10px; right: 10px; }
+            #status-message { font-size: 0.5rem; }
+            .window-grid-layout { column-gap: 10px; grid-template-columns: 1fr 65px; }
         }
     </style>
 </head>
@@ -256,16 +325,61 @@
 
         <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
 
-        <form id="contact-form">
-            <label for="email">Enter E-mail for Updates:</label>
-            <input type="email" id="email" name="email" required>
-            <button type="submit">Go</button>
-            <div id="status-message"></div> 
-        </form>
+        <!-- UNIFIED RETRO WINDOW CONTAINER -->
+        <div id="unified-window" class="retro-window">
+            <!-- Window Title bar -->
+            <div class="title-bar">
+                <span class="title">System_Info.exe</span>
+                <button class="close-btn" type="button" onclick="document.getElementById('email').value=''">X</button>
+            </div>
+
+            <!-- BRANDING HEADER SECTION (Swap image path and text properties as desired) -->
+            <div class="branding-bar">
+                <img src="/logo.png" alt="Logo" class="branding-logo" onerror="this.style.display='none'" />
+                <div class="branding-text-group">
+                    <h1 class="branding-title">Michelle Acid</h1>
+                    <p class="branding-subtitle">System Info Module</p>
+                </div>
+            </div>
+
+            <!-- Form Content Box -->
+            <div class="window-body">
+                <form id="contact-form">
+                    <div class="window-grid-layout">
+                        
+                        <!-- ROW 1: Centered heading line -->
+                        <div class="grid-center-row">
+                            <label for="email" style="font-weight: bold;">Want to work together?</label>
+                        </div>
+
+                        <!-- ROW 2: The Centered "Read Me" Button Frame -->
+                        <div class="grid-center-row" style="margin-top: 2px;">
+                            <button id="legalLauncher" type="button" class="retro-btn" style="width: 100px;">Read Me</button>
+                        </div>
+
+                        <!-- ROW 3: Context subtext line -->
+                        <div class="grid-left-item" style="grid-column: 1 / span 2; margin-top: 4px;">
+                            <p style="margin: 0; color: black;">Enter your e-mail address for updates:</p>
+                        </div>
+
+                        <!-- ROW 4: Email field lined up perfectly with "Go" -->
+                        <div class="grid-left-item">
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="grid-right-item">
+                            <button type="submit" class="retro-btn">Go</button>
+                        </div>
+                        <div id="status-message"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
     </div>
 
-    <button id="legalLauncher" class="retro-btn">Read Me</button>
-
+    <!-- LEGAL MODAL DIALOG -->
     <div id="legalModal" class="modal-overlay">
         <div class="retro-window">
             <div class="title-bar">
@@ -273,34 +387,31 @@
                 <button id="closeBtn" class="close-btn">X</button>
             </div>
             <div class="window-body">
-<div class="window-content">
-    <!-- Notice to User Section -->
-    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
-    
-    <!-- Projects Clustered Tight -->
-    <p style="margin-bottom: 4px;">METRO: Animated via Adobe Photoshop.</p>
-    <p style="margin-bottom: 4px;">ACID FUTURE: Animated via Adobe Animate and After Effects.</p>
-    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video editing via Adobe Premiere; multi-track audio engineering via Ableton Live.</p>
-<p style="margin-bottom: 12px;">MICHELLEACID.TV: built and deployed through GitHub.</p>
-    <p style="margin-bottom: 8px;">Everything hand drawn by human on computer</p>
-<p style="margin-bottom: 8px; text-align: center;">***</p>
-    <!-- Services Section -->
-    <p style="margin-bottom: 8px;"><strong>What Can I Do for You</strong></p>
-    <p style="margin-bottom: 12px;">Album cover? Spotify canvas? Music video? Animated clip? Flyer? CONTENT? Draw you like a monkey? What would you like for me to do for you</p>
+                <div class="window-content">
+                    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
+                    
+                    <p style="margin-bottom: 4px;">METRO: Animated in Adobe Photoshop.</p>
+                    <p style="margin-bottom: 4px;">ACID FUTURE: Animated in Adobe Animate and After Effects.</p>
+                    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video edited in Adobe Premiere; audio engineered in Ableton Live.</p>
+                    <p style="margin-bottom: 12px;">MICHELLEACID.TV: Built and deployed through GitHub.</p>
+                    <p style="margin-bottom: 8px;">Everything hand drawn by human on computer</p>
+                    <p style="margin-bottom: 8px; text-align: center;">***</p>
+                    
+                    <p style="margin-bottom: 8px;"><strong>What Can I Do for You</strong></p>
+                    <p style="margin-bottom: 24px;">Album cover? Spotify canvas? Music video? Animated clip? Flyer? CONTENT? Draw you like a monkey? What would you like for me to do for you</p>
 
-    <!-- Call to Action & Sign-off Clustered Together -->
-    <p style="margin-bottom: 24px;">Want to work together? michelleacidtv@gmail.com</p>
-    <p style="margin-bottom: 4px;">Kind regards,</p>
-    <p style="margin-bottom: 28px;">ɯıɔɥǝןןǝ ɐɔıp</p>
-    <!-- Quote -->
-    <p style="margin-bottom: 28px;"><em>“Why would you focus on one thing and get really good at it when you can do a lot of things, mediocrely” ~ Thomas Jefferson</em></p>
-    
-    <!-- Footer Legal Line (No extra bottom space needed) -->
-    <p style="margin-bottom: 0px;">Content is subject to change without notice. All rights reserved &copy; 2025-2026. Made in the USA.</p>
-</div>
+                    <p style="margin-bottom: 24px;">Want to work together? <span style="color: #ff0000;">michelleacidtv@gmail.com</span></p>                    
+                    <p style="margin-bottom: 4px;">Kind regards,</p>
+                    <p style="margin-bottom: 8px;">ɯıɔɥǝןןǝ ɐɔıp</p>
+                    <p style="margin-bottom: 8px; text-align: center;">***</p>
+
+                    <p style="margin-bottom: 24px;"><em>“Why would you focus on one thing and get really good at it when you can do a lot of things, mediocrely” ~ Thomas Jefferson</em></p>
+                    
+                    <p style="margin-bottom: 0px;">Content is subject to change without notice. All rights reserved &copy; 2025-2026. Made in the USA.</p>
+                </div>
                 
                 <div class="action-buttons">
-                    <button id="agreeBtn" class="retro-btn" style="width: 60px;">OK</button>
+                    <button id="agreeBtn" class="retro-btn" style="width: 60px; padding: 3px 0;">OK</button>
                 </div>
             </div>
         </div>
@@ -309,7 +420,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         // Form Handling
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
+document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault(); 
 
             const emailInput = document.getElementById("email");
@@ -317,23 +428,25 @@
             
             if (!emailInput || !statusMessage) return; 
 
-            statusMessage.innerHTML = "Sending...";
+            // --- UPDATE STARTS HERE ---
+            statusMessage.style.display = "block"; // Makes the retro alert box appear
+            statusMessage.innerHTML = "Sending request...";
 
-            // Post request to Formspree
             axios.post('https://formspree.io/f/xovdvkjq', {
                 email: emailInput.value
             })
             .then(function(response) {
-                statusMessage.innerHTML = "꓄ꃅꍏꈤꀘꌗ. ꁅꂦ ꀤꈤ ꉣꍟꍏꉓꍟ";
-                emailInput.value = ""; // Clear input box
+                statusMessage.innerHTML = "Registration complete. Go in peace.";
+                emailInput.value = ""; 
             })
             .catch(function(error) {
-                statusMessage.innerHTML = "Error. Try again.";
+                statusMessage.innerHTML = "ERROR: System failed to process request. Try again.";
                 console.error("Formspree Error Details:", error);
             });
+            // --- UPDATE ENDS HERE ---
         });
 
-        // Retro Dialog Box Modal Scripts
+        // Modal Scripts
         const legalLauncher = document.getElementById("legalLauncher");
         const legalModal = document.getElementById("legalModal");
         const closeBtn = document.getElementById("closeBtn");
@@ -356,6 +469,5 @@
             }
         }
     </script>
-
 </body>
 </html>
