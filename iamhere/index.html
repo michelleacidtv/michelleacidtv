@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>i̷̡̡͔̮͛͆͝ ̴̧̨͕̣̞̤̖̤͙̆ǎ̷̫̫̪͈̦͎͔̥̝͌͜ṃ̴̄͝ ̷̙͛̅̿̋̀̑̓h̵͍̤́̋͒̍̚̕ē̸̼̰̊͌̂͊ŗ̵̘̰̺͖̣̆̀͑͋̓̀̄̈́̏è̵̫̙̞̝͂͊͊</title>
-    <link rel="icon" type="image/png" href="faviconnew.png">
+    <link rel="icon" type="image/png" href="/faviconnew.png">
     <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
     
- <style>
+    <style>
         @font-face {
             font-family: 'Xolonium';
-            src: url('Xolonium.woff2') format('woff2'),
-                 url('Xolonium.woff') format('woff'),
-                 url('Xolonium-Regular.ttf') format('truetype');
+            src: url('/Xolonium.woff2') format('woff2'),
+                 url('/Xolonium.woff') format('woff'),
+                 url('/Xolonium-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -31,7 +31,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('iamhere%20copy.webp');
+            /* FIXED: Changed to absolute slash and removed the space %20 encoding bug */
+            background-image: url('/iamhere-copy.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -72,27 +73,26 @@
             color: #fffce6;
         }
         
-        /* NEW TRANSPARENT BACKDROP ANIMATION CLASS */
         #bgAnimation {
             position: absolute;
-            width: 144px; /* Adjust size to fit your asset's dimensions */
+            width: 144px; 
             height: auto;
             top: 78%;
             left: 78%;
             transform: translate(-50%, -50%);
-            z-index: 2; /* Sits cleanly over your face background, beneath text/buttons */
-            pointer-events: none; /* Allows click signals to pass straight through to elements behind it */
+            z-index: 2; 
+            pointer-events: none; 
         }
      
-             #winkgif {
+        #winkgif {
             position: absolute;
-            width: 129px; /* Adjust size to fit your asset's dimensions */
+            width: 129px; 
             height: auto;
             top: 43%;
             left: 26%;
             transform: translate(-50%, -50%);
-            z-index: 2; /* Sits cleanly over your face background, beneath text/buttons */
-            pointer-events: none; /* Allows click signals to pass straight through to elements behind it */
+            z-index: 2; 
+            pointer-events: none; 
         }
         
         .computer-gif {
@@ -106,7 +106,6 @@
             z-index: 5;
         }
         
-        /* FIXED BUTTON STYLING */
         #clickmeButton {
             position: absolute;
             top: 91%;
@@ -120,7 +119,6 @@
             z-index: 100;
         }
 
-        /* FIXED COUNT POSITIONING */
         #clickCount {
             position: absolute;
             top: 56%;
@@ -136,7 +134,7 @@
             white-space: nowrap;
         }
         
-#facegif {
+        #facegif {
             position: absolute;
             width: 30vw; 
             top: 20%;  
@@ -145,15 +143,13 @@
             z-index: 1; 
             cursor: pointer; 
             transition: transform 0.2s;
-            /* pointer-events: none; REMOVED so the button is clickable */
         }
      
-        /* Added both class and ID so click feedback works flawlessly */
         #facegif:active, .Face:active {
-            transform: translateY(-50%) scale(0.95); /* Kept your absolute centering logic intact */
+            transform: translateY(-50%) scale(0.95); 
         }
      
-                  #kissface {
+        #kissface {
             position: absolute;
             width: 785px; 
             left: 77%;
@@ -164,7 +160,6 @@
 
         /* Mobile Layouts */
         @media (max-width: 768px) {
-            #bgAnimation { width: 300px; top: 45%; }
             .computer-gif { width: 41vw; left: 25%; top: 87%; }
             #clickmeButton { width: 25vw; left: 17%; top: 93%; font-size: 9px; }
             #clickCount { left: 63%; top: 21%; font-size: 14px; }
@@ -174,127 +169,110 @@
             #kissface { width: 197px; top: 4%; left: 286px; }
         }
      
-     /* The semi-transparent dark backdrop covering the whole screen */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 10000; /* Keeps it on top of everything else */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Dims your background site */
-    justify-content: center;
-    align-items: center;
-}
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 10000; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); 
+            justify-content: center;
+            align-items: center;
+        }
 
-/* The wrapper keeping the video responsive */
-.modal-content {
-    position: relative;
-    width: 80%;
-    max-width: 800px;
-    aspect-ratio: 16 / 9; /* Keeps standard widescreen video shape */
-    border: 2px solid #e31982; /* Pink border matching your theme */
-    background-color: black;
-}
+        .modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            aspect-ratio: 16 / 9; 
+            border: 2px solid #e31982; 
+            background-color: black;
+        }
 
-/* The actual video player inside the box */
-.modal-content iframe {
-    width: 100%;
-    height: 100%;
-}
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+        }
 
-/* The "X" button to close the video player */
-.close-video {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: #e31982;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
+        .close-video {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #e31982;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-.close-video:hover {
-    color: white;
-}
-     
-     
+        .close-video:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
 
-    
     <div class="content-wrapper">
-        <a href="index.html" class="back-btn">back</a>
+        <a href="/index.html" class="back-btn">back</a>
         
-                <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
+        <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
 
-        
-        <!-- TRANSPARENT VIDEO (ACTING AS AN OPTIMIZED GIF COUPLER) -->
         <video autoplay loop muted playsinline id="bgAnimation">
-            <source src="alienscreen.webm" type="video/webm">
+            <source src="/alienscreen.webm" type="video/webm">
             Your browser does not support WebM transparency.
         </video>
         
-                <video autoplay loop muted playsinline id="winkgif">
-            <source src="winkgif.webm" type="video/webm">
+        <video autoplay loop muted playsinline id="winkgif">
+            <source src="/winkgif.webm" type="video/webm">
             Your browser does not support WebM transparency.
         </video>
         
         <button id="clickmeButton" onclick="countClicks()">click me</button>
         <p id="clickCount">Clicks: 0</p>
-        <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
         
-<div onclick="openVideo()">
-    <img id="facegif" src="facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
-</div>
+        <img src="/computer.gif" alt="Animated Computer" class="computer-gif" />
+        
+        <div onclick="openVideo()">
+            <img id="facegif" src="/facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
+        </div>
 
-<div id="videoModal" class="modal">
-    <div class="modal-content">
-        <span class="close-video" onclick="closeVideo()">&times;</span>
-        <iframe id="youtubePlayer" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-</div>
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-video" onclick="closeVideo()">&times;</span>
+                <iframe id="youtubePlayer" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
         
     </div>
     
     <script>
-        
-// 1. CLEANED UP: Only the video IDs extracted from your links are kept here
-const videoList = [
-    "73omlAllMm4",  // Video 1
-    "JSvcoOCD3IU",  // Video 2
-    "0bFbx3fIUoc",  // Video 3
-    "JaKcHS27RQU"   // Video 4
-];
+        const videoList = [
+            "73omlAllMm4",  
+            "JSvcoOCD3IU",  
+            "0bFbx3fIUoc",  
+            "JaKcHS27RQU"   
+        ];
 
-let count = 0;
-function countClicks() {
-    count++;
-    document.getElementById("clickCount").innerText = "Clicks: " + count;
-}
-        
-function openVideo() {
-    // 2. NEW: This picks a random number between 0 and the total number of videos in your list
-    const randomIndex = Math.floor(Math.random() * videoList.length);
-    const chosenVideoId = videoList[randomIndex];
+        let count = 0;
+        function countClicks() {
+            count++;
+            document.getElementById("clickCount").innerText = "Clicks: " + count;
+        }
+                
+        function openVideo() {
+            const randomIndex = Math.floor(Math.random() * videoList.length);
+            const chosenVideoId = videoList[randomIndex];
 
-    // 3. Show the hidden pop-up container
-    document.getElementById("videoModal").style.display = "flex";
-    
-    // 4. FIXED: Instead of hardcoding one video, this dynamically injects the randomly chosen video ID
-    document.getElementById("youtubePlayer").src = `https://www.youtube.com/embed/${chosenVideoId}?autoplay=1`;
-}
+            document.getElementById("videoModal").style.display = "flex";
+            document.getElementById("youtubePlayer").src = `https://www.youtube.com/embed/${chosenVideoId}?autoplay=1`;
+        }
 
-function closeVideo() {
-    // 1. Hide the pop-up container
-    document.getElementById("videoModal").style.display = "none";
-    
-    // 2. Kill the video source so the audio stops playing
-    document.getElementById("youtubePlayer").src = "";
-}
+        function closeVideo() {
+            document.getElementById("videoModal").style.display = "none";
+            document.getElementById("youtubePlayer").src = "";
+        }
     </script>
 </body>
 </html>
