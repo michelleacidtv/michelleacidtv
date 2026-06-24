@@ -4,22 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>i̷̡̡͔̮͛͆͝ ̴̧̨͕̣̞̤̖̤͙̆ǎ̷̫̫̪͈̦͎͔̥̝͌͜ṃ̴̄͝ ̷̙͛̅̿̋̀̑̓h̵͍̤́̋͒̍̚̕ē̸̼̰̊͌̂͊ŗ̵̘̰̺͖̣̆̀͑͋̓̀̄̈́̏è̵̫̙̞̝͂͊͊</title>
-    <link rel="canonical" href="https://www.michelleacid.tv/" />
-    <link rel="icon" type="image/png" href="/faviconnew.png">
+    <link rel="icon" type="image/png" href="faviconnew.png">
     <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
     
  <style>
         @font-face {
             font-family: 'Xolonium';
-            src: url('/Xolonium.woff2') format('woff2'),
-                 url('/Xolonium.woff') format('woff'),
-                 url('/Xolonium-Regular.ttf') format('truetype');
+            src: url('Xolonium.woff2') format('woff2'),
+                 url('Xolonium.woff') format('woff'),
+                 url('Xolonium-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
-html, body {
-
+        html, body {
             background-color: #fffce6;
             color: #e31982;
             font-family: "Xolonium", sans-serif;
@@ -33,14 +31,13 @@ html, body {
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('/iamherebg.webp');
+            background-image: url('iamhere%20copy.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             cursor: default;
+        }
 
-        } 
-     
         .content-wrapper {
             max-width: 90vw;
             max-height: 90vh;
@@ -78,10 +75,10 @@ html, body {
         /* NEW TRANSPARENT BACKDROP ANIMATION CLASS */
         #bgAnimation {
             position: absolute;
-            width: 253px; /* Adjust size to fit your asset's dimensions */
+            width: 144px; /* Adjust size to fit your asset's dimensions */
             height: auto;
-            top: 71%;
-            left: 41%;
+            top: 78%;
+            left: 78%;
             transform: translate(-50%, -50%);
             z-index: 2; /* Sits cleanly over your face background, beneath text/buttons */
             pointer-events: none; /* Allows click signals to pass straight through to elements behind it */
@@ -100,9 +97,9 @@ html, body {
         
         .computer-gif {
             position: absolute; 
-            top: 75%; 
-            left: 89%; 
-            width: 25%; 
+            top: 81%; 
+            left: 41%; 
+            width: 17%; 
             max-width: 1000px; 
             height: auto; 
             transform: translate(-50%, -50%);
@@ -112,10 +109,10 @@ html, body {
         /* FIXED BUTTON STYLING */
         #clickmeButton {
             position: absolute;
-            top: 90%;
-            left: 91%; 
+            top: 91%;
+            left: 42%; 
             font-size: 15px;
-            padding: 7px 24px;
+            padding: 4px 9px;
             color: #E31982;
             font-family: "Xolonium", sans-serif;
             background-color: rgba(128, 113, 121, 0.34);
@@ -126,12 +123,12 @@ html, body {
         /* FIXED COUNT POSITIONING */
         #clickCount {
             position: absolute;
-            top: 90%;
-            left: 41%;
+            top: 56%;
+            left: 43%;
             transform: translateX(-50%);
             font-family: "Xolonium", sans-serif;
             color: #e31982;
-            font-size: 18px;
+            font-size: 12px;
             border: 2px double #e31982;
             padding: 5px 15px;
             margin: 0;
@@ -155,6 +152,15 @@ html, body {
         #facegif:active, .Face:active {
             transform: translateY(-50%) scale(0.95); /* Kept your absolute centering logic intact */
         }
+     
+                  #kissface {
+            position: absolute;
+            width: 785px; 
+            left: 77%;
+            top: 80%;  
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
 
         /* Mobile Layouts */
         @media (max-width: 768px) {
@@ -165,6 +171,7 @@ html, body {
             #facegif { width: 58vw; left: 23%; top: 13%; } 
             #winkgif { width: 21vw; left: 29%; top: 22%; } 
             #bgAnimation { width: 40vw; left: 22%; top: 62%; } 
+            #kissface { width: 197px; top: 4%; left: 286px; }
         }
      
      /* The semi-transparent dark backdrop covering the whole screen */
@@ -213,35 +220,35 @@ html, body {
     color: white;
 }
      
+     
     </style>
 </head>
 <body>
 
+    
     <div class="content-wrapper">
-        <a href="/" class="back-btn">back</a>
+        <a href="index.html" class="back-btn">back</a>
         
-<video autoplay loop muted playsinline id="bgAnimation">
-    <source src="/alienscreen-1.mov" type="video/mp4; codecs=hvc1">
-    
-    <source src="/alienscreen.webm" type="video/webm">
-    
-    Your browser does not support transparent video backgrounds.
-</video>
+                <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
+
         
-<video autoplay loop muted playsinline id="winkgif">
-    <source src="/winksmall-1.mov" type="video/mp4; codecs=hvc1">
-    
-    <source src="/winkgif.webm" type="video/webm">
-    
-    Your browser does not support transparent video backgrounds.
-</video>
+        <!-- TRANSPARENT VIDEO (ACTING AS AN OPTIMIZED GIF COUPLER) -->
+        <video autoplay loop muted playsinline id="bgAnimation">
+            <source src="alienscreen.webm" type="video/webm">
+            Your browser does not support WebM transparency.
+        </video>
+        
+                <video autoplay loop muted playsinline id="winkgif">
+            <source src="winkgif.webm" type="video/webm">
+            Your browser does not support WebM transparency.
+        </video>
         
         <button id="clickmeButton" onclick="countClicks()">click me</button>
         <p id="clickCount">Clicks: 0</p>
-        <img src="/computer.gif" alt="Animated Computer" class="computer-gif" />
+        <img src="computer.gif" alt="Animated Computer" class="computer-gif" />
         
 <div onclick="openVideo()">
-    <img id="facegif" src="/facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
+    <img id="facegif" src="facegif-ezgif.com-optipng.png" alt="Face" class="Face" />
 </div>
 
 <div id="videoModal" class="modal">
@@ -260,14 +267,7 @@ const videoList = [
     "73omlAllMm4",  // Video 1
     "JSvcoOCD3IU",  // Video 2
     "0bFbx3fIUoc",  // Video 3
-    "JaKcHS27RQU",
-    "TUDvI9KDags",
-    "QTvFzBS6e68",
-    "iDNiLqM90fM",
-    "T1gpgU_xkUk",
-    "KX7TJrlq8xI",
-    "9yPHiSaNmdM",
-    "y4C2hk4FuC0"
+    "JaKcHS27RQU"   // Video 4
 ];
 
 let count = 0;
