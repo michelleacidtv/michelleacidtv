@@ -139,11 +139,113 @@
             z-index: 1;
         }
 
+        /* RETRO LEGAL PIECES */
+        .retro-btn, .retro-window {
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+        }
+
+        /* Bottom right placement for launcher button */
+        #legalLauncher {
+            position: absolute;
+            left: 50%;
+            top: 93%;
+            transform: translate(-50%, -50%);
+            z-index: 150;
+        }
+
+        .retro-btn {
+            background-color: #c0c0c0;
+            color: black;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 3px 10px;
+            cursor: default;
+            font-weight: normal;
+        }
+        .retro-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080; 
+        }
+
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .retro-window {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 321px;
+            background-color: #c0c0c0;
+            border: 2px solid;
+            border-color: #ffffff #000000 #000000 #ffffff;
+            text-align: left; /* Keep modal alignment standard classic */
+            box-shadow: 1px 1px 0 0 #000000;
+        }
+
+        /* Windows 98 Blue Gradient Bar */
+        .title-bar {
+            background: linear-gradient(90deg, #000080, #1084d0);
+            color: white;
+            padding: 3px 3px 3px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .title {
+            letter-spacing: 0.5px;
+        }
+
+        .close-btn {
+            background-color: #c0c0c0;
+            color: black;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            font-weight: bold;
+            font-size: 9px;
+            padding: 0px 4px;
+            cursor: default;
+        }
+        .close-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+
+        .window-body {
+            padding: 6px;
+        }
+
+        .window-content {
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid;
+            border-color: #808080 #ffffff #ffffff #808080; 
+            padding: 10px;
+            height: 467px;
+            overflow-y: scroll; 
+        }
+
+        .window-content p {
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .action-buttons {
+            margin-top: 8px;
+            text-align: center;
+        }
+
         /* Responsive scaling */
         @media (max-width: 768px) {
             #contact-form { width: 61vw; top: 67%; }
             #kissface { width: 197px; top: 4%; left: 286px; }
             #status-message { font-size: 1.5rem; }
+            #legalLauncher { bottom: 10px; right: 10px; }
         }
     </style>
 </head>
@@ -154,20 +256,59 @@
 
         <img id="kissface" src="/kissface-ezgif.com-optimize.gif" alt="kissface" class="kiss" />
 
-        
-        <!-- FIXED FORM WITH NESTED STATUS DIV -->
         <form id="contact-form">
             <label for="email">Enter E-mail for Updates:</label>
             <input type="email" id="email" name="email" required>
             <button type="submit">Go</button>
             <div id="status-message"></div> 
         </form>
-
     </div>
 
-    <!-- FIXED SCRIPT INCLUSIONS -->
+    <button id="legalLauncher" class="retro-btn">Read Me</button>
+
+    <div id="legalModal" class="modal-overlay">
+        <div class="retro-window">
+            <div class="title-bar">
+                <span class="title">READ_ME.TXT</span>
+                <button id="closeBtn" class="close-btn">X</button>
+            </div>
+            <div class="window-body">
+<div class="window-content">
+    <!-- Notice to User Section -->
+    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
+    
+    <!-- Projects Clustered Tight -->
+    <p style="margin-bottom: 4px;">METRO: Animated via Adobe Photoshop.</p>
+    <p style="margin-bottom: 4px;">ACID FUTURE: Animated via Adobe Animate and After Effects.</p>
+    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video editing via Adobe Premiere; multi-track audio engineering via Ableton Live.</p>
+<p style="margin-bottom: 12px;">MICHELLEACID.TV: built and deployed through GitHub.</p>
+    <p style="margin-bottom: 8px;">Everything hand drawn by human on computer</p>
+<p style="margin-bottom: 8px; text-align: center;">***</p>
+    <!-- Services Section -->
+    <p style="margin-bottom: 8px;"><strong>What Can I Do for You</strong></p>
+    <p style="margin-bottom: 12px;">Album cover? Spotify canvas? Music video? Animated clip? Flyer? CONTENT? Draw you like a monkey? What would you like for me to do for you</p>
+
+    <!-- Call to Action & Sign-off Clustered Together -->
+    <p style="margin-bottom: 24px;">Want to work together? michelleacidtv@gmail.com</p>
+    <p style="margin-bottom: 4px;">Kind regards,</p>
+    <p style="margin-bottom: 28px;">ɯıɔɥǝןןǝ ɐɔıp</p>
+    <!-- Quote -->
+    <p style="margin-bottom: 28px;"><em>“Why would you focus on one thing and get really good at it when you can do a lot of things, mediocrely” ~ Thomas Jefferson</em></p>
+    
+    <!-- Footer Legal Line (No extra bottom space needed) -->
+    <p style="margin-bottom: 0px;">Content is subject to change without notice. All rights reserved &copy; 2025-2026. Made in the USA.</p>
+</div>
+                
+                <div class="action-buttons">
+                    <button id="agreeBtn" class="retro-btn" style="width: 60px;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+        // Form Handling
         document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault(); 
 
@@ -191,6 +332,29 @@
                 console.error("Formspree Error Details:", error);
             });
         });
+
+        // Retro Dialog Box Modal Scripts
+        const legalLauncher = document.getElementById("legalLauncher");
+        const legalModal = document.getElementById("legalModal");
+        const closeBtn = document.getElementById("closeBtn");
+        const agreeBtn = document.getElementById("agreeBtn");
+
+        legalLauncher.onclick = function() {
+            legalModal.style.display = "block";
+        }
+
+        function closeModal() {
+            legalModal.style.display = "none";
+        }
+
+        closeBtn.onclick = closeModal;
+        agreeBtn.onclick = closeModal;
+
+        window.onclick = function(event) {
+            if (event.target === legalModal) {
+                closeModal();
+            }
+        }
     </script>
 
 </body>
