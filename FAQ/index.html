@@ -1,1 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FAQ</title>
+    <link rel="canonical" href="https://www.michelleacid.tv/" />
+    <link rel="icon" type="image/png" href="/faviconnew.png">
+    <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
+    
+    <style>
+        @font-face {
+            font-family: 'Xolonium';
+            src: url('/Xolonium.woff2') format('woff2'),
+                 url('/Xolonium.woff') format('woff'),
+                 url('/Xolonium-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 
+        html, body {
+            background-color: #f3f6ff;
+            background-size: cover;       
+            background-position: center;  
+            color: #e31982;
+            font-family: "Xolonium", sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: default;
+        }
+
+        .content-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .back-btn {
+            position: fixed;   
+            top: 20px;         
+            left: 20px;        
+            color: #000000;
+            background-color: #c0c0c0;
+            
+            /* Vintage square 3D borders */
+            border: 4px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            box-shadow: 1px 1px 0 0 #000000;
+            
+            padding: 4px 10px;
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            text-decoration: none;
+            font-weight: normal;
+            text-align: center;
+            box-sizing: border-box;
+            z-index: 200;
+            cursor: default;
+        }
+
+        /* Simulated 90s button press effect */
+        .back-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+            box-shadow: none;
+            padding: 5px 9px 3px 11px;
+        }
+
+        /* RETRO WINDOW SYSTEM */
+               .retro-window {
+            background-color: #c0c0c0;
+            border: 7px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            text-align: left; 
+            box-shadow: 1px 1px 0 0 #000000;
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            color: #000000;
+        }
+
+        /* Blue Title Bar */
+        .title-bar {
+            background: #0006f7;
+            color: white;
+            padding: 3px 3px 3px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .title {
+            letter-spacing: 0.5px;
+        }
+
+        .close-btn {
+            background-color: #c0c0c0;
+            color: black;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            font-weight: bold;
+            font-size: 9px;
+            padding: 0px 4px;
+            cursor: default;
+        }
+        .close-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080;
+        }
+
+        /* BRANDING HEADER SECTION (Inspired by Windows XP/images.jpeg Setup) */
+        .branding-bar {
+            background-image: url(/dialogbox.webp);/* Deep retro OS gradient styling */
+            background-size: cover; /* Forces the image to fill the entire header bar */
+            background-position: center center;
+            color: #ffffff;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #e79b38; /* Classic bottom highlight line separator */
+        }
+
+        .branding-logo {
+            width: auto;
+            height: 48px; /* Fixed height container bounds for logo assets */
+            display: block;
+            object-fit: contain;
+        }
+
+        .branding-text-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgba(0, 222, 255, 0.77); /* Black tint with 55% opacity */
+    padding: 6px 4px;                      /* Adds space around the text inside the box */
+    border-radius: 3px;                     /* Slightly rounds the corners */
+    
+        }
+
+        .branding-title {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin: 0 0 2px 0;
+            color: #ffffff;
+        }
+
+        .branding-subtitle {
+            font-size: 11px;
+            opacity: 0.85;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .window-body {
+            padding: 12px;
+        }
+
+        /* PERFECTLY CENTERED WINDOW POSITIONING FOR ALL SCREENS */
+        #unified-window {
+            position: absolute;  
+            left: 50%;
+            top: 50%; /* Holds absolute center position on all screens */           
+            transform: translate(-50%, -50%);
+            z-index: 50;
+            width: 436px; /* Marginally scaled to fit wider branding details comfortably */
+            min-height: 232px;
+        }
+
+        /* Container grid for layout rows */
+        .window-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 75px;
+            column-gap: 16px;
+            row-gap: 10px;
+        }
+
+        /* Left-side text elements and labels */
+        .grid-left-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Right-side button alignment slots */
+        .grid-right-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Full-width row setup for centering content */
+        .grid-center-row {
+            grid-column: 1 / span 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #contact-form label {
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        #contact-form input {
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 12px;
+            padding: 3px 4px;
+            border: 2px solid;
+            border-color: #808080 #ffffff #ffffff #808080; 
+            background: #ffffff;
+            color: #000000;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        /* Classic Retro Button Style */
+        .retro-btn {
+            font-family: Tahoma, "MS Sans Serif", sans-serif;
+            font-size: 11px;
+            background-color: #c0c0c0;
+            color: black;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 4px 0;
+            text-align: center;
+            width: 100%;
+            cursor: default;
+            font-weight: normal;
+            outline: none;
+            box-sizing: border-box;
+        }
+        
+        .retro-btn:active {
+            border-color: #808080 #ffffff #ffffff #808080; 
+        }
+
+        /* STATUS MESSAGE UNDER WINDOW Frame */
+#status-message {
+    display: none; /* Hidden by default, script will show it */
+    margin-top: 0px;
+    background-color: #e3ffc0;
+    color: #000000;
+    font-family: Tahoma, "MS Sans Serif", sans-serif;
+    font-size: 11px;
+    padding: 6px 12px;
+    text-align: center;
+    
+    /* Classic Vintage 3D borders matching your buttons/windows */
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: 1px 1px 0 0 #000000;
+}
+
+
+        /* Modal Overlay Properties */
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        #legalModal .retro-window {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 321px;
+        }
+        
+    #legalModal2 .retro-window {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 321px;       /* Adjust this value to make it wider or narrower */
+}
+
+#legalModal2 .window-content {
+    height: 373px;      /* Adjust this value to make it taller or shorter */
+}
+
+        .window-content {
+            background: #ffffff;
+            color: #000000;
+            border: 2px solid;
+            border-color: #808080 #ffffff #ffffff #808080; 
+            padding: 10px;
+            height: 296px;
+            overflow-y: scroll; 
+        }
+
+        .window-content p {
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .action-buttons {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Responsive scaling */
+@media (max-width: 768px) {
+    #unified-window { width: 85vw; top: 50%; } /* Slightly widened on mobile to give text more horizontal runway */
+    #status-message { font-size: 0.5rem; }
+    .window-grid-layout { column-gap: 10px; grid-template-columns: 1fr 65px; }
+    
+    /* Forces label text to stay on one line and scales down font gracefully */
+    .responsive-label {
+        font-size: 10px !important;
+        white-space: nowrap !important;
+        min-height: auto !important;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="/" class="back-btn">back</a>
+
+        <!-- UNIFIED RETRO WINDOW CONTAINER -->
+        <div id="unified-window" class="retro-window">
+            <!-- Window Title bar -->
+            <div class="title-bar">
+                <span class="title">System_Info.exe</span>
+                <button class="close-btn" type="button" onclick="document.getElementById('email').value=''">X</button>
+            </div>
+
+            <!-- BRANDING HEADER SECTION (Swap image path and text properties as desired) -->
+            <div class="branding-bar">
+                <img src="/logo.png" alt="Logo" class="branding-logo" onerror="this.style.display='none'" />
+                <div class="branding-text-group">
+                    <h1 class="branding-title">Michelle Acid</h1>
+                    <p class="branding-subtitle">System Info Module</p>
+                </div>
+            </div>
+
+            <!-- Form Content Box -->
+            <div class="window-body">
+                <form id="contact-form">
+                    <div class="window-grid-layout">
+                        
+<div class="grid-center-row" style="display: flex; width: 100%; justify-content: center; margin-bottom: 8px;">
+    <div style="display: flex; width: 100%; max-width: 320px; justify-content: center;">
+        
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; padding: 0 4px;">
+            <label for="email" class="responsive-label" style="font-weight: bold; min-height: 2.6em; display: flex; align-items: flex-end; text-align: center;">Want to work together?</label>
+            <button id="legalLauncher" type="button" class="retro-btn" style="width: 100px; max-width: 100%;">Read Me</button>
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; padding: 0 4px;">
+            <label class="responsive-label" style="font-weight: bold; min-height: 2.6em; display: flex; align-items: flex-end; text-align: center;">FAQ</label>
+            <button id="legalLauncher2" type="button" class="retro-btn" style="width: 100px; max-width: 100%;">Click Me</button>
+        </div>
+
+    </div>
+</div>
+
+                        <!-- ROW 3: Context subtext line -->
+                        <div class="grid-left-item" style="grid-column: 1 / span 2; margin-top: 4px;">
+                            <p style="margin: 0; color: black;">Enter your e-mail address for updates:</p>
+                        </div>
+
+                        <!-- ROW 4: Email field lined up perfectly with "Go" -->
+                        <div class="grid-left-item">
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="grid-right-item">
+                            <button type="submit" class="retro-btn">Go</button>
+                        </div>
+                        <div id="status-message"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- LEGAL MODAL DIALOG -->
+    <div id="legalModal" class="modal-overlay">
+        <div class="retro-window">
+            <div class="title-bar">
+                <span class="title">READ_ME.TXT</span>
+                <button id="closeBtn" class="close-btn">X</button>
+            </div>
+            <div class="window-body">
+                <div class="window-content">
+                   
+                    <p style="margin-bottom: 8px;"><strong>What Can I Do for You</strong></p>
+                    <p style="margin-bottom: 24px;">Album cover? Spotify canvas? Music video? Animated clip? Flyer? CONTENT? Draw you like a monkey? What would you like for me to do for you</p>
+
+                    <p style="margin-bottom: 24px;">Want to work together? <span style="color: #ff0000;">michelleacidtv@gmail.com</span></p>                    
+                    <p style="margin-bottom: 4px;">Kind regards,</p>
+                    <p style="margin-bottom: 8px;">ɯıɔɥǝןןǝ ɐɔıp</p>
+                    <p style="margin-bottom: 8px; text-align: center;">***</p>
+
+                    <p style="margin-bottom: 24px;"><em>“Why would you focus on one thing and get really good at it when you can do a lot of things, mediocrely” ~ Thomas Jefferson</em></p>
+                    
+                    <p style="margin-bottom: 0px;">Content is subject to change without notice. All rights reserved &copy; 2025-2026. Made in the USA.</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="agreeBtn" class="retro-btn" style="width: 60px; padding: 3px 0;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="legalModal2" class="modal-overlay">
+        <div class="retro-window">
+            <div class="title-bar">
+                <span class="title">FAQ.TXT</span>
+                <button id="closeBtn2" class="close-btn">X</button>
+            </div>
+            <div class="window-body">
+                <div class="window-content">
+                    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
+                    
+                    <p style="margin-bottom: 4px;">METRO: Animated in Adobe Photoshop.</p>
+                    <p style="margin-bottom: 4px;">ACID FUTURE: Animated in Adobe Animate and After Effects.</p>
+                    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video edited in Adobe Premiere; music produced in Ableton Live.</p>
+                    <p style="margin-bottom: 12px;">MICHELLEACID.TV: Built and deployed through GitHub.</p>                    
+                    <p style="margin-bottom: 8px; text-align: center;">***</p>
+                    
+                    <p style="margin-bottom: 6px;"><strong>Frequently Asked Questions</strong></p>
+                                        
+                    <p style="margin-bottom: 8px;">Q: What is this website?</p>
+                    <p style="margin-bottom: 8px;">A: Everything is hand drawn by human on computer</p>
+                    
+                    <p style="margin-bottom: 8px;">Q: Who is asking for this?</p>
+                    <p style="margin-bottom: 8px;">A: ...</p>
+                    
+                    <p style="margin-bottom: 8px;">Q: Why did you do this?</p>
+                    <p style="margin-bottom: 8px;">A: I don't want to talk about it.</p>
+ 
+                    <p style="margin-bottom: 8px;">Q: You know there are already multiple platforms out there where you can post your videos?</p>
+                    <p style="margin-bottom: 12px;">A: K. </p>   
+                    
+                    
+                    </div>
+                
+                <div class="action-buttons">
+                    <button id="agreeBtn2" class="retro-btn" style="width: 60px; padding: 3px 0;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Form Handling
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const emailInput = document.getElementById("email");
+            const statusMessage = document.getElementById("status-message");
+            
+            if (!emailInput || !statusMessage) return; 
+
+            // --- UPDATE STARTS HERE ---
+            statusMessage.style.display = "block"; // Makes the retro alert box appear
+            statusMessage.innerHTML = "Sending request...";
+
+            axios.post('https://formspree.io/f/xovdvkjq', {
+                email: emailInput.value
+            })
+            .then(function(response) {
+                statusMessage.innerHTML = "Registration complete. Go in peace.";
+                emailInput.value = ""; 
+            })
+            .catch(function(error) {
+                statusMessage.innerHTML = "ERROR: System failed to process request. Try again.";
+                console.error("Formspree Error Details:", error);
+            });
+            // --- UPDATE ENDS HERE ---
+        });
+
+// MODAL SYSTEM SCRIPTING
+        const modal1 = document.getElementById("legalModal");
+        const btn1 = document.getElementById("legalLauncher");
+        const close1 = document.getElementById("closeBtn");
+        const agree1 = document.getElementById("agreeBtn");
+
+        const modal2 = document.getElementById("legalModal2");
+        const btn2 = document.getElementById("legalLauncher2");
+        const close2 = document.getElementById("closeBtn2");
+        const agree2 = document.getElementById("agreeBtn2");
+
+        // Button 1 Controls (Opens Modal 1)
+        btn1.onclick = function() { modal1.style.display = "block"; }
+        close1.onclick = function() { modal1.style.display = "none"; }
+        agree1.onclick = function() { modal1.style.display = "none"; }
+
+        // Button 2 Controls (Opens Modal 2)
+        if (btn2) {
+            btn2.onclick = function() { modal2.style.display = "block"; }
+        }
+        if (close2) {
+            close2.onclick = function() { modal2.style.display = "none"; }
+        }
+        if (agree2) {
+            agree2.onclick = function() { modal2.style.display = "none"; }
+        }
+
+        // Close when clicking background overlay
+        window.onclick = function(event) {
+            if (event.target === modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target === modal2) {
+                modal2.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
