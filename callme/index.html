@@ -79,7 +79,7 @@
         }
 
         /* RETRO WINDOW SYSTEM */
-        .retro-window {
+               .retro-window {
             background-color: #c0c0c0;
             border: 7px solid;
             border-color: #ffffff #808080 #808080 #ffffff;
@@ -121,7 +121,7 @@
 
         /* BRANDING HEADER SECTION (Inspired by Windows XP/images.jpeg Setup) */
         .branding-bar {
-            background-image: url('/dialogbox.webp');
+            background-image: url(contactbackground.png);/* Deep retro OS gradient styling */
             background-size: cover; /* Forces the image to fill the entire header bar */
             background-position: center center;
             color: #ffffff;
@@ -143,6 +143,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background-color: rgba(0, 222, 255, 0.77); /* Black tint with 55% opacity */
+    padding: 6px 4px;                      /* Adds space around the text inside the box */
+    border-radius: 3px;                     /* Slightly rounds the corners */
+    
         }
 
         .branding-title {
@@ -262,6 +266,7 @@
     box-shadow: 1px 1px 0 0 #000000;
 }
 
+
         /* Modal Overlay Properties */
         .modal-overlay {
             display: none; 
@@ -277,6 +282,17 @@
             transform: translate(-50%, -50%);
             width: 321px;
         }
+        
+    #legalModal2 .retro-window {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 321px;       /* Adjust this value to make it wider or narrower */
+}
+
+#legalModal2 .window-content {
+    height: 373px;      /* Adjust this value to make it taller or shorter */
+}
 
         .window-content {
             background: #ffffff;
@@ -284,7 +300,7 @@
             border: 2px solid;
             border-color: #808080 #ffffff #ffffff #808080; 
             padding: 10px;
-            height: 464px;
+            height: 296px;
             overflow-y: scroll; 
         }
 
@@ -299,11 +315,18 @@
         }
 
         /* Responsive scaling */
-        @media (max-width: 768px) {
-            #unified-window { width: 76vw; top: 50%; }
-            #status-message { font-size: 0.5rem; }
-            .window-grid-layout { column-gap: 10px; grid-template-columns: 1fr 65px; }
-        }
+@media (max-width: 768px) {
+    #unified-window { width: 85vw; top: 50%; } /* Slightly widened on mobile to give text more horizontal runway */
+    #status-message { font-size: 0.5rem; }
+    .window-grid-layout { column-gap: 10px; grid-template-columns: 1fr 65px; }
+    
+    /* Forces label text to stay on one line and scales down font gracefully */
+    .responsive-label {
+        font-size: 10px !important;
+        white-space: nowrap !important;
+        min-height: auto !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -333,15 +356,21 @@
                 <form id="contact-form">
                     <div class="window-grid-layout">
                         
-                        <!-- ROW 1: Centered heading line -->
-                        <div class="grid-center-row">
-                            <label for="email" style="font-weight: bold;">Want to work together?</label>
-                        </div>
+<div class="grid-center-row" style="display: flex; width: 100%; justify-content: center; margin-bottom: 8px;">
+    <div style="display: flex; width: 100%; max-width: 320px; justify-content: center;">
+        
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; padding: 0 4px;">
+            <label for="email" class="responsive-label" style="font-weight: bold; min-height: 2.6em; display: flex; align-items: flex-end; text-align: center;">Want to work together?</label>
+            <button id="legalLauncher" type="button" class="retro-btn" style="width: 100px; max-width: 100%;">Read Me</button>
+        </div>
 
-                        <!-- ROW 2: The Centered "Read Me" Button Frame -->
-                        <div class="grid-center-row" style="margin-top: 2px;">
-                            <button id="legalLauncher" type="button" class="retro-btn" style="width: 100px;">Read Me</button>
-                        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; padding: 0 4px;">
+            <label class="responsive-label" style="font-weight: bold; min-height: 2.6em; display: flex; align-items: flex-end; text-align: center;">FAQ</label>
+            <button id="legalLauncher2" type="button" class="retro-btn" style="width: 100px; max-width: 100%;">Click Me</button>
+        </div>
+
+    </div>
+</div>
 
                         <!-- ROW 3: Context subtext line -->
                         <div class="grid-left-item" style="grid-column: 1 / span 2; margin-top: 4px;">
@@ -374,15 +403,7 @@
             </div>
             <div class="window-body">
                 <div class="window-content">
-                    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
-                    
-                    <p style="margin-bottom: 4px;">METRO: Animated in Adobe Photoshop.</p>
-                    <p style="margin-bottom: 4px;">ACID FUTURE: Animated in Adobe Animate and After Effects.</p>
-                    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video edited in Adobe Premiere; Music produced in Ableton Live.</p>
-                    <p style="margin-bottom: 12px;">MICHELLEACID.TV: Built and deployed through GitHub.</p>
-                    <p style="margin-bottom: 8px;">Everything hand drawn by human on computer</p>
-                    <p style="margin-bottom: 8px; text-align: center;">***</p>
-                    
+                   
                     <p style="margin-bottom: 8px;"><strong>What Can I Do for You</strong></p>
                     <p style="margin-bottom: 24px;">Album cover? Spotify canvas? Music video? Animated clip? Flyer? CONTENT? Draw you like a monkey? What would you like for me to do for you</p>
 
@@ -398,6 +419,46 @@
                 
                 <div class="action-buttons">
                     <button id="agreeBtn" class="retro-btn" style="width: 60px; padding: 3px 0;">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="legalModal2" class="modal-overlay">
+        <div class="retro-window">
+            <div class="title-bar">
+                <span class="title">FAQ.TXT</span>
+                <button id="closeBtn2" class="close-btn">X</button>
+            </div>
+            <div class="window-body">
+                <div class="window-content">
+                    <p style="margin-bottom: 6px;"><strong>Notice to User</strong></p>
+                    
+                    <p style="margin-bottom: 4px;">METRO: Animated in Adobe Photoshop.</p>
+                    <p style="margin-bottom: 4px;">ACID FUTURE: Animated in Adobe Animate and After Effects.</p>
+                    <p style="margin-bottom: 4px;">MECHANICAL WOMAN (DVD): Video edited in Adobe Premiere; audio engineered in Ableton Live.</p>
+                    <p style="margin-bottom: 12px;">MICHELLEACID.TV: Built and deployed through GitHub.</p>                    
+                    <p style="margin-bottom: 8px; text-align: center;">***</p>
+                    
+                    <p style="margin-bottom: 6px;"><strong>Frequently Asked Questions</strong></p>
+                                        
+                    <p style="margin-bottom: 8px;">Q: What is this website?</p>
+                    <p style="margin-bottom: 8px;">A: Everything is hand drawn by human on computer</p>
+                    
+                    <p style="margin-bottom: 8px;">Q: Who is asking for this?</p>
+                    <p style="margin-bottom: 8px;">A: ...</p>
+                    
+                    <p style="margin-bottom: 8px;">Q: Why did you do this?</p>
+                    <p style="margin-bottom: 8px;">A: I don't want to talk about it.</p>
+ 
+                    <p style="margin-bottom: 8px;">Q: You know there are already multiple platforms out there where you can post your videos?</p>
+                    <p style="margin-bottom: 12px;">A: K. </p>   
+                    
+                    
+                    </div>
+                
+                <div class="action-buttons">
+                    <button id="agreeBtn2" class="retro-btn" style="width: 60px; padding: 3px 0;">OK</button>
                 </div>
             </div>
         </div>
@@ -432,26 +493,40 @@ document.getElementById("contact-form").addEventListener("submit", function(even
             // --- UPDATE ENDS HERE ---
         });
 
-        // Modal Scripts
-        const legalLauncher = document.getElementById("legalLauncher");
-        const legalModal = document.getElementById("legalModal");
-        const closeBtn = document.getElementById("closeBtn");
-        const agreeBtn = document.getElementById("agreeBtn");
+// MODAL SYSTEM SCRIPTING
+        const modal1 = document.getElementById("legalModal");
+        const btn1 = document.getElementById("legalLauncher");
+        const close1 = document.getElementById("closeBtn");
+        const agree1 = document.getElementById("agreeBtn");
 
-        legalLauncher.onclick = function() {
-            legalModal.style.display = "block";
+        const modal2 = document.getElementById("legalModal2");
+        const btn2 = document.getElementById("legalLauncher2");
+        const close2 = document.getElementById("closeBtn2");
+        const agree2 = document.getElementById("agreeBtn2");
+
+        // Button 1 Controls (Opens Modal 1)
+        btn1.onclick = function() { modal1.style.display = "block"; }
+        close1.onclick = function() { modal1.style.display = "none"; }
+        agree1.onclick = function() { modal1.style.display = "none"; }
+
+        // Button 2 Controls (Opens Modal 2)
+        if (btn2) {
+            btn2.onclick = function() { modal2.style.display = "block"; }
+        }
+        if (close2) {
+            close2.onclick = function() { modal2.style.display = "none"; }
+        }
+        if (agree2) {
+            agree2.onclick = function() { modal2.style.display = "none"; }
         }
 
-        function closeModal() {
-            legalModal.style.display = "none";
-        }
-
-        closeBtn.onclick = closeModal;
-        agreeBtn.onclick = closeModal;
-
+        // Close when clicking background overlay
         window.onclick = function(event) {
-            if (event.target === legalModal) {
-                closeModal();
+            if (event.target === modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target === modal2) {
+                modal2.style.display = "none";
             }
         }
     </script>
