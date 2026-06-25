@@ -82,50 +82,6 @@
             box-shadow: 0 0 0px #e31982;
         }
         
-/* Base Desktop Style */
-.click-text {
-    position: absolute;
-    top: 355px;
-    left: 274px;
-    margin: 0;
-    color: #e31982;
-    font-size: 0.7rem;
-    z-index: 10;
-}
-
-/* Mobile Portrait (Phones) */
-@media (max-width: 768px) {
-    .click-text {
-        position: fixed;      /* Lock it relative to the viewport glass */
-        top: 103px;            /* Placed safely below the quote button (top 20px + button height) */
-        right: 47px;          /* Aligned with the right edge side of the button area */
-        left: auto;           /* Clears desktop positioning rules */
-        transform: none;      
-        
-        /* Cleaned out the accidental layout block styles */
-        width: auto;          /* Let the text span naturally across a single line */
-        height: auto;         
-        font-size: 0.65rem;   /* Crisp, readable subtitle size for mobile scales */
-        text-align: right;    /* Keeps text cleanly flush with the right screen margin */
-    }
-}
-
-/* Mobile Landscape (Horizontal Phones) */
-@media screen and (max-width: 844px) and (orientation: landscape) {
-    .click-text {
-        position: fixed;
-        top: 56px;            /* Tighter fit under the landscape quote button */
-        right: 15px;
-        left: auto;
-        transform: none;
-        
-        width: auto;
-        height: auto;
-        font-size: 0.6rem;
-        text-align: right;
-    }
-}
-        
               .tv-container {
             position: relative;
             width: 700px; /* Max desktop size */
@@ -638,12 +594,6 @@
     <div class="content-wrapper">
 <p class="more-music-text">
     more music... <br>
-</p>
-        <p class="click-text">
-    click me <br>
-</p>
-        <p class="click-text">
-    click me <br>
 </p>
         
         <a href="/" class="back-btn">back</a>
