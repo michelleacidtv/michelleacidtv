@@ -270,15 +270,23 @@
         }
 
         /* --- LIGHTBOX OVERLAY --- */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0, 0, 0, 0.78);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
+.lightbox {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    
+    /* FIX FOR MOBILE: Forces the tint to match dynamic browser bar changes */
+    width: 100vw; 
+    height: 100vh; /* Fallback */
+    width: 100dvw; 
+    height: 100dvh; 
+    
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
 
         .lightbox-content {
             position: relative;
