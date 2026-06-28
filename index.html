@@ -38,6 +38,18 @@
                 overflow: hidden;
             }
 
+            .main-container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+
             #loadingScreen {
                 position: fixed;
                 top: 0;
@@ -71,20 +83,15 @@
             }
  
             #dpbig {
-                position: absolute;
-                width: 440px; /* Keeps your original CD size */
-                
-                /* 1. Dead center it vertically and horizontally */
-                top: 47%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                
-                /* 2. Layering setup */
-                z-index: 10; /* Ensures it sits underneath your loading screen but above the background */
-                
+                width: 100%;
+                max-width: 440px; 
+                max-height: 45vh; /* Prevents image from hogging space on cramped mobile viewports */
+                object-fit: contain;
+                z-index: 10;
                 transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
                 cursor: pointer;
                 -webkit-tap-highlight-color: transparent;
+                margin-bottom: 0px; /* Comfortable layout gap between image and nav list */
             }
             
             #dpbig:hover {
@@ -98,25 +105,6 @@
     filter: grayscale(1) contrast(5) brightness(0.8); /* Inverts colors completely to pure negative on press */
     transition: transform 0.05s ease; /* Lightning fast speed so it feels crisp */
 }
-
-            @media (max-width: 768px) {
-                #dpbig {
-                    width: 240px; /* Scales down smoothly for mobile vertical viewports */
-                    top: 29%;     /* Locks it to the dead center vertically */
-                    left: 50%;    /* Locks it to the dead center horizontally */
-                    transform: translate(-50%, -50%); /* Keeps it anchored to the true center point */
-                }
-            }
-
-            @media screen and (max-width: 844px) and (orientation: landscape) {
-                #dpbig {
-                    width: 280px; /* Scales down cleanly so it doesn't clip off the top/bottom on wide mobile screens */
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-                
-            }
             
             #dismiss-btn {
     /* 1. Color and Typography */
@@ -141,17 +129,14 @@
 }
                         
             /* UPDATED PINK TEXT-ONLY MENU STYLING */
-nav {
-    position: absolute;
-    z-index: 100; /* Keeps it on top of the background/CD */
-
-    /* 1. VERTICAL MOVEMENT (Anchored dynamically from the center) */
-    top: calc(50% + 212px); /* Adjust '150px' up or down to position it perfectly under your CD */
-    
-    /* 2. HORIZONTAL MOVEMENT (Left & Right) */
-    left: 50%;           /* Starts it at the middle... */
-    transform: translateX(-50%); /* ...and perfectly centers it left-to-right */
-}
+            nav {
+                z-index: 100;
+                width: 100%;
+                max-width: 1200px;
+                position: relative; /* ◄ Required to enable relative coordinate adjustments */
+                top: 40px;          /* ◄ INCREASE this number to push the menu DOWN on desktop */
+                                    /* DECREASE this number (e.g. 0px) to pull it UP */
+            }
 
             nav ul {
                 list-style-type: none; /* No bullets */
@@ -187,20 +172,46 @@ nav {
             }   
             
             @media screen and (max-width: 768px) {
+                #dpbig {
+                    max-width: 242px; 
+                    margin-bottom: 132px;
+                    flex-shrink: 0; 
+                }
+                
                 nav {
-                    top: 54%; 
-                    width: 100%;
+                    position: relative; 
+                    top: 0px;          /* ◄ Keeps mobile overrides separate from desktop layout shifts */
                 }
 
                 nav ul {
-                    display: flex;          /* Re-ensure flex layout is active */
-                    flex-direction: column; /* Force the items to stack vertically */
-                    align-items: center;    /* Center the stacked links horizontally */
-                    gap: 35px;              
+                    display: flex;
+                    flex-direction: column; 
+                    align-items: center;
+                    gap: 33px;              
                 }
 
                 nav li a {
-                    font-size: 16px;        
+                    font-size: 13px; 
+                    white-space: normal; 
+                    text-align: center;
+                }
+            }
+
+            /* LANDSCAPE MOBILE SAFEGUARDS */
+            @media screen and (max-height: 450px) {
+                #dpbig {
+                    max-width: 130px; 
+                    margin-bottom: 5px;
+                }
+                nav {
+                    top: 5px;
+                }
+                nav ul {
+                    flex-direction: row; 
+                    gap: 12px;
+                }
+                nav li a {
+                    font-size: 11px;
                 }
             }
 
@@ -213,6 +224,9 @@ nav {
             <div id="lottieLoader"></div>
         </div>
 
+        <div class="main-container">
+        <img id="dpbig" src="dpBIG2.png" alt="dpbig" class="dpbig" />
+
         <nav>
             <ul>
                 <li><a href="/metro/"> ⓜⓔⓣⓡⓞ </a></li>
@@ -222,8 +236,6 @@ nav {
                 <li><a href="/FAQ/">F͎A͎Q͎ ✉︎</a></li>
             </ul>
         </nav>
-
-        <img id="dpbig" src="dpBIG2.png" alt="dpbig" class="dpbig" />
             
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.1/lottie.min.js"></script>
 
