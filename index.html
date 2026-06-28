@@ -116,21 +116,6 @@
                 }
                 
             }
-
-            #mobile-warning {
-                display: none; /* CRITICAL: Hides the warning on desktop by default */
-                position: fixed;
-                top: 10px;
-                width: 43%;
-                background-color: rgba(227, 25, 130, 0.35);
-                color: #ffffff;
-                text-align: center;
-                padding: 4px;
-                font-size: 14px;
-                z-index: 9999;
-                border: 2px solid rgba(227, 25, 130, 0.55);
-                border-radius: 8px;
-            }
             
             #dismiss-btn {
     /* 1. Color and Typography */
@@ -226,11 +211,6 @@ nav {
         <div id="loadingScreen">
             <div id="lottieLoader"></div>
         </div>
-        
-        <div id="mobile-warning">
-          ⚠︎ Looking Good ×͜× 
-          <button id="dismiss-btn">×</button>
-        </div>
 
         <nav>
             <ul>
@@ -285,19 +265,6 @@ nav {
         }, 500); 
     }, 2300); 
                 
-    // Mobile Warning script
-    document.addEventListener("DOMContentLoaded", () => {
-        const warning = document.getElementById("mobile-warning");
-        const dismissBtn = document.getElementById("dismiss-btn");
-
-        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            warning.style.display = "block"; 
-        }
-
-        dismissBtn?.addEventListener("click", () => {
-            warning.style.display = "none";
-        });
-    });
 </script>
     </body>
 </html>
