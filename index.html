@@ -19,7 +19,7 @@
             }
 
             html, body {
-                background-image: url('indexbgcopy.webp');
+                background-image: url('indexbgacid.webp');
                 background-color: #fefff0;
                 color: #e31982;
                 font-family: "Xolonium", sans-serif; /* Use Xolonium font */
@@ -74,7 +74,7 @@
                 width: 440px; /* Keeps your original CD size */
                 
                 /* 1. Dead center it vertically and horizontally */
-                top: 42%;
+                top: 47%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 
@@ -155,17 +155,17 @@
 }
                         
             /* UPDATED PINK TEXT-ONLY MENU STYLING */
-            nav {
-                position: absolute;
-                z-index: 100; /* Keeps it on top of the background/CD */
+nav {
+    position: absolute;
+    z-index: 100; /* Keeps it on top of the background/CD */
 
-                /* 1. VERTICAL MOVEMENT (Up & Down) */
-                top: 584px;       /* Distance from the TOP of the screen. Increase to move down, decrease to move up */
-                
-                /* 2. HORIZONTAL MOVEMENT (Left & Right) */
-                left: 50%;       /* Starts it at the middle... */
-                transform: translateX(-50%); /* ...and perfectly centers it left-to-right */
-            }
+    /* 1. VERTICAL MOVEMENT (Anchored dynamically from the center) */
+    top: calc(50% + 212px); /* Adjust '150px' up or down to position it perfectly under your CD */
+    
+    /* 2. HORIZONTAL MOVEMENT (Left & Right) */
+    left: 50%;           /* Starts it at the middle... */
+    transform: translateX(-50%); /* ...and perfectly centers it left-to-right */
+}
 
             nav ul {
                 list-style-type: none; /* No bullets */
