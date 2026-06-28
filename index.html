@@ -35,6 +35,7 @@
                 background-position: center;  /* Centers the image */
                 cursor: default;
                 position: relative;
+                overflow: hidden;
             }
 
             #loadingScreen {
@@ -187,7 +188,7 @@ nav {
             
             @media screen and (max-width: 768px) {
                 nav {
-                    top: 54%; 
+                    top: 52%; 
                     width: 100%;
                 }
 
@@ -195,7 +196,7 @@ nav {
                     display: flex;          /* Re-ensure flex layout is active */
                     flex-direction: column; /* Force the items to stack vertically */
                     align-items: center;    /* Center the stacked links horizontally */
-                    gap: 41px;              
+                    gap: 35px;              
                 }
 
                 nav li a {
