@@ -6,7 +6,22 @@
         <title>¯\_(ツ)_/¯</title>
         <link rel="canonical" href="https://www.michelleacid.tv/" />
         <link rel="icon" type="image/png" href="/faviconnew.png">
-        <link href="https://fonts.googleapis.com/css2?family=Xolonium&display=swap" rel="stylesheet" />
+
+        <!-- Basic SEO / social share metadata -->
+        <meta name="description" content="michelleacid.tv" />
+        <meta name="theme-color" content="#e2ff40" />
+        <meta property="og:title" content="michelleacid.tv" />
+        <meta property="og:description" content="michelleacid.tv" />
+        <meta property="og:image" content="https://www.michelleacid.tv/dpBIG2.png" />
+        <meta property="og:url" content="https://www.michelleacid.tv/" />
+        <meta name="twitter:card" content="summary_large_image" />
+ 
+        <!-- Preload above-the-fold assets so they're discovered before CSSOM finishes building -->
+        <link rel="preload" as="image" href="indexbg.png" />
+        <link rel="preload" as="image" href="loadingbg.png" />
+        <link rel="preload" as="font" href="Xolonium.woff2" type="font/woff2" crossorigin="anonymous" />
+ 
+        
         <style>
         
             @font-face {
@@ -16,6 +31,7 @@
                      url('Xolonium-Regular.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
+                font-display: swap; /* avoid invisible text while the font loads */
             }
 
             html, body {
@@ -52,7 +68,7 @@
                 left: 0;
                 width: 100vw;
                 height: 100%;
-                background-color: #f3f6ff; 
+                background-color: #fff6eb; 
                 display: flex;
                 align-items: center;
                 justify-content: center;
