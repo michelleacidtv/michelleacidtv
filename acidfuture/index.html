@@ -61,33 +61,24 @@
         }
 
         .back-btn {
-            position: fixed;   
-            top: 20px;         
-            left: 20px;        
-            color: #000000;
-            background-color: #c0c0c0;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #ff0066;
             
-            /* Vintage square 3D borders */
-            border: 4px solid;
-            border-color: #ffffff #808080 #808080 #ffffff;
-            box-shadow: 1px 1px 0 0 #000000;
-            
-            padding: 4px 10px;
-            font-family: Tahoma, "MS Sans Serif", sans-serif;
-            font-size: 11px;
+            background-color: #ffffcb;
+            border-radius: 7px;
+            padding: 7px 9px;
+            font-size: 0.8rem;
             text-decoration: none;
-            font-weight: normal;
-            text-align: center;
-            box-sizing: border-box;
-            z-index: 200;
-            cursor: default;
+            font-weight: bold;
+            transition: 0.3s;
+            z-index: 10000;
         }
 
-        /* Simulated 90s button press effect */
-        .back-btn:active {
-            border-color: #808080 #ffffff #ffffff #808080;
-            box-shadow: none;
-            padding: 5px 9px 3px 11px;
+        .back-btn:hover {
+            background-color: #ff0066;
+            color: white;
         }
         
         #phone-gif {
