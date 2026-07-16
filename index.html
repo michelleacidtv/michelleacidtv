@@ -34,21 +34,30 @@
                 font-display: swap; /* avoid invisible text while the font loads */
             }
 
-            html, body {
-                background-image: url('/indexbgacid.webp');
-                background-color: #e2ff40;
-                color: #e31982;
-                font-family: "Xolonium", sans-serif;
-                margin: 0;
-                padding: 0;
-                width: 100vw;
-                height: 100vh;
-                height: 100dvh; /* Dynamic viewport height safely fixes mobile browser search bar bugs */
-                overflow: hidden; /* Absolute scroll lockout */
-                background-size: cover;       
-                background-position: center;  
-                cursor: default;
-            }
+html, body {
+    background-color: #e2ff40; /* keep as fallback color only */
+    color: #e31982;
+    font-family: "Xolonium", sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    cursor: default;
+}
+            .bg-layer {
+    position: fixed;
+    inset: 0; /* top/left/right/bottom: 0 */
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-image: url('/indexbgacid.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 
             .main-container {
                 width: 100%;
@@ -206,6 +215,7 @@
     </head> 
         
     <body>
+        <div class="bg-layer"></div>
         
         <div id="loadingScreen">
             <div id="lottieLoader"></div>
